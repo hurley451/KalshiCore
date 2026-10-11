@@ -8,7 +8,7 @@
   },
   "package": {
     "ecosystem": "crates.io",
-    "name": "kalshi_rs"
+    "name": "kalshi-client"
   },
   "adapter": {
     "workingDirectory": ".",
