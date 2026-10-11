@@ -1,0 +1,35 @@
+{
+  "$schema": "../schemas/sdk-target.schema.json",
+  "id": "rust.kalshi-rs",
+  "language": "rust",
+  "repository": {
+    "name": "kalshi-rs",
+    "url": "https://github.com/hurley451/kalshi-rs"
+  },
+  "package": {
+    "ecosystem": "crates.io",
+    "name": "kalshi_rs"
+  },
+  "adapter": {
+    "workingDirectory": ".",
+    "offlineCommand": "node tools/generate_operations.mjs --kalshicore-root ${KALSHICORE_ROOT} && cargo test && cargo run --bin kalshicore-conformance -- --kalshicore-root ${KALSHICORE_ROOT} --report artifacts/kalshicore-conformance/report.json",
+    "reportPath": "artifacts/kalshicore-conformance/report.json",
+    "requiredEnvironment": [
+      "KALSHICORE_ROOT"
+    ]
+  },
+  "conformance": {
+    "status": "draft",
+    "kalshiCoreRef": "main",
+    "contractIds": [
+      "portfolio.fills.list"
+    ],
+    "fixtureIds": [
+      "auth.signing.rest-get-portfolio-fills",
+      "rest.request.portfolio-fills-query",
+      "rest.response.portfolio-fills-page",
+      "websocket.replay.orderbook-delta"
+    ],
+    "exclusions": []
+  }
+}
