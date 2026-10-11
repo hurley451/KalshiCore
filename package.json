@@ -2,6 +2,7 @@
   "name": "kalshicore",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "description": "Shared contracts, fixtures, and conformance framework for Kalshi SDK implementations.",
   "scripts": {
     "refresh:sources": "node tools/refresh-official-sources.js",

@@ -10,6 +10,19 @@ const workflow = YAML.parse(fs.readFileSync(path.join(__dirname, "../.github/wor
 const steps = workflow.jobs.release.steps;
 const tagCheck = steps.find((step) => step.id === "release-tag");
 
+test("release distribution includes the approved MIT license and matching package metadata", () => {
+  const root = path.join(__dirname, "..");
+  const license = fs.readFileSync(path.join(root, "LICENSE"), "utf8");
+  const pkg = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
+  const lock = JSON.parse(fs.readFileSync(path.join(root, "package-lock.json"), "utf8"));
+  assert.match(license, /^MIT License\n/);
+  assert.match(license, /Copyright \(c\) 2026 Matt Hurley/);
+  assert.equal(pkg.license, "MIT");
+  assert.equal(lock.packages[""].license, pkg.license);
+  assert.equal(pkg.private, true);
+  assert.match(steps.find((step) => step.name === "Build suite archive").run, /\n\s+LICENSE \\/);
+});
+
 test("release workflow binds checkout to the requested existing tag and checks archive consumer", () => {
   assert.match(steps[0].with.ref, /inputs.tag/);
   assert.match(steps[0].with.ref, /github.ref_name/);
