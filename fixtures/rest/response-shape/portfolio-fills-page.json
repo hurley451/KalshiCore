@@ -1,0 +1,34 @@
+{
+  "$schema": "../../schemas/fixture.schema.json",
+  "id": "rest.response.portfolio-fills-page",
+  "kind": "rest-response-shape",
+  "description": "Representative portfolio fills response shape for SDK deserialization tests.",
+  "input": {
+    "status": 200,
+    "body": {
+      "fills": [
+        {
+          "trade_id": "trade_example_001",
+          "ticker": "KXEXAMPLE-26OCT10-B100",
+          "side": "yes",
+          "count": 3,
+          "yes_price": 47,
+          "no_price": 53,
+          "created_time": "2026-10-10T12:00:00Z"
+        }
+      ],
+      "cursor": "next-page-cursor"
+    }
+  },
+  "expected": {
+    "fillsCount": 1,
+    "firstFill": {
+      "tradeId": "trade_example_001",
+      "ticker": "KXEXAMPLE-26OCT10-B100",
+      "side": "yes",
+      "count": 3,
+      "yesPrice": 47
+    },
+    "cursor": "next-page-cursor"
+  }
+}

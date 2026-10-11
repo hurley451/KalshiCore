@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kalshicore.dev/contracts/schemas/endpoint-contract.schema.json",
+  "title": "KalshiCore endpoint contract",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "method",
+    "path",
+    "status",
+    "request",
+    "responses"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "ready",
+        "deprecated"
+      ]
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ]
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^/trade-api/v2/"
+    },
+    "auth": {
+      "type": "string",
+      "enum": [
+        "api-key",
+        "none"
+      ]
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pathParameters": {
+          "$ref": "#/$defs/parameterList"
+        },
+        "queryParameters": {
+          "$ref": "#/$defs/parameterList"
+        },
+        "headers": {
+          "$ref": "#/$defs/parameterList"
+        },
+        "bodySchema": {
+          "type": "object"
+        }
+      }
+    },
+    "responses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "status",
+          "description",
+          "bodySchema"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "type": "integer",
+            "minimum": 100,
+            "maximum": 599
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "bodySchema": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "provenance",
+        "kind",
+        "url"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "provenance": {
+          "type": "string",
+          "enum": [
+            "official-confirmed",
+            "observed-live-api",
+            "observed-sdk",
+            "fixture-inferred",
+            "pending-review"
+          ]
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "kalshi-docs",
+            "kalshi-openapi",
+            "live-observation",
+            "sdk-observation",
+            "placeholder"
+          ]
+        },
+        "url": {
+          "type": "string"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "parameterList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type",
+          "required"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "string",
+              "integer",
+              "number",
+              "boolean",
+              "array"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

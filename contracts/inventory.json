@@ -1,0 +1,11 @@
+{
+  "$schema": "./schemas/contract-inventory.schema.json",
+  "version": "0.1.0",
+  "description": "Bootstrap inventory for Kalshi API endpoint contracts.",
+  "contracts": [
+    {
+      "id": "portfolio.fills.list",
+      "path": "endpoints/portfolio.fills.list.json"
+    }
+  ]
+}

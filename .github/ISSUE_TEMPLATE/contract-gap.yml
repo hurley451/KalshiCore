@@ -1,0 +1,58 @@
+name: Contract gap
+description: Report a missing, incorrect, or ambiguous KalshiCore contract.
+title: "Contract gap: "
+labels:
+  - contract-gap
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when an SDK implementation, fixture, or official source shows that KalshiCore's contract data needs review.
+  - type: input
+    id: api-area
+    attributes:
+      label: API area
+      placeholder: "Orders V2, portfolio fills, WebSocket ticker, auth signing"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source or observed evidence
+      placeholder: "Kalshi docs URL, OpenAPI path, fixture name, or SDK failure link"
+    validations:
+      required: true
+  - type: dropdown
+    id: provenance
+    attributes:
+      label: Evidence status
+      options:
+        - official-confirmed
+        - observed-live-api
+        - observed-sdk
+        - fixture-inferred
+        - pending-review
+    validations:
+      required: true
+  - type: textarea
+    id: mismatch
+    attributes:
+      label: Mismatch
+      description: What does KalshiCore say, and what evidence suggests it should change?
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: SDK impact
+      description: Which SDK targets are affected, and how?
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What contract, fixture, or conformance change would resolve this?
+  - type: textarea
+    id: propagation
+    attributes:
+      label: SDK propagation
+      description: Which SDK target manifests, waivers, or follow-up issues should be updated when this gap is resolved?

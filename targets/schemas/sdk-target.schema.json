@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kalshicore.dev/targets/schemas/sdk-target.schema.json",
+  "title": "KalshiCore SDK target manifest",
+  "type": "object",
+  "required": [
+    "id",
+    "language",
+    "repository",
+    "conformance"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "object",
+      "required": [
+        "name",
+        "url"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "package": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ecosystem": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "conformance": {
+      "type": "object",
+      "required": [
+        "status",
+        "kalshiCoreRef",
+        "contractIds",
+        "fixtureIds"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "example",
+            "draft",
+            "active"
+          ]
+        },
+        "kalshiCoreRef": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contractIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fixtureIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/fixture.schema.json",
+  "id": "rest.request.portfolio-fills-query",
+  "kind": "rest-request-serialization",
+  "description": "Serializes optional portfolio fills query parameters without a JSON request body.",
+  "input": {
+    "method": "GET",
+    "path": "/trade-api/v2/portfolio/fills",
+    "query": {
+      "tickers": [
+        "KXEXAMPLE-26OCT10-B100",
+        "KXEXAMPLE-26OCT10-B105"
+      ],
+      "limit": 2,
+      "cursor": "opaque-cursor"
+    }
+  },
+  "expected": {
+    "method": "GET",
+    "pathAndQuery": "/trade-api/v2/portfolio/fills?cursor=opaque-cursor&limit=2&tickers=KXEXAMPLE-26OCT10-B100%2CKXEXAMPLE-26OCT10-B105",
+    "body": null
+  }
+}

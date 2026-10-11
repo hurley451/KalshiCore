@@ -1,0 +1,43 @@
+{
+  "$schema": "../../schemas/fixture.schema.json",
+  "id": "websocket.replay.orderbook-delta",
+  "kind": "websocket-replay",
+  "description": "Small replay sequence for SDK WebSocket message dispatch and state update tests.",
+  "input": {
+    "url": "wss://api.elections.kalshi.com/trade-api/ws/v2",
+    "messages": [
+      {
+        "seq": 1,
+        "type": "subscribed",
+        "sid": 7,
+        "msg": {
+          "channel": "orderbook_delta",
+          "market_ticker": "KXEXAMPLE-26OCT10-B100"
+        }
+      },
+      {
+        "seq": 2,
+        "type": "orderbook_delta",
+        "sid": 7,
+        "msg": {
+          "market_ticker": "KXEXAMPLE-26OCT10-B100",
+          "price": 47,
+          "delta": 10,
+          "side": "yes"
+        }
+      }
+    ]
+  },
+  "expected": {
+    "dispatchedTypes": [
+      "subscribed",
+      "orderbook_delta"
+    ],
+    "finalBookPatch": {
+      "ticker": "KXEXAMPLE-26OCT10-B100",
+      "yes": {
+        "47": 10
+      }
+    }
+  }
+}

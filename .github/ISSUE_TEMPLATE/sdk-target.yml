@@ -1,0 +1,35 @@
+name: SDK target
+description: Propose or track a language SDK target.
+title: "SDK target: "
+labels:
+  - sdk-target
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language and package ecosystem
+      placeholder: "TypeScript / npm"
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Repository
+      placeholder: "hurley451/kalshi-js"
+  - type: textarea
+    id: scope
+    attributes:
+      label: Initial scope
+      description: Which API areas, auth behavior, fixtures, and conformance suites should this target support first?
+    validations:
+      required: true
+  - type: textarea
+    id: idioms
+    attributes:
+      label: Language-specific constraints
+      description: Note package layout, async/runtime constraints, publishing requirements, and compatibility expectations.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What proves this target is wired into KalshiCore?

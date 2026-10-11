@@ -1,0 +1,102 @@
+{
+  "$schema": "../schemas/endpoint-contract.schema.json",
+  "id": "portfolio.fills.list",
+  "name": "List portfolio fills",
+  "description": "Draft skeleton for the authenticated portfolio fills endpoint.",
+  "status": "draft",
+  "method": "GET",
+  "path": "/trade-api/v2/portfolio/fills",
+  "auth": "api-key",
+  "request": {
+    "queryParameters": [
+      {
+        "name": "ticker",
+        "type": "string",
+        "required": false,
+        "description": "Single market ticker filter."
+      },
+      {
+        "name": "tickers",
+        "type": "array",
+        "required": false,
+        "description": "Comma-separated market ticker filter for SDKs that expose collection input."
+      },
+      {
+        "name": "limit",
+        "type": "integer",
+        "required": false,
+        "description": "Maximum number of fills to return."
+      },
+      {
+        "name": "cursor",
+        "type": "string",
+        "required": false,
+        "description": "Opaque pagination cursor."
+      }
+    ]
+  },
+  "responses": [
+    {
+      "status": 200,
+      "description": "Portfolio fills page.",
+      "bodySchema": {
+        "type": "object",
+        "required": [
+          "fills"
+        ],
+        "properties": {
+          "fills": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "trade_id",
+                "ticker",
+                "side",
+                "count",
+                "yes_price",
+                "created_time"
+              ],
+              "properties": {
+                "trade_id": {
+                  "type": "string"
+                },
+                "ticker": {
+                  "type": "string"
+                },
+                "side": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer"
+                },
+                "yes_price": {
+                  "type": "integer"
+                },
+                "created_time": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "fixtures": [
+    "../../fixtures/rest/request-serialization/portfolio-fills-query.json",
+    "../../fixtures/rest/response-shape/portfolio-fills-page.json"
+  ],
+  "source": {
+    "provenance": "pending-review",
+    "kind": "placeholder",
+    "url": "https://docs.kalshi.com/",
+    "observedAt": "2026-10-10T00:00:00Z"
+  }
+}

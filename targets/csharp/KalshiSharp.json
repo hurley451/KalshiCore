@@ -1,0 +1,26 @@
+{
+  "$schema": "../schemas/sdk-target.schema.json",
+  "id": "csharp.KalshiSharp",
+  "language": "csharp",
+  "repository": {
+    "name": "KalshiSharp",
+    "url": "https://github.com/hurley451/KalshiSharp"
+  },
+  "package": {
+    "ecosystem": "nuget",
+    "name": "KalshiSharp"
+  },
+  "conformance": {
+    "status": "example",
+    "kalshiCoreRef": "main",
+    "contractIds": [
+      "portfolio.fills.list"
+    ],
+    "fixtureIds": [
+      "auth.signing.rest-get-portfolio-fills",
+      "rest.request.portfolio-fills-query",
+      "rest.response.portfolio-fills-page",
+      "websocket.replay.orderbook-delta"
+    ]
+  }
+}

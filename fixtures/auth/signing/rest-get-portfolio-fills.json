@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schemas/fixture.schema.json",
+  "id": "auth.signing.rest-get-portfolio-fills",
+  "kind": "auth-signing",
+  "description": "Representative REST signing vector with deterministic placeholder values.",
+  "input": {
+    "method": "GET",
+    "path": "/trade-api/v2/portfolio/fills",
+    "query": {
+      "ticker": "KXEXAMPLE-26OCT10-B100",
+      "limit": 2
+    },
+    "timestampMs": "1760054400000",
+    "apiKeyId": "example-key-id",
+    "signingAlgorithm": "RSA-PSS-SHA256",
+    "privateKeyPem": "<test-rsa-private-key-pem>"
+  },
+  "expected": {
+    "canonicalPath": "/trade-api/v2/portfolio/fills?limit=2&ticker=KXEXAMPLE-26OCT10-B100",
+    "signatureMessage": "1760054400000GET/trade-api/v2/portfolio/fills?limit=2&ticker=KXEXAMPLE-26OCT10-B100",
+    "headers": {
+      "KALSHI-ACCESS-KEY": "example-key-id",
+      "KALSHI-ACCESS-TIMESTAMP": "1760054400000",
+      "KALSHI-ACCESS-SIGNATURE": "base64url-placeholder-signature"
+    }
+  }
+}

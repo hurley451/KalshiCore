@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kalshicore.dev/fixtures/schemas/fixture.schema.json",
+  "title": "KalshiCore fixture",
+  "type": "object",
+  "required": [
+    "id",
+    "kind",
+    "description",
+    "input",
+    "expected"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)*$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "auth-signing",
+        "rest-request-serialization",
+        "rest-response-shape",
+        "websocket-replay"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input": {
+      "type": "object"
+    },
+    "expected": {
+      "type": "object"
+    }
+  }
+}
