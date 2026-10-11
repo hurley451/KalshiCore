@@ -508,6 +508,9 @@
       "summary": "Get Multiple Live Data",
       "tags": [
         "live-data"
+      ],
+      "repeatedQueryParameters": [
+        "milestone_ids"
       ]
     },
     {
@@ -598,6 +601,9 @@
       "summary": "Get Multiple Market Orderbooks",
       "tags": [
         "market"
+      ],
+      "repeatedQueryParameters": [
+        "tickers"
       ]
     },
     {
@@ -1030,6 +1036,9 @@
       "summary": "Get Event Forecast Percentile History",
       "tags": [
         "events"
+      ],
+      "repeatedQueryParameters": [
+        "percentiles"
       ]
     },
     {
@@ -1057,6 +1066,9 @@
       "summary": "Get Structured Targets",
       "tags": [
         "structured-targets"
+      ],
+      "repeatedQueryParameters": [
+        "ids"
       ]
     },
     {

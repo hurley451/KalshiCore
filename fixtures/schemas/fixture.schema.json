@@ -11,6 +11,155 @@
     "expected"
   ],
   "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "auth-signing" } } },
+      "then": {
+        "properties": {
+          "input": {
+            "type": "object",
+            "required": ["method", "path", "timestampMs", "apiKeyId", "signingAlgorithm", "privateKeyPem"],
+            "additionalProperties": false,
+            "properties": {
+              "method": { "$ref": "#/$defs/method" },
+              "path": { "$ref": "#/$defs/path" },
+              "query": { "$ref": "#/$defs/query" },
+              "timestampMs": { "type": "string", "pattern": "^[0-9]+$" },
+              "apiKeyId": { "$ref": "#/$defs/nonEmptyString" },
+              "signingAlgorithm": { "const": "RSA-PSS-SHA256" },
+              "privateKeyPem": { "$ref": "#/$defs/nonEmptyString" }
+            }
+          },
+          "expected": {
+            "type": "object",
+            "required": ["canonicalPath", "signatureMessage", "headers"],
+            "additionalProperties": false,
+            "properties": {
+              "canonicalPath": { "$ref": "#/$defs/path" },
+              "signatureMessage": { "$ref": "#/$defs/nonEmptyString" },
+              "headers": {
+                "type": "object",
+                "required": ["KALSHI-ACCESS-KEY", "KALSHI-ACCESS-TIMESTAMP", "KALSHI-ACCESS-SIGNATURE"],
+                "additionalProperties": { "$ref": "#/$defs/nonEmptyString" },
+                "properties": {
+                  "KALSHI-ACCESS-KEY": { "$ref": "#/$defs/nonEmptyString" },
+                  "KALSHI-ACCESS-TIMESTAMP": { "type": "string", "pattern": "^[0-9]+$" },
+                  "KALSHI-ACCESS-SIGNATURE": { "$ref": "#/$defs/nonEmptyString" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "rest-request-serialization" } } },
+      "then": {
+        "properties": {
+          "input": {
+            "type": "object",
+            "required": ["method", "path"],
+            "additionalProperties": false,
+            "properties": {
+              "method": { "$ref": "#/$defs/method" },
+              "path": { "$ref": "#/$defs/path" },
+              "query": { "$ref": "#/$defs/query" },
+              "headers": { "type": "object", "additionalProperties": { "type": "string" } },
+              "body": true
+            }
+          },
+          "expected": {
+            "type": "object",
+            "required": ["method", "pathAndQuery", "body"],
+            "additionalProperties": false,
+            "properties": {
+              "method": { "$ref": "#/$defs/method" },
+              "pathAndQuery": { "$ref": "#/$defs/path" },
+              "headers": { "type": "object", "additionalProperties": { "type": "string" } },
+              "body": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "rest-response-shape" } } },
+      "then": {
+        "properties": {
+          "input": {
+            "type": "object",
+            "required": ["status", "body"],
+            "additionalProperties": false,
+            "properties": {
+              "status": { "type": "integer", "minimum": 100, "maximum": 599 },
+              "body": true,
+              "headers": { "type": "object", "additionalProperties": { "type": "string" } }
+            }
+          },
+          "expected": {
+            "type": "object",
+            "minProperties": 1,
+            "properties": {
+              "fillsCount": { "type": "integer", "minimum": 0 },
+              "firstFill": { "type": "object", "minProperties": 1 },
+              "cursor": { "type": ["string", "null"] }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "websocket-replay" } } },
+      "then": {
+        "properties": {
+          "input": {
+            "type": "object",
+            "required": ["url", "messages"],
+            "additionalProperties": false,
+            "properties": {
+              "url": { "type": "string", "format": "uri", "pattern": "^wss?://" },
+              "messages": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["type", "msg"],
+                  "properties": {
+                    "type": { "$ref": "#/$defs/nonEmptyString" },
+                    "msg": { "type": "object" },
+                    "seq": { "type": "integer", "minimum": 0 },
+                    "sid": { "type": "integer", "minimum": 0 }
+                  }
+                }
+              }
+            }
+          },
+          "expected": {
+            "type": "object",
+            "minProperties": 1,
+            "properties": {
+              "dispatchedTypes": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } },
+              "finalBookPatch": { "type": "object", "minProperties": 1 }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "method": { "type": "string", "enum": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"] },
+    "path": { "type": "string", "pattern": "^/[^\\s]*$" },
+    "query": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          { "type": ["string", "number", "boolean", "null"] },
+          { "type": "array", "items": { "type": ["string", "number", "boolean"] } }
+        ]
+      }
+    }
+  },
   "properties": {
     "$schema": {
       "type": "string"

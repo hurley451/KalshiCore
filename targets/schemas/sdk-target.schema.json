@@ -16,7 +16,8 @@
       "type": "string"
     },
     "id": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "language": {
       "type": "string"
@@ -107,14 +108,18 @@
         },
         "contractIds": {
           "type": "array",
+          "uniqueItems": true,
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "fixtureIds": {
           "type": "array",
+          "uniqueItems": true,
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "exclusions": {
@@ -141,7 +146,18 @@
             }
           }
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "active" } } },
+          "then": {
+            "properties": {
+              "contractIds": { "minItems": 1 },
+              "fixtureIds": { "minItems": 1 }
+            }
+          }
+        }
+      ]
     }
   }
 }

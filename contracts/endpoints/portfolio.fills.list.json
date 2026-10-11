@@ -66,7 +66,8 @@
       "bodySchema": {
         "type": "object",
         "required": [
-          "fills"
+          "fills",
+          "cursor"
         ],
         "properties": {
           "fills": {
@@ -86,12 +87,7 @@
                 "yes_price_dollars",
                 "no_price_dollars",
                 "fee_cost",
-                "side",
-                "action",
-                "created_time",
-                "is_taker",
-                "subaccount_number",
-                "ts"
+                "is_taker"
               ],
               "properties": {
                 "fill_id": {
@@ -113,10 +109,12 @@
                   "type": "string"
                 },
                 "outcome_side": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": ["yes", "no"]
                 },
                 "book_side": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": ["bid", "ask"]
                 },
                 "count_fp": {
                   "type": "string"
@@ -131,19 +129,22 @@
                   "type": "string"
                 },
                 "side": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": ["yes", "no"]
                 },
                 "action": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": ["buy", "sell"]
                 },
                 "created_time": {
-                  "type": "string"
+                  "type": "string",
+                  "format": "date-time"
                 },
                 "is_taker": {
                   "type": "boolean"
                 },
                 "subaccount_number": {
-                  "type": "integer"
+                  "type": ["integer", "null"]
                 },
                 "ts": {
                   "type": "integer"
@@ -152,10 +153,7 @@
             }
           },
           "cursor": {
-            "type": [
-              "string",
-              "null"
-            ]
+            "type": "string"
           }
         }
       }

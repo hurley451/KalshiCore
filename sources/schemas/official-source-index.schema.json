@@ -15,7 +15,7 @@
     },
     "id": {
       "type": "string",
-      "minLength": 1
+      "const": "kalshi-official-sources"
     },
     "generatedAt": {
       "type": "string",
@@ -23,6 +23,7 @@
     },
     "sources": {
       "type": "array",
+      "minItems": 3,
       "items": {
         "type": "object",
         "required": [
@@ -34,6 +35,11 @@
           "lineCount"
         ],
         "additionalProperties": false,
+        "allOf": [
+          { "if": { "properties": { "kind": { "const": "openapi" } } }, "then": { "required": ["version", "operationCount"] } },
+          { "if": { "properties": { "kind": { "const": "asyncapi" } } }, "then": { "required": ["version", "channelCount"] } },
+          { "if": { "properties": { "kind": { "const": "llms" } } }, "then": { "required": ["linkCount"] } }
+        ],
         "properties": {
           "id": {
             "type": "string",
