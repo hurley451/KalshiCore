@@ -115,6 +115,45 @@ function writeJson(relativePath, value) {
   fs.writeFileSync(absolutePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
+function readReviewedContracts() {
+  const endpointDir = path.join(root, "contracts", "endpoints");
+  if (!fs.existsSync(endpointDir)) {
+    return new Map();
+  }
+
+  const reviewed = new Map();
+  for (const fileName of fs.readdirSync(endpointDir).filter((entry) => entry.endsWith(".json")).sort()) {
+    const contract = JSON.parse(fs.readFileSync(path.join(endpointDir, fileName), "utf8"));
+    const operationId = contract.source?.operationId;
+    if (operationId) {
+      reviewed.set(operationId, contract.id);
+    }
+  }
+  return reviewed;
+}
+
+function writeCoverage(sourceId, operations) {
+  const reviewedContracts = readReviewedContracts();
+  const coverage = operations.map((operation) => {
+    const contractId = reviewedContracts.get(operation.operationId);
+    return {
+      operationId: operation.operationId,
+      path: operation.path,
+      method: operation.method,
+      status: contractId ? "reviewed" : "unreviewed",
+      ...(contractId ? { contractId } : {})
+    };
+  });
+
+  writeJson("contracts/official-coverage.json", {
+    $schema: "./schemas/official-coverage.schema.json",
+    sourceId,
+    generatedAt,
+    operationCount: coverage.length,
+    operations: coverage
+  });
+}
+
 async function main() {
   const indexEntries = [];
 
@@ -134,6 +173,7 @@ async function main() {
       const operations = extractOpenApiOperations(document);
       metadata.version = String(document.info?.version || "");
       metadata.operationCount = operations.length;
+      writeCoverage(source.id, operations);
       writeJson("sources/official/rest-openapi-operations.json", {
         $schema: "../schemas/openapi-operations.schema.json",
         sourceId: source.id,

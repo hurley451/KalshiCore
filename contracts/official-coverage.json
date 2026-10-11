@@ -1,0 +1,717 @@
+{
+  "$schema": "./schemas/official-coverage.schema.json",
+  "sourceId": "kalshi-openapi-rest",
+  "generatedAt": "2026-10-11T05:44:05.819Z",
+  "operationCount": 118,
+  "operations": [
+    {
+      "operationId": "UpgradeAccountApiUsageLevel",
+      "path": "/account/api_usage_level/upgrade",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetAccountApiUsageLevelVolumeProgress",
+      "path": "/account/api_usage_level/volume_progress",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetAccountEndpointCosts",
+      "path": "/account/endpoint_costs",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetAccountApiLimits",
+      "path": "/account/limits",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetApiKeys",
+      "path": "/api_keys",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateApiKey",
+      "path": "/api_keys",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "DeleteApiKey",
+      "path": "/api_keys/{api_key}",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GenerateApiKey",
+      "path": "/api_keys/generate",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetBlockTradeProposals",
+      "path": "/communications/block-trade-proposals",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "ProposeBlockTrade",
+      "path": "/communications/block-trade-proposals",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "AcceptBlockTradeProposal",
+      "path": "/communications/block-trade-proposals/{block_trade_proposal_id}/accept",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetCommunicationsID",
+      "path": "/communications/id",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetQuotes",
+      "path": "/communications/quotes",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateQuote",
+      "path": "/communications/quotes",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "DeleteQuote",
+      "path": "/communications/quotes/{quote_id}",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetQuote",
+      "path": "/communications/quotes/{quote_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "AcceptQuote",
+      "path": "/communications/quotes/{quote_id}/accept",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "ConfirmQuote",
+      "path": "/communications/quotes/{quote_id}/confirm",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetRFQs",
+      "path": "/communications/rfqs",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateRFQ",
+      "path": "/communications/rfqs",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "DeleteRFQ",
+      "path": "/communications/rfqs/{rfq_id}",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetRFQ",
+      "path": "/communications/rfqs/{rfq_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "DeleteRFQQuote",
+      "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetRFQQuote",
+      "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "AcceptRFQQuote",
+      "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}/accept",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "ConfirmRFQQuote",
+      "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}/confirm",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetEvents",
+      "path": "/events",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetEvent",
+      "path": "/events/{event_ticker}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetEventMetadata",
+      "path": "/events/{event_ticker}/metadata",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetEventFeeChanges",
+      "path": "/events/fee_changes",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMultivariateEvents",
+      "path": "/events/multivariate",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetExchangeSchedule",
+      "path": "/exchange/schedule",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetExchangeStatus",
+      "path": "/exchange/status",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetUserDataTimestamp",
+      "path": "/exchange/user_data_timestamp",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetFCMFills",
+      "path": "/fcm/fills",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetFCMOrders",
+      "path": "/fcm/orders",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetFCMPositions",
+      "path": "/fcm/positions",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateFCMPositionTransfer",
+      "path": "/fcm/positions/transfers",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "ListFCMSubtraders",
+      "path": "/fcm/subtraders",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateFCMSubtrader",
+      "path": "/fcm/subtraders",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetFCMSubtraderBlockedCategories",
+      "path": "/fcm/subtraders/blocked_categories",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "UpdateFCMSubtraderBlockedCategories",
+      "path": "/fcm/subtraders/blocked_categories",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "DeleteFCMEventContractDailyCap",
+      "path": "/fcm/subtraders/event_contract_daily_cap",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetFCMEventContractDailyCap",
+      "path": "/fcm/subtraders/event_contract_daily_cap",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "UpdateFCMEventContractDailyCap",
+      "path": "/fcm/subtraders/event_contract_daily_cap",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetHistoricalCutoff",
+      "path": "/historical/cutoff",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetFillsHistorical",
+      "path": "/historical/fills",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetHistoricalMarkets",
+      "path": "/historical/markets",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetHistoricalMarket",
+      "path": "/historical/markets/{ticker}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMarketCandlesticksHistorical",
+      "path": "/historical/markets/{ticker}/candlesticks",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetHistoricalOrders",
+      "path": "/historical/orders",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetHistoricalPositions",
+      "path": "/historical/positions",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetTradesHistorical",
+      "path": "/historical/trades",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetIncentivePrograms",
+      "path": "/incentive_programs",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetLiveData",
+      "path": "/live_data/{type}/milestone/{milestone_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetLiveDatas",
+      "path": "/live_data/batch",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetEventLiveData",
+      "path": "/live_data/events/{event_ticker}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetLiveDataByMilestone",
+      "path": "/live_data/milestone/{milestone_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetGameStats",
+      "path": "/live_data/milestone/{milestone_id}/game_stats",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetWeatherIndex",
+      "path": "/live_data/weather/{city}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetWeatherIndexCalibrations",
+      "path": "/live_data/weather/{city}/calibrations",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMarkets",
+      "path": "/markets",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMarket",
+      "path": "/markets/{ticker}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMarketOrderbook",
+      "path": "/markets/{ticker}/orderbook",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "BatchGetMarketCandlesticks",
+      "path": "/markets/candlesticks",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMarketOrderbooks",
+      "path": "/markets/orderbooks",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetTrades",
+      "path": "/markets/trades",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMilestones",
+      "path": "/milestones",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMilestone",
+      "path": "/milestones/{milestone_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMultivariateEventCollections",
+      "path": "/multivariate_event_collections",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMultivariateEventCollection",
+      "path": "/multivariate_event_collections/{collection_ticker}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateMarketInMultivariateEventCollection",
+      "path": "/multivariate_event_collections/{collection_ticker}",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetBalance",
+      "path": "/portfolio/balance",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetDeposits",
+      "path": "/portfolio/deposits",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CancelAllOrders",
+      "path": "/portfolio/events/orders",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateOrderV2",
+      "path": "/portfolio/events/orders",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CancelOrderV2",
+      "path": "/portfolio/events/orders/{order_id}",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "AmendOrderV2",
+      "path": "/portfolio/events/orders/{order_id}/amend",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "DecreaseOrderV2",
+      "path": "/portfolio/events/orders/{order_id}/decrease",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "BatchCancelOrdersV2",
+      "path": "/portfolio/events/orders/batched",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "BatchCreateOrdersV2",
+      "path": "/portfolio/events/orders/batched",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetFills",
+      "path": "/portfolio/fills",
+      "method": "GET",
+      "status": "reviewed",
+      "contractId": "portfolio.fills.list"
+    },
+    {
+      "operationId": "IntraExchangeInstanceTransfer",
+      "path": "/portfolio/intra_exchange_instance_transfer",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetIntraExchangeInstanceTransfers",
+      "path": "/portfolio/intra_exchange_instance_transfers",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetIntraExchangeInstanceTransfer",
+      "path": "/portfolio/intra_exchange_instance_transfers/{transfer_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetOrderGroups",
+      "path": "/portfolio/order_groups",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "DeleteOrderGroup",
+      "path": "/portfolio/order_groups/{order_group_id}",
+      "method": "DELETE",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetOrderGroup",
+      "path": "/portfolio/order_groups/{order_group_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "UpdateOrderGroupLimit",
+      "path": "/portfolio/order_groups/{order_group_id}/limit",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "ResetOrderGroup",
+      "path": "/portfolio/order_groups/{order_group_id}/reset",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "TriggerOrderGroup",
+      "path": "/portfolio/order_groups/{order_group_id}/trigger",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateOrderGroup",
+      "path": "/portfolio/order_groups/create",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetOrders",
+      "path": "/portfolio/orders",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetOrder",
+      "path": "/portfolio/orders/{order_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetOrderQueuePosition",
+      "path": "/portfolio/orders/{order_id}/queue_position",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetOrderQueuePositions",
+      "path": "/portfolio/orders/queue_positions",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetPositions",
+      "path": "/portfolio/positions",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetSettlements",
+      "path": "/portfolio/settlements",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "CreateSubaccount",
+      "path": "/portfolio/subaccounts",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetSubaccountBalances",
+      "path": "/portfolio/subaccounts/balances",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetSubaccountNetting",
+      "path": "/portfolio/subaccounts/netting",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "UpdateSubaccountNetting",
+      "path": "/portfolio/subaccounts/netting",
+      "method": "PUT",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "ApplySubaccountTransfer",
+      "path": "/portfolio/subaccounts/transfer",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetSubaccountTransfers",
+      "path": "/portfolio/subaccounts/transfers",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetPortfolioRestingOrderTotalValue",
+      "path": "/portfolio/summary/total_resting_order_value",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetTargetBalanceAllocation",
+      "path": "/portfolio/target_balance_allocation",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "SetTargetBalanceAllocation",
+      "path": "/portfolio/target_balance_allocation",
+      "method": "POST",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetWithdrawals",
+      "path": "/portfolio/withdrawals",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetFiltersForSports",
+      "path": "/search/filters_by_sport",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetTagsForSeriesCategories",
+      "path": "/search/tags_by_categories",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetSeriesList",
+      "path": "/series",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetSeries",
+      "path": "/series/{series_ticker}",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMarketCandlesticksByEvent",
+      "path": "/series/{series_ticker}/events/{ticker}/candlesticks",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetEventForecastPercentilesHistory",
+      "path": "/series/{series_ticker}/events/{ticker}/forecast_percentile_history",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetMarketCandlesticks",
+      "path": "/series/{series_ticker}/markets/{ticker}/candlesticks",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetSeriesFeeChanges",
+      "path": "/series/fee_changes",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetStructuredTargets",
+      "path": "/structured_targets",
+      "method": "GET",
+      "status": "unreviewed"
+    },
+    {
+      "operationId": "GetStructuredTarget",
+      "path": "/structured_targets/{structured_target_id}",
+      "method": "GET",
+      "status": "unreviewed"
+    }
+  ]
+}

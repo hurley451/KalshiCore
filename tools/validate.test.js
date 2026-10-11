@@ -141,6 +141,30 @@ assertFail(
 );
 
 assertFail(
+  "reviewed coverage unknown contract",
+  withFixture((root) => {
+    const file = "contracts/official-coverage.json";
+    const coverage = readJson(root, file);
+    const operation = coverage.operations.find((entry) => entry.operationId === "GetFills");
+    operation.contractId = "missing.contract";
+    writeJson(root, file, coverage);
+  }),
+  "references unknown contract missing.contract"
+);
+
+assertFail(
+  "missing official coverage operation",
+  withFixture((root) => {
+    const file = "contracts/official-coverage.json";
+    const coverage = readJson(root, file);
+    coverage.operations = coverage.operations.filter((entry) => entry.operationId !== "GetFills");
+    coverage.operationCount = coverage.operations.length;
+    writeJson(root, file, coverage);
+  }),
+  "missing coverage entry for official operation GetFills"
+);
+
+assertFail(
   "active target mutable ref",
   withFixture((root) => {
     const file = "targets/csharp/KalshiSharp.json";

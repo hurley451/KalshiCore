@@ -145,6 +145,20 @@ function validateInventory(parsed, contractIds) {
   }
 }
 
+function collectContractOperationIds(parsed) {
+  const ids = new Map();
+  for (const [relativePath, contract] of parsed) {
+    if (!relativePath.startsWith("contracts/endpoints/")) {
+      continue;
+    }
+
+    if (hasString(contract.source?.operationId)) {
+      ids.set(contract.source.operationId, contract.id);
+    }
+  }
+  return ids;
+}
+
 function validateEndpointContracts(parsed) {
   const sourceIds = collectOfficialSourceIds(parsed);
   const operationIds = collectOpenApiOperationIds(parsed);
@@ -254,6 +268,40 @@ function validateSources(parsed) {
   }
 }
 
+function validateOfficialCoverage(parsed, contractIds) {
+  const sourceIds = collectOfficialSourceIds(parsed);
+  const operationIds = collectOpenApiOperationIds(parsed);
+  const contractOperationIds = collectContractOperationIds(parsed);
+
+  for (const [relativePath, coverage] of parsed) {
+    if (relativePath !== "contracts/official-coverage.json") {
+      continue;
+    }
+
+    expect(sourceIds.has(coverage.sourceId), `${relativePath}: sourceId ${coverage.sourceId} is not in official source index`);
+    expect(coverage.operationCount === coverage.operations?.length, `${relativePath}: operationCount must match operations length`);
+
+    const coveredOperationIds = new Set();
+    for (const operation of coverage.operations || []) {
+      expect(operationIds.has(operation.operationId), `${relativePath}: operationId ${operation.operationId} is not in official OpenAPI operations`);
+      coveredOperationIds.add(operation.operationId);
+
+      if (operation.status === "reviewed") {
+        expect(hasString(operation.contractId), `${relativePath}: reviewed operation ${operation.operationId} must include contractId`);
+        expect(contractIds.has(operation.contractId), `${relativePath}: reviewed operation ${operation.operationId} references unknown contract ${operation.contractId}`);
+        expect(
+          contractOperationIds.get(operation.operationId) === operation.contractId,
+          `${relativePath}: reviewed operation ${operation.operationId} must match endpoint contract source.operationId`
+        );
+      }
+    }
+
+    for (const operationId of operationIds) {
+      expect(coveredOperationIds.has(operationId), `${relativePath}: missing coverage entry for official operation ${operationId}`);
+    }
+  }
+}
+
 function main() {
   const parsed = loadDocuments();
   validateSchemas(parsed);
@@ -265,6 +313,7 @@ function main() {
   validateEndpointContracts(parsed);
   validateFixtures(parsed, fixtureIds);
   validateSources(parsed);
+  validateOfficialCoverage(parsed, contractIds);
   validateTargets(parsed, contractIds, fixtureIds);
 
   if (errors.length > 0) {

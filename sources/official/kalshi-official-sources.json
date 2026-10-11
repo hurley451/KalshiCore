@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/official-source-index.schema.json",
   "id": "kalshi-official-sources",
-  "generatedAt": "2026-10-11T05:40:00.774Z",
+  "generatedAt": "2026-10-11T05:44:05.819Z",
   "sources": [
     {
       "id": "kalshi-openapi-rest",
