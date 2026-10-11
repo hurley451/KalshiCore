@@ -1,0 +1,1072 @@
+{
+  "$schema": "../schemas/openapi-operations.schema.json",
+  "sourceId": "kalshi-openapi-rest",
+  "url": "https://docs.kalshi.com/openapi.yaml",
+  "version": "3.34.0",
+  "sha256": "091f171718a0376b0c1a2e9348b02b1ce003d0786dd04d772dd11005ca414bf4",
+  "operationCount": 118,
+  "operations": [
+    {
+      "path": "/account/api_usage_level/upgrade",
+      "method": "POST",
+      "operationId": "UpgradeAccountApiUsageLevel",
+      "summary": "Upgrade Account API Usage Level",
+      "tags": [
+        "account"
+      ]
+    },
+    {
+      "path": "/account/api_usage_level/volume_progress",
+      "method": "GET",
+      "operationId": "GetAccountApiUsageLevelVolumeProgress",
+      "summary": "Get Account API Usage Level Volume Progress",
+      "tags": [
+        "account"
+      ]
+    },
+    {
+      "path": "/account/endpoint_costs",
+      "method": "GET",
+      "operationId": "GetAccountEndpointCosts",
+      "summary": "List Non-Default Endpoint Costs",
+      "tags": [
+        "account"
+      ]
+    },
+    {
+      "path": "/account/limits",
+      "method": "GET",
+      "operationId": "GetAccountApiLimits",
+      "summary": "Get Account API Limits",
+      "tags": [
+        "account"
+      ]
+    },
+    {
+      "path": "/api_keys",
+      "method": "GET",
+      "operationId": "GetApiKeys",
+      "summary": "Get API Keys",
+      "tags": [
+        "api-keys"
+      ]
+    },
+    {
+      "path": "/api_keys",
+      "method": "POST",
+      "operationId": "CreateApiKey",
+      "summary": "Create API Key",
+      "tags": [
+        "api-keys"
+      ]
+    },
+    {
+      "path": "/api_keys/{api_key}",
+      "method": "DELETE",
+      "operationId": "DeleteApiKey",
+      "summary": "Delete API Key",
+      "tags": [
+        "api-keys"
+      ]
+    },
+    {
+      "path": "/api_keys/generate",
+      "method": "POST",
+      "operationId": "GenerateApiKey",
+      "summary": "Generate API Key",
+      "tags": [
+        "api-keys"
+      ]
+    },
+    {
+      "path": "/communications/block-trade-proposals",
+      "method": "GET",
+      "operationId": "GetBlockTradeProposals",
+      "summary": "Get Block Trade Proposals",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/block-trade-proposals",
+      "method": "POST",
+      "operationId": "ProposeBlockTrade",
+      "summary": "Propose Block Trade",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/block-trade-proposals/{block_trade_proposal_id}/accept",
+      "method": "POST",
+      "operationId": "AcceptBlockTradeProposal",
+      "summary": "Accept Block Trade Proposal",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/id",
+      "method": "GET",
+      "operationId": "GetCommunicationsID",
+      "summary": "Get Communications ID",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/quotes",
+      "method": "GET",
+      "operationId": "GetQuotes",
+      "summary": "Get Quotes",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/quotes",
+      "method": "POST",
+      "operationId": "CreateQuote",
+      "summary": "Create Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/quotes/{quote_id}",
+      "method": "DELETE",
+      "operationId": "DeleteQuote",
+      "summary": "Delete Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/quotes/{quote_id}",
+      "method": "GET",
+      "operationId": "GetQuote",
+      "summary": "Get Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/quotes/{quote_id}/accept",
+      "method": "PUT",
+      "operationId": "AcceptQuote",
+      "summary": "Accept Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/quotes/{quote_id}/confirm",
+      "method": "PUT",
+      "operationId": "ConfirmQuote",
+      "summary": "Confirm Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/rfqs",
+      "method": "GET",
+      "operationId": "GetRFQs",
+      "summary": "Get RFQs",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/rfqs",
+      "method": "POST",
+      "operationId": "CreateRFQ",
+      "summary": "Create RFQ",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/rfqs/{rfq_id}",
+      "method": "DELETE",
+      "operationId": "DeleteRFQ",
+      "summary": "Delete RFQ",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/rfqs/{rfq_id}",
+      "method": "GET",
+      "operationId": "GetRFQ",
+      "summary": "Get RFQ",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}",
+      "method": "DELETE",
+      "operationId": "DeleteRFQQuote",
+      "summary": "Delete RFQ Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}",
+      "method": "GET",
+      "operationId": "GetRFQQuote",
+      "summary": "Get RFQ Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}/accept",
+      "method": "PUT",
+      "operationId": "AcceptRFQQuote",
+      "summary": "Accept RFQ Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}/confirm",
+      "method": "PUT",
+      "operationId": "ConfirmRFQQuote",
+      "summary": "Confirm RFQ Quote",
+      "tags": [
+        "communications"
+      ]
+    },
+    {
+      "path": "/events",
+      "method": "GET",
+      "operationId": "GetEvents",
+      "summary": "Get Events",
+      "tags": [
+        "events"
+      ]
+    },
+    {
+      "path": "/events/{event_ticker}",
+      "method": "GET",
+      "operationId": "GetEvent",
+      "summary": "Get Event",
+      "tags": [
+        "events"
+      ]
+    },
+    {
+      "path": "/events/{event_ticker}/metadata",
+      "method": "GET",
+      "operationId": "GetEventMetadata",
+      "summary": "Get Event Metadata",
+      "tags": [
+        "events"
+      ]
+    },
+    {
+      "path": "/events/fee_changes",
+      "method": "GET",
+      "operationId": "GetEventFeeChanges",
+      "summary": "Get Event Fee Changes",
+      "tags": [
+        "events"
+      ]
+    },
+    {
+      "path": "/events/multivariate",
+      "method": "GET",
+      "operationId": "GetMultivariateEvents",
+      "summary": "Get Multivariate Events",
+      "tags": [
+        "events"
+      ]
+    },
+    {
+      "path": "/exchange/schedule",
+      "method": "GET",
+      "operationId": "GetExchangeSchedule",
+      "summary": "Get Exchange Schedule",
+      "tags": [
+        "exchange"
+      ]
+    },
+    {
+      "path": "/exchange/status",
+      "method": "GET",
+      "operationId": "GetExchangeStatus",
+      "summary": "Get Exchange Status",
+      "tags": [
+        "exchange"
+      ]
+    },
+    {
+      "path": "/exchange/user_data_timestamp",
+      "method": "GET",
+      "operationId": "GetUserDataTimestamp",
+      "summary": "Get User Data Timestamp",
+      "tags": [
+        "exchange"
+      ]
+    },
+    {
+      "path": "/fcm/fills",
+      "method": "GET",
+      "operationId": "GetFCMFills",
+      "summary": "Get FCM Fills",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/orders",
+      "method": "GET",
+      "operationId": "GetFCMOrders",
+      "summary": "Get FCM Orders",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/positions",
+      "method": "GET",
+      "operationId": "GetFCMPositions",
+      "summary": "Get FCM Positions",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/positions/transfers",
+      "method": "POST",
+      "operationId": "CreateFCMPositionTransfer",
+      "summary": "Create FCM Position Transfer",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/subtraders",
+      "method": "GET",
+      "operationId": "ListFCMSubtraders",
+      "summary": "List FCM Subtraders",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/subtraders",
+      "method": "POST",
+      "operationId": "CreateFCMSubtrader",
+      "summary": "Create FCM Subtrader",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/subtraders/blocked_categories",
+      "method": "GET",
+      "operationId": "GetFCMSubtraderBlockedCategories",
+      "summary": "Get FCM Subtrader Blocked Categories",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/subtraders/blocked_categories",
+      "method": "PUT",
+      "operationId": "UpdateFCMSubtraderBlockedCategories",
+      "summary": "Update FCM Subtrader Blocked Categories",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/subtraders/event_contract_daily_cap",
+      "method": "DELETE",
+      "operationId": "DeleteFCMEventContractDailyCap",
+      "summary": "Delete FCM Subtrader Event Contract Daily Cap",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/subtraders/event_contract_daily_cap",
+      "method": "GET",
+      "operationId": "GetFCMEventContractDailyCap",
+      "summary": "Get FCM Subtrader Event Contract Daily Cap",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/fcm/subtraders/event_contract_daily_cap",
+      "method": "PUT",
+      "operationId": "UpdateFCMEventContractDailyCap",
+      "summary": "Update FCM Subtrader Event Contract Daily Cap",
+      "tags": [
+        "fcm"
+      ]
+    },
+    {
+      "path": "/historical/cutoff",
+      "method": "GET",
+      "operationId": "GetHistoricalCutoff",
+      "summary": "Get Historical Cutoff Timestamps",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "path": "/historical/fills",
+      "method": "GET",
+      "operationId": "GetFillsHistorical",
+      "summary": "Get Historical Fills",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "path": "/historical/markets",
+      "method": "GET",
+      "operationId": "GetHistoricalMarkets",
+      "summary": "Get Historical Markets",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "path": "/historical/markets/{ticker}",
+      "method": "GET",
+      "operationId": "GetHistoricalMarket",
+      "summary": "Get Historical Market",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "path": "/historical/markets/{ticker}/candlesticks",
+      "method": "GET",
+      "operationId": "GetMarketCandlesticksHistorical",
+      "summary": "Get Historical Market Candlesticks",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "path": "/historical/orders",
+      "method": "GET",
+      "operationId": "GetHistoricalOrders",
+      "summary": "Get Historical Orders",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "path": "/historical/positions",
+      "method": "GET",
+      "operationId": "GetHistoricalPositions",
+      "summary": "Get Historical Positions",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "path": "/historical/trades",
+      "method": "GET",
+      "operationId": "GetTradesHistorical",
+      "summary": "Get Historical Trades",
+      "tags": [
+        "historical"
+      ]
+    },
+    {
+      "path": "/incentive_programs",
+      "method": "GET",
+      "operationId": "GetIncentivePrograms",
+      "summary": "Get Incentives",
+      "tags": [
+        "incentive-programs"
+      ]
+    },
+    {
+      "path": "/live_data/{type}/milestone/{milestone_id}",
+      "method": "GET",
+      "operationId": "GetLiveData",
+      "summary": "Get Live Data (with type)",
+      "tags": [
+        "live-data"
+      ]
+    },
+    {
+      "path": "/live_data/batch",
+      "method": "GET",
+      "operationId": "GetLiveDatas",
+      "summary": "Get Multiple Live Data",
+      "tags": [
+        "live-data"
+      ]
+    },
+    {
+      "path": "/live_data/events/{event_ticker}",
+      "method": "GET",
+      "operationId": "GetEventLiveData",
+      "summary": "Get Event Live Data",
+      "tags": [
+        "live-data"
+      ]
+    },
+    {
+      "path": "/live_data/milestone/{milestone_id}",
+      "method": "GET",
+      "operationId": "GetLiveDataByMilestone",
+      "summary": "Get Live Data",
+      "tags": [
+        "live-data"
+      ]
+    },
+    {
+      "path": "/live_data/milestone/{milestone_id}/game_stats",
+      "method": "GET",
+      "operationId": "GetGameStats",
+      "summary": "Get Game Stats",
+      "tags": [
+        "live-data"
+      ]
+    },
+    {
+      "path": "/live_data/weather/{city}",
+      "method": "GET",
+      "operationId": "GetWeatherIndex",
+      "summary": "Get Weather Index",
+      "tags": [
+        "live-data"
+      ]
+    },
+    {
+      "path": "/live_data/weather/{city}/calibrations",
+      "method": "GET",
+      "operationId": "GetWeatherIndexCalibrations",
+      "summary": "Get Weather Index Calibrations",
+      "tags": [
+        "live-data"
+      ]
+    },
+    {
+      "path": "/markets",
+      "method": "GET",
+      "operationId": "GetMarkets",
+      "summary": "Get Markets",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/markets/{ticker}",
+      "method": "GET",
+      "operationId": "GetMarket",
+      "summary": "Get Market",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/markets/{ticker}/orderbook",
+      "method": "GET",
+      "operationId": "GetMarketOrderbook",
+      "summary": "Get Market Orderbook",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/markets/candlesticks",
+      "method": "GET",
+      "operationId": "BatchGetMarketCandlesticks",
+      "summary": "Batch Get Market Candlesticks",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/markets/orderbooks",
+      "method": "GET",
+      "operationId": "GetMarketOrderbooks",
+      "summary": "Get Multiple Market Orderbooks",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/markets/trades",
+      "method": "GET",
+      "operationId": "GetTrades",
+      "summary": "Get Trades",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/milestones",
+      "method": "GET",
+      "operationId": "GetMilestones",
+      "summary": "Get Milestones",
+      "tags": [
+        "milestone"
+      ]
+    },
+    {
+      "path": "/milestones/{milestone_id}",
+      "method": "GET",
+      "operationId": "GetMilestone",
+      "summary": "Get Milestone",
+      "tags": [
+        "milestone"
+      ]
+    },
+    {
+      "path": "/multivariate_event_collections",
+      "method": "GET",
+      "operationId": "GetMultivariateEventCollections",
+      "summary": "Get Multivariate Event Collections",
+      "tags": [
+        "multivariate"
+      ]
+    },
+    {
+      "path": "/multivariate_event_collections/{collection_ticker}",
+      "method": "GET",
+      "operationId": "GetMultivariateEventCollection",
+      "summary": "Get Multivariate Event Collection",
+      "tags": [
+        "multivariate"
+      ]
+    },
+    {
+      "path": "/multivariate_event_collections/{collection_ticker}",
+      "method": "POST",
+      "operationId": "CreateMarketInMultivariateEventCollection",
+      "summary": "Create Market In Multivariate Event Collection",
+      "tags": [
+        "multivariate"
+      ]
+    },
+    {
+      "path": "/portfolio/balance",
+      "method": "GET",
+      "operationId": "GetBalance",
+      "summary": "Get Balance",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/deposits",
+      "method": "GET",
+      "operationId": "GetDeposits",
+      "summary": "Get Deposits",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/events/orders",
+      "method": "DELETE",
+      "operationId": "CancelAllOrders",
+      "summary": "Cancel All Orders",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/events/orders",
+      "method": "POST",
+      "operationId": "CreateOrderV2",
+      "summary": "Create Order (V2)",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/events/orders/{order_id}",
+      "method": "DELETE",
+      "operationId": "CancelOrderV2",
+      "summary": "Cancel Order (V2)",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/events/orders/{order_id}/amend",
+      "method": "POST",
+      "operationId": "AmendOrderV2",
+      "summary": "Amend Order (V2)",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/events/orders/{order_id}/decrease",
+      "method": "POST",
+      "operationId": "DecreaseOrderV2",
+      "summary": "Decrease Order (V2)",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/events/orders/batched",
+      "method": "DELETE",
+      "operationId": "BatchCancelOrdersV2",
+      "summary": "Batch Cancel Orders (V2)",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/events/orders/batched",
+      "method": "POST",
+      "operationId": "BatchCreateOrdersV2",
+      "summary": "Batch Create Orders (V2)",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/fills",
+      "method": "GET",
+      "operationId": "GetFills",
+      "summary": "Get Fills",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/intra_exchange_instance_transfer",
+      "method": "POST",
+      "operationId": "IntraExchangeInstanceTransfer",
+      "summary": "Intra Account Transfer",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/intra_exchange_instance_transfers",
+      "method": "GET",
+      "operationId": "GetIntraExchangeInstanceTransfers",
+      "summary": "Get Intra Account Transfers",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/intra_exchange_instance_transfers/{transfer_id}",
+      "method": "GET",
+      "operationId": "GetIntraExchangeInstanceTransfer",
+      "summary": "Get Intra Account Transfer",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/order_groups",
+      "method": "GET",
+      "operationId": "GetOrderGroups",
+      "summary": "Get Order Groups",
+      "tags": [
+        "order-groups"
+      ]
+    },
+    {
+      "path": "/portfolio/order_groups/{order_group_id}",
+      "method": "DELETE",
+      "operationId": "DeleteOrderGroup",
+      "summary": "Delete Order Group",
+      "tags": [
+        "order-groups"
+      ]
+    },
+    {
+      "path": "/portfolio/order_groups/{order_group_id}",
+      "method": "GET",
+      "operationId": "GetOrderGroup",
+      "summary": "Get Order Group",
+      "tags": [
+        "order-groups"
+      ]
+    },
+    {
+      "path": "/portfolio/order_groups/{order_group_id}/limit",
+      "method": "PUT",
+      "operationId": "UpdateOrderGroupLimit",
+      "summary": "Update Order Group Limit",
+      "tags": [
+        "order-groups"
+      ]
+    },
+    {
+      "path": "/portfolio/order_groups/{order_group_id}/reset",
+      "method": "PUT",
+      "operationId": "ResetOrderGroup",
+      "summary": "Reset Order Group",
+      "tags": [
+        "order-groups"
+      ]
+    },
+    {
+      "path": "/portfolio/order_groups/{order_group_id}/trigger",
+      "method": "PUT",
+      "operationId": "TriggerOrderGroup",
+      "summary": "Trigger Order Group",
+      "tags": [
+        "order-groups"
+      ]
+    },
+    {
+      "path": "/portfolio/order_groups/create",
+      "method": "POST",
+      "operationId": "CreateOrderGroup",
+      "summary": "Create Order Group",
+      "tags": [
+        "order-groups"
+      ]
+    },
+    {
+      "path": "/portfolio/orders",
+      "method": "GET",
+      "operationId": "GetOrders",
+      "summary": "Get Orders",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/orders/{order_id}",
+      "method": "GET",
+      "operationId": "GetOrder",
+      "summary": "Get Order",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/orders/{order_id}/queue_position",
+      "method": "GET",
+      "operationId": "GetOrderQueuePosition",
+      "summary": "Get Order Queue Position",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/orders/queue_positions",
+      "method": "GET",
+      "operationId": "GetOrderQueuePositions",
+      "summary": "Get Queue Positions for Orders",
+      "tags": [
+        "orders"
+      ]
+    },
+    {
+      "path": "/portfolio/positions",
+      "method": "GET",
+      "operationId": "GetPositions",
+      "summary": "Get Positions",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/settlements",
+      "method": "GET",
+      "operationId": "GetSettlements",
+      "summary": "Get Settlements",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/subaccounts",
+      "method": "POST",
+      "operationId": "CreateSubaccount",
+      "summary": "Create Subaccount",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/subaccounts/balances",
+      "method": "GET",
+      "operationId": "GetSubaccountBalances",
+      "summary": "Get All Subaccount Balances",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/subaccounts/netting",
+      "method": "GET",
+      "operationId": "GetSubaccountNetting",
+      "summary": "Get Subaccount Netting",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/subaccounts/netting",
+      "method": "PUT",
+      "operationId": "UpdateSubaccountNetting",
+      "summary": "Update Subaccount Netting",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/subaccounts/transfer",
+      "method": "POST",
+      "operationId": "ApplySubaccountTransfer",
+      "summary": "Transfer Between Subaccounts",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/subaccounts/transfers",
+      "method": "GET",
+      "operationId": "GetSubaccountTransfers",
+      "summary": "Get Subaccount Transfers",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/summary/total_resting_order_value",
+      "method": "GET",
+      "operationId": "GetPortfolioRestingOrderTotalValue",
+      "summary": "Get Total Resting Order Value",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/target_balance_allocation",
+      "method": "GET",
+      "operationId": "GetTargetBalanceAllocation",
+      "summary": "Get Target Balance Allocation",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/target_balance_allocation",
+      "method": "POST",
+      "operationId": "SetTargetBalanceAllocation",
+      "summary": "Set Target Balance Allocation",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/portfolio/withdrawals",
+      "method": "GET",
+      "operationId": "GetWithdrawals",
+      "summary": "Get Withdrawals",
+      "tags": [
+        "portfolio"
+      ]
+    },
+    {
+      "path": "/search/filters_by_sport",
+      "method": "GET",
+      "operationId": "GetFiltersForSports",
+      "summary": "Get Filters for Sports",
+      "tags": [
+        "search"
+      ]
+    },
+    {
+      "path": "/search/tags_by_categories",
+      "method": "GET",
+      "operationId": "GetTagsForSeriesCategories",
+      "summary": "Get Tags for Series Categories",
+      "tags": [
+        "search"
+      ]
+    },
+    {
+      "path": "/series",
+      "method": "GET",
+      "operationId": "GetSeriesList",
+      "summary": "Get Series List",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/series/{series_ticker}",
+      "method": "GET",
+      "operationId": "GetSeries",
+      "summary": "Get Series",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/series/{series_ticker}/events/{ticker}/candlesticks",
+      "method": "GET",
+      "operationId": "GetMarketCandlesticksByEvent",
+      "summary": "Get Event Candlesticks",
+      "tags": [
+        "events"
+      ]
+    },
+    {
+      "path": "/series/{series_ticker}/events/{ticker}/forecast_percentile_history",
+      "method": "GET",
+      "operationId": "GetEventForecastPercentilesHistory",
+      "summary": "Get Event Forecast Percentile History",
+      "tags": [
+        "events"
+      ]
+    },
+    {
+      "path": "/series/{series_ticker}/markets/{ticker}/candlesticks",
+      "method": "GET",
+      "operationId": "GetMarketCandlesticks",
+      "summary": "Get Market Candlesticks",
+      "tags": [
+        "market"
+      ]
+    },
+    {
+      "path": "/series/fee_changes",
+      "method": "GET",
+      "operationId": "GetSeriesFeeChanges",
+      "summary": "Get Series Fee Changes",
+      "tags": [
+        "exchange"
+      ]
+    },
+    {
+      "path": "/structured_targets",
+      "method": "GET",
+      "operationId": "GetStructuredTargets",
+      "summary": "Get Structured Targets",
+      "tags": [
+        "structured-targets"
+      ]
+    },
+    {
+      "path": "/structured_targets/{structured_target_id}",
+      "method": "GET",
+      "operationId": "GetStructuredTarget",
+      "summary": "Get Structured Target",
+      "tags": [
+        "structured-targets"
+      ]
+    }
+  ]
+}

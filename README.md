@@ -16,6 +16,8 @@ ecosystems rather than inheriting generated client design from this repository.
 - `contracts/` defines reviewed API contract material and schema metadata.
 - `fixtures/` contains request, response, and behavior examples used by
   conformance checks.
+- `sources/` records imported official Kalshi source metadata and operation
+  inventories.
 - `targets/` records SDK target manifests that describe how each implementation
   is validated.
 - `tools/` contains shared validation and conformance tooling.
@@ -70,6 +72,7 @@ behavior; SDKs should remain idiomatic.
 - [SDK Targets](docs/SDK_TARGETS.md)
 - [Language Target Roadmap](docs/LANGUAGE_TARGET_ROADMAP.md)
 - [Contract Change Policy](docs/CONTRACT_CHANGE_POLICY.md)
+- [Official Sources](docs/OFFICIAL_SOURCES.md)
 - [SDK Boundaries](docs/SDK_BOUNDARIES.md)
 - [Releases](docs/RELEASES.md)
 - [Contributing](CONTRIBUTING.md)

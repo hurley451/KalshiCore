@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kalshicore.dev/sources/schemas/official-source-index.schema.json",
+  "title": "KalshiCore official source index",
+  "type": "object",
+  "required": [
+    "id",
+    "generatedAt",
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "url",
+          "sha256",
+          "byteCount",
+          "lineCount"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "openapi",
+              "asyncapi",
+              "llms"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "version": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "byteCount": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "lineCount": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "operationCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "channelCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "linkCount": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

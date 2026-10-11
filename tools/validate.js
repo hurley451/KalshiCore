@@ -6,7 +6,7 @@ const Ajv2020 = require("ajv/dist/2020");
 const addFormats = require("ajv-formats");
 
 const root = path.resolve(process.env.KALSHICORE_ROOT || path.resolve(__dirname, ".."));
-const jsonRoots = ["contracts", "fixtures", "targets"];
+const jsonRoots = ["contracts", "fixtures", "sources", "targets"];
 const errors = [];
 
 function toPosix(value) {
@@ -146,6 +146,9 @@ function validateInventory(parsed, contractIds) {
 }
 
 function validateEndpointContracts(parsed) {
+  const sourceIds = collectOfficialSourceIds(parsed);
+  const operationIds = collectOpenApiOperationIds(parsed);
+
   for (const [relativePath, contract] of parsed) {
     if (!relativePath.startsWith("contracts/endpoints/")) {
       continue;
@@ -155,7 +158,51 @@ function validateEndpointContracts(parsed) {
       const fixturePath = resolveReference(relativePath, fixtureReference);
       expect(parsed.has(fixturePath), `${relativePath}: fixture reference ${fixtureReference} resolves to missing ${fixturePath}`);
     }
+
+    if (contract.source?.sourceId) {
+      expect(sourceIds.has(contract.source.sourceId), `${relativePath}: source.sourceId ${contract.source.sourceId} is not in official source index`);
+    }
+    if (contract.source?.operationId) {
+      expect(operationIds.has(contract.source.operationId), `${relativePath}: source.operationId ${contract.source.operationId} is not in official OpenAPI operations`);
+    }
   }
+}
+
+function collectOfficialSourceIds(parsed) {
+  const ids = new Set();
+  for (const [relativePath, document] of parsed) {
+    if (!relativePath.startsWith("sources/official/") || document.id !== "kalshi-official-sources") {
+      continue;
+    }
+
+    for (const source of document.sources || []) {
+      if (hasString(source.id)) {
+        ids.add(source.id);
+      }
+    }
+  }
+  return ids;
+}
+
+function collectOpenApiOperationIds(parsed) {
+  const ids = new Set();
+  for (const [relativePath, document] of parsed) {
+    if (!relativePath.startsWith("sources/official/") || !Array.isArray(document.operations)) {
+      continue;
+    }
+
+    expect(
+      document.operationCount === document.operations.length,
+      `${relativePath}: operationCount must match operations length`
+    );
+
+    for (const operation of document.operations) {
+      if (hasString(operation.operationId)) {
+        ids.add(operation.operationId);
+      }
+    }
+  }
+  return ids;
 }
 
 function validateFixtures(parsed, fixtureIds) {
@@ -190,6 +237,23 @@ function validateTargets(parsed, contractIds, fixtureIds) {
   }
 }
 
+function validateSources(parsed) {
+  const sourceIds = collectOfficialSourceIds(parsed);
+
+  for (const [relativePath, document] of parsed) {
+    if (!relativePath.startsWith("sources/official/")) {
+      continue;
+    }
+
+    if (document.sourceId) {
+      expect(sourceIds.has(document.sourceId), `${relativePath}: sourceId ${document.sourceId} is not in official source index`);
+    }
+    if (Array.isArray(document.links)) {
+      expect(document.linkCount === document.links.length, `${relativePath}: linkCount must match links length`);
+    }
+  }
+}
+
 function main() {
   const parsed = loadDocuments();
   validateSchemas(parsed);
@@ -200,6 +264,7 @@ function main() {
   validateInventory(parsed, contractIds);
   validateEndpointContracts(parsed);
   validateFixtures(parsed, fixtureIds);
+  validateSources(parsed);
   validateTargets(parsed, contractIds, fixtureIds);
 
   if (errors.length > 0) {

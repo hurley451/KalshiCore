@@ -24,7 +24,7 @@ Pushing a `v*.*.*` tag runs `.github/workflows/release.yml`. The workflow:
 2. Runs `npm test`.
 3. Runs `npm run validate`.
 4. Creates a `kalshicore-<tag>.tar.gz` archive containing contracts, fixtures,
-   targets, schemas, docs, and validation tooling.
+   official source inventories, targets, schemas, docs, and validation tooling.
 5. Creates a GitHub release for the tag with the archive attached.
 
 Release tags should only be pushed after the relevant SDK target adapters have

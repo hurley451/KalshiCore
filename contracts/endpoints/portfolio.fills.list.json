@@ -169,6 +169,8 @@
     "provenance": "official-confirmed",
     "kind": "kalshi-docs",
     "url": "https://docs.kalshi.com/api-reference/portfolio/get-fills",
-    "observedAt": "2026-10-11T00:00:00Z"
+    "observedAt": "2026-10-11T00:00:00Z",
+    "sourceId": "kalshi-openapi-rest",
+    "operationId": "GetFills"
   }
 }

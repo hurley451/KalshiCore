@@ -1,0 +1,36 @@
+{
+  "$schema": "../schemas/official-source-index.schema.json",
+  "id": "kalshi-official-sources",
+  "generatedAt": "2026-10-11T05:40:00.774Z",
+  "sources": [
+    {
+      "id": "kalshi-openapi-rest",
+      "kind": "openapi",
+      "url": "https://docs.kalshi.com/openapi.yaml",
+      "sha256": "091f171718a0376b0c1a2e9348b02b1ce003d0786dd04d772dd11005ca414bf4",
+      "byteCount": 374279,
+      "lineCount": 10119,
+      "version": "3.34.0",
+      "operationCount": 118
+    },
+    {
+      "id": "kalshi-asyncapi-websocket",
+      "kind": "asyncapi",
+      "url": "https://docs.kalshi.com/asyncapi.yaml",
+      "sha256": "eaf754def77f36cd016f1e852a5ce76f11b635140e879bee7a3f9cad40716f9f",
+      "byteCount": 166216,
+      "lineCount": 4194,
+      "version": "2.0.0",
+      "channelCount": 15
+    },
+    {
+      "id": "kalshi-llms",
+      "kind": "llms",
+      "url": "https://docs.kalshi.com/llms.txt",
+      "sha256": "96744d72a42f2c07cb6729c5e5516f759ecd669f34950220bfc97bf59a6eaee0",
+      "byteCount": 57007,
+      "lineCount": 261,
+      "linkCount": 245
+    }
+  ]
+}

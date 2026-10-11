@@ -49,6 +49,11 @@ Contract material should be tied to source evidence whenever possible:
 - Existing SDK behavior accepted as compatibility-preserving only when it is
   clearly marked and backed by tests.
 
+Official source inventories live under `sources/official/` and are refreshed
+with `npm run refresh:sources`. Endpoint contracts can cite a `sourceId` and
+OpenAPI `operationId`; validation checks those references against the imported
+source inventory.
+
 Claims that cannot be tied to source evidence should be tracked as gaps instead
 of silently becoming shared truth.
 

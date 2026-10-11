@@ -9,7 +9,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const validateScript = path.join(repoRoot, "tools", "validate.js");
 
 function copyTree(destination) {
-  for (const entry of ["contracts", "fixtures", "targets"]) {
+  for (const entry of ["contracts", "fixtures", "sources", "targets"]) {
     fs.cpSync(path.join(repoRoot, entry), path.join(destination, entry), { recursive: true });
   }
 }
@@ -116,6 +116,28 @@ assertFail(
     writeJson(root, file, target);
   }),
   "unknown contract id unknown.contract"
+);
+
+assertFail(
+  "unknown official source id",
+  withFixture((root) => {
+    const file = "contracts/endpoints/portfolio.fills.list.json";
+    const contract = readJson(root, file);
+    contract.source.sourceId = "missing-source";
+    writeJson(root, file, contract);
+  }),
+  "source.sourceId missing-source is not in official source index"
+);
+
+assertFail(
+  "unknown official operation id",
+  withFixture((root) => {
+    const file = "contracts/endpoints/portfolio.fills.list.json";
+    const contract = readJson(root, file);
+    contract.source.operationId = "MissingOperation";
+    writeJson(root, file, contract);
+  }),
+  "source.operationId MissingOperation is not in official OpenAPI operations"
 );
 
 assertFail(

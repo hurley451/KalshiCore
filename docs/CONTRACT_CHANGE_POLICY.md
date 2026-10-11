@@ -29,11 +29,13 @@ available, open or update an upstream gap instead.
 ## Review Flow
 
 1. Identify the affected contract area and SDK targets.
-2. Add or update contract material.
-3. Add or update fixtures that prove the behavior.
-4. Update target manifests when support status or exclusions change.
-5. Run the relevant validation or conformance checks.
-6. Record unresolved gaps and target impacts in the change.
+2. Refresh or inspect official source inventory when official material is the
+   evidence.
+3. Add or update contract material.
+4. Add or update fixtures that prove the behavior.
+5. Update target manifests when support status or exclusions change.
+6. Run the relevant validation or conformance checks.
+7. Record unresolved gaps and target impacts in the change.
 
 The smallest reviewable change is preferred. Large endpoint families should be
 split when they can be validated independently.
