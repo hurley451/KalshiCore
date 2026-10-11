@@ -21,15 +21,20 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+          fetch-depth: 0
 
       - name: Set release tag
         id: release-tag
+        env:
+          REQUESTED_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "value=${{ inputs.tag }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "value=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
-          fi
+          [[ "$REQUESTED_TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]] || { echo "Expected vMAJOR.MINOR.PATCH"; exit 1; }
+          test "$(git rev-parse HEAD)" = "$(git rev-parse "refs/tags/$REQUESTED_TAG^{commit}")"
+          test "${REQUESTED_TAG#v}" = "$(node -p 'require("./package.json").version')"
+          test -f LICENSE
+          echo "value=$REQUESTED_TAG" >> "$GITHUB_OUTPUT"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -47,9 +52,15 @@ jobs:
         run: npm run validate
 
       - name: Build suite archive
+        env:
+          RELEASE_TAG: ${{ steps.release-tag.outputs.value }}
         run: |
-          archive="kalshicore-${{ steps.release-tag.outputs.value }}.tar.gz"
+          archive="kalshicore-${RELEASE_TAG}.tar.gz"
+          node -e 'const fs=require("fs"),cp=require("child_process"); fs.writeFileSync("suite-release.json", JSON.stringify({tag:process.env.RELEASE_TAG,commit:cp.execFileSync("git",["rev-parse","HEAD"],{encoding:"utf8"}).trim()},null,2)+"\n");'
           tar -czf "$archive" \
+            LICENSE \
+            suite-release.json \
+            .github/workflows/release.yml \
             README.md \
             CONTRIBUTING.md \
             package.json \
@@ -61,11 +72,23 @@ jobs:
             docs \
             tools
           echo "archive=$archive" >> "$GITHUB_ENV"
+          sha256sum "$archive" > "${archive}.sha256"
+
+      - name: Verify archived consumer
+        run: |
+          consumer="$(mktemp -d)"
+          tar -xzf "$archive" -C "$consumer"
+          cd "$consumer"
+          npm ci
+          npm test
+          npm run validate
 
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release-tag.outputs.value }}
         run: |
-          gh release create "${{ steps.release-tag.outputs.value }}" "$archive" \
-            --title "KalshiCore ${{ steps.release-tag.outputs.value }}" \
+          gh release create "$RELEASE_TAG" "$archive" "${archive}.sha256" \
+            --verify-tag \
+            --title "KalshiCore $RELEASE_TAG" \
             --notes "Validated KalshiCore contract, fixture, target, and tooling snapshot."
