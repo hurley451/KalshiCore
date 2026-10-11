@@ -6,7 +6,7 @@
   "scripts": {
     "refresh:sources": "node tools/refresh-official-sources.js",
     "validate": "node tools/validate.js",
-    "test": "node tools/validate.test.js && node --test tools/refresh-official-sources.test.js"
+    "test": "node tools/validate.test.js && node --test tools/refresh-official-sources.test.js tools/release-workflow.test.js"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
