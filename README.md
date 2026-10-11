@@ -150,3 +150,7 @@ should first demonstrate one useful offline adapter before expanding coverage.
 - [SDK Boundaries](docs/SDK_BOUNDARIES.md)
 - [Releases](docs/RELEASES.md)
 - [Contributing](CONTRIBUTING.md)
+
+## License
+
+KalshiCore is licensed under the [MIT License](LICENSE).
