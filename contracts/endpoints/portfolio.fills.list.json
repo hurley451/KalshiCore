@@ -2,8 +2,8 @@
   "$schema": "../schemas/endpoint-contract.schema.json",
   "id": "portfolio.fills.list",
   "name": "List portfolio fills",
-  "description": "Draft skeleton for the authenticated portfolio fills endpoint.",
-  "status": "draft",
+  "description": "Authenticated endpoint for listing portfolio fills.",
+  "status": "ready",
   "method": "GET",
   "path": "/trade-api/v2/portfolio/fills",
   "auth": "api-key",
@@ -13,13 +13,25 @@
         "name": "ticker",
         "type": "string",
         "required": false,
-        "description": "Single market ticker filter."
+        "description": "Single market ticker or comma-separated market ticker filter."
       },
       {
-        "name": "tickers",
-        "type": "array",
+        "name": "order_id",
+        "type": "string",
         "required": false,
-        "description": "Comma-separated market ticker filter for SDKs that expose collection input."
+        "description": "Order identifier filter."
+      },
+      {
+        "name": "min_ts",
+        "type": "integer",
+        "required": false,
+        "description": "Filter fills after this Unix timestamp."
+      },
+      {
+        "name": "max_ts",
+        "type": "integer",
+        "required": false,
+        "description": "Filter fills before this Unix timestamp."
       },
       {
         "name": "limit",
@@ -32,6 +44,18 @@
         "type": "string",
         "required": false,
         "description": "Opaque pagination cursor."
+      },
+      {
+        "name": "subaccount",
+        "type": "integer",
+        "required": false,
+        "description": "Subaccount number filter."
+      },
+      {
+        "name": "exchange_index",
+        "type": "integer",
+        "required": false,
+        "description": "Exchange shard filter."
       }
     ]
   },
@@ -50,31 +74,79 @@
             "items": {
               "type": "object",
               "required": [
+                "fill_id",
+                "exchange_index",
                 "trade_id",
+                "order_id",
                 "ticker",
+                "market_ticker",
+                "outcome_side",
+                "book_side",
+                "count_fp",
+                "yes_price_dollars",
+                "no_price_dollars",
+                "fee_cost",
                 "side",
-                "count",
-                "yes_price",
-                "created_time"
+                "action",
+                "created_time",
+                "is_taker",
+                "subaccount_number",
+                "ts"
               ],
               "properties": {
+                "fill_id": {
+                  "type": "string"
+                },
+                "exchange_index": {
+                  "type": "integer"
+                },
                 "trade_id": {
+                  "type": "string"
+                },
+                "order_id": {
                   "type": "string"
                 },
                 "ticker": {
                   "type": "string"
                 },
+                "market_ticker": {
+                  "type": "string"
+                },
+                "outcome_side": {
+                  "type": "string"
+                },
+                "book_side": {
+                  "type": "string"
+                },
+                "count_fp": {
+                  "type": "string"
+                },
+                "yes_price_dollars": {
+                  "type": "string"
+                },
+                "no_price_dollars": {
+                  "type": "string"
+                },
+                "fee_cost": {
+                  "type": "string"
+                },
                 "side": {
                   "type": "string"
                 },
-                "count": {
-                  "type": "integer"
-                },
-                "yes_price": {
-                  "type": "integer"
+                "action": {
+                  "type": "string"
                 },
                 "created_time": {
                   "type": "string"
+                },
+                "is_taker": {
+                  "type": "boolean"
+                },
+                "subaccount_number": {
+                  "type": "integer"
+                },
+                "ts": {
+                  "type": "integer"
                 }
               }
             }
@@ -94,9 +166,9 @@
     "../../fixtures/rest/response-shape/portfolio-fills-page.json"
   ],
   "source": {
-    "provenance": "pending-review",
-    "kind": "placeholder",
-    "url": "https://docs.kalshi.com/",
-    "observedAt": "2026-10-10T00:00:00Z"
+    "provenance": "official-confirmed",
+    "kind": "kalshi-docs",
+    "url": "https://docs.kalshi.com/api-reference/portfolio/get-fills",
+    "observedAt": "2026-10-11T00:00:00Z"
   }
 }

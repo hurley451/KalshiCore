@@ -68,6 +68,8 @@ behavior; SDKs should remain idiomatic.
 
 - [Architecture](docs/ARCHITECTURE.md)
 - [SDK Targets](docs/SDK_TARGETS.md)
+- [Language Target Roadmap](docs/LANGUAGE_TARGET_ROADMAP.md)
 - [Contract Change Policy](docs/CONTRACT_CHANGE_POLICY.md)
 - [SDK Boundaries](docs/SDK_BOUNDARIES.md)
+- [Releases](docs/RELEASES.md)
 - [Contributing](CONTRIBUTING.md)

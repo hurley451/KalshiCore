@@ -16,8 +16,8 @@
     "privateKeyPem": "<test-rsa-private-key-pem>"
   },
   "expected": {
-    "canonicalPath": "/trade-api/v2/portfolio/fills?limit=2&ticker=KXEXAMPLE-26OCT10-B100",
-    "signatureMessage": "1760054400000GET/trade-api/v2/portfolio/fills?limit=2&ticker=KXEXAMPLE-26OCT10-B100",
+    "canonicalPath": "/trade-api/v2/portfolio/fills",
+    "signatureMessage": "1760054400000GET/trade-api/v2/portfolio/fills",
     "headers": {
       "KALSHI-ACCESS-KEY": "example-key-id",
       "KALSHI-ACCESS-TIMESTAMP": "1760054400000",

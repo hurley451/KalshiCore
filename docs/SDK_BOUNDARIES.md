@@ -34,6 +34,8 @@ Those choices belong in each SDK repository.
 
 SDK repositories should pin the KalshiCore conformance input they validate
 against. A target may pin a commit SHA, release tag, or future suite version.
+Example or draft targets may temporarily use `main` while the first adapter is
+being introduced. Active targets must pin an immutable ref.
 
 KalshiCore changes can then be classified independently from SDK releases:
 

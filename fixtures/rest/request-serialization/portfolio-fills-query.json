@@ -17,7 +17,7 @@
   },
   "expected": {
     "method": "GET",
-    "pathAndQuery": "/trade-api/v2/portfolio/fills?cursor=opaque-cursor&limit=2&tickers=KXEXAMPLE-26OCT10-B100%2CKXEXAMPLE-26OCT10-B105",
+    "pathAndQuery": "/trade-api/v2/portfolio/fills?limit=2&cursor=opaque-cursor&ticker=KXEXAMPLE-26OCT10-B100%2CKXEXAMPLE-26OCT10-B105",
     "body": null
   }
 }

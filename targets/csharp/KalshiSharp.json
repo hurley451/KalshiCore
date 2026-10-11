@@ -10,6 +10,14 @@
     "ecosystem": "nuget",
     "name": "KalshiSharp"
   },
+  "adapter": {
+    "workingDirectory": ".",
+    "offlineCommand": "dotnet run --project KalshiSharp.Conformance/KalshiSharp.Conformance.csproj --configuration Release -- --kalshicore-root ${KALSHICORE_ROOT} --report artifacts/kalshicore-conformance/report.json",
+    "reportPath": "artifacts/kalshicore-conformance/report.json",
+    "requiredEnvironment": [
+      "KALSHICORE_ROOT"
+    ]
+  },
   "conformance": {
     "status": "example",
     "kalshiCoreRef": "main",
@@ -21,6 +29,7 @@
       "rest.request.portfolio-fills-query",
       "rest.response.portfolio-fills-page",
       "websocket.replay.orderbook-delta"
-    ]
+    ],
+    "exclusions": []
   }
 }

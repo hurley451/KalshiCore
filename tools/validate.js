@@ -184,6 +184,9 @@ function validateTargets(parsed, contractIds, fixtureIds) {
     if (target.conformance?.status === "active") {
       expect(target.conformance.kalshiCoreRef !== "main", `${relativePath}: active targets must pin an immutable KalshiCore ref, tag, or suite version`);
     }
+
+    expect(hasString(target.adapter?.offlineCommand), `${relativePath}: adapter.offlineCommand must be a non-empty string`);
+    expect(hasString(target.adapter?.reportPath), `${relativePath}: adapter.reportPath must be a non-empty string`);
   }
 }
 

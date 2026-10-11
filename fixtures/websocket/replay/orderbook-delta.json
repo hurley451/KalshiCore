@@ -21,6 +21,7 @@
         "sid": 7,
         "msg": {
           "market_ticker": "KXEXAMPLE-26OCT10-B100",
+          "market_id": "market-example-001",
           "price": 47,
           "delta": 10,
           "side": "yes"

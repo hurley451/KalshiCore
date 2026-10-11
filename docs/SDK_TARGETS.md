@@ -11,10 +11,11 @@ A target manifest should identify:
 - The SDK repository and primary language.
 - The target status, such as reference, active, experimental, or planned.
 - The conformance adapter entry point.
+- The offline command that runs deterministic fixtures.
+- The optional live command and required environment variables for credentialed
+  checks.
+- The expected conformance report path.
 - Supported contract areas and known exclusions.
-- Required environment variables or credentials for live checks, if any.
-- The command used to run offline fixture checks.
-- The command used to run optional live or integration checks.
 
 The manifest is a contract between KalshiCore and the SDK repository. It should
 be stable enough for automation while remaining small enough to maintain by
@@ -38,12 +39,16 @@ To add a target:
 2. Provide a conformance adapter in the SDK repository or an agreed integration
    location.
 3. Mark supported and unsupported contract areas explicitly.
-4. Run offline fixture checks and include the result in the change.
-5. File upstream gaps for contract behavior that cannot be verified from the
+4. Add the adapter command and report path to the target manifest.
+5. Run offline fixture checks and include the result in the change.
+6. File upstream gaps for contract behavior that cannot be verified from the
    current shared material.
 
 Targets should start narrow. A partial target with clear exclusions is better
 than broad implied coverage.
+
+See [Language Target Roadmap](LANGUAGE_TARGET_ROADMAP.md) for the current target
+priority order and entry criteria.
 
 ## Upstream Gap Reporting
 

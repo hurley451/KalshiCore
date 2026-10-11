@@ -7,6 +7,7 @@
     "id",
     "language",
     "repository",
+    "adapter",
     "conformance"
   ],
   "additionalProperties": false,
@@ -48,6 +49,40 @@
         }
       }
     },
+    "adapter": {
+      "type": "object",
+      "required": [
+        "workingDirectory",
+        "offlineCommand",
+        "reportPath"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "workingDirectory": {
+          "type": "string",
+          "minLength": 1
+        },
+        "offlineCommand": {
+          "type": "string",
+          "minLength": 1
+        },
+        "liveCommand": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reportPath": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requiredEnvironment": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
     "conformance": {
       "type": "object",
       "required": [
@@ -80,6 +115,30 @@
           "type": "array",
           "items": {
             "type": "string"
+          }
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "reason"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "issue": {
+                "type": "string"
+              }
+            }
           }
         }
       }
