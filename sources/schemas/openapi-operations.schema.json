@@ -72,6 +72,11 @@
             "items": {
               "type": "string"
             }
+          },
+          "repeatedQueryParameters": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
           }
         }
       }
