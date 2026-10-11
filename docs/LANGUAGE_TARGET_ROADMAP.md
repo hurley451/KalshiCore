@@ -25,7 +25,8 @@ A language SDK should become a KalshiCore target only after it has:
 
 ## First Implementation Slice
 
-Start TypeScript with the same narrow fixture suite used by KalshiSharp:
+`hurley451/KalshiTS` now starts with the same narrow fixture suite used by
+KalshiSharp:
 
 - API key signing canonical path behavior.
 - `GET /portfolio/fills` query serialization.

@@ -1,0 +1,35 @@
+{
+  "$schema": "../schemas/sdk-target.schema.json",
+  "id": "typescript.KalshiTS",
+  "language": "typescript",
+  "repository": {
+    "name": "KalshiTS",
+    "url": "https://github.com/hurley451/KalshiTS"
+  },
+  "package": {
+    "ecosystem": "npm",
+    "name": "@hurley451/kalshi-ts"
+  },
+  "adapter": {
+    "workingDirectory": ".",
+    "offlineCommand": "npm ci && npm run build && npm run conformance -- --kalshicore-root ${KALSHICORE_ROOT} --report artifacts/kalshicore-conformance/report.json",
+    "reportPath": "artifacts/kalshicore-conformance/report.json",
+    "requiredEnvironment": [
+      "KALSHICORE_ROOT"
+    ]
+  },
+  "conformance": {
+    "status": "draft",
+    "kalshiCoreRef": "main",
+    "contractIds": [
+      "portfolio.fills.list"
+    ],
+    "fixtureIds": [
+      "auth.signing.rest-get-portfolio-fills",
+      "rest.request.portfolio-fills-query",
+      "rest.response.portfolio-fills-page",
+      "websocket.replay.orderbook-delta"
+    ],
+    "exclusions": []
+  }
+}
