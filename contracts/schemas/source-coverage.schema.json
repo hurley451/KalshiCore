@@ -1,0 +1,130 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "sourceId",
+    "sha256",
+    "counts",
+    "entries"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "sourceId": {
+      "enum": [
+        "perps_openapi",
+        "perps_scm_openapi",
+        "perps_asyncapi"
+      ]
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "restOperations",
+        "channels",
+        "websocketOperations",
+        "channelMessages",
+        "componentMessages",
+        "schemas",
+        "references",
+        "responses"
+      ],
+      "properties": {
+        "restOperations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "channels": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "websocketOperations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "channelMessages": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "componentMessages": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "schemas": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "references": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "responses": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "identity",
+          "contract",
+          "schemaAccounting",
+          "disposition"
+        ],
+        "properties": {
+          "identity": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "sourceId",
+              "pointer"
+            ],
+            "properties": {
+              "sourceId": {
+                "enum": [
+                  "perps_openapi",
+                  "perps_scm_openapi",
+                  "perps_asyncapi"
+                ]
+              },
+              "pointer": {
+                "type": "string",
+                "pattern": "^#/"
+              }
+            }
+          },
+          "contract": {
+            "type": "string",
+            "pattern": "^perps_(openapi|scm_openapi|asyncapi)\\.json#/"
+          },
+          "schemaAccounting": {
+            "const": "complete"
+          },
+          "disposition": {
+            "type": "object",
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "unreviewed"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

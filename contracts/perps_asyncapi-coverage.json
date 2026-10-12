@@ -1,0 +1,347 @@
+{
+  "$schema": "./schemas/source-coverage.schema.json",
+  "sourceId": "perps_asyncapi",
+  "sha256": "e5cc0f026b8e306e917860b870e23c9152d0d782c33137d42698f051a9dbe824",
+  "counts": {
+    "restOperations": 0,
+    "channels": 8,
+    "websocketOperations": 22,
+    "channelMessages": 22,
+    "componentMessages": 22,
+    "schemas": 49,
+    "references": 152,
+    "responses": 0
+  },
+  "entries": [
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveError"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/0",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveFill"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/1",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveListSubscriptions"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/2",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOk"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/3",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderGroupUpdates"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/4",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderbookDelta"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/5",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderbookSnapshot"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/6",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receivePing"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/7",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receivePong"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/8",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveSubscribed"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/9",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveTicker"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/10",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveTrade"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/11",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveUnsubscribed"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/12",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveUserOrder"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/13",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendListSubscriptions"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/14",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendPing"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/15",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendPong"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/16",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendSubscribe"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/17",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUnsubscribe"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/18",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscription"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/19",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscriptionDelete"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/20",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscriptionSingleSid"
+      },
+      "contract": "perps_asyncapi.json#/websocket/operations/21",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      },
+      "contract": "perps_asyncapi.json#/websocket/channels/0",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/fill"
+      },
+      "contract": "perps_asyncapi.json#/websocket/channels/1",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/order_group_updates"
+      },
+      "contract": "perps_asyncapi.json#/websocket/channels/2",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta"
+      },
+      "contract": "perps_asyncapi.json#/websocket/channels/3",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "contract": "perps_asyncapi.json#/websocket/channels/4",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/ticker"
+      },
+      "contract": "perps_asyncapi.json#/websocket/channels/5",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/trade"
+      },
+      "contract": "perps_asyncapi.json#/websocket/channels/6",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/user_orders"
+      },
+      "contract": "perps_asyncapi.json#/websocket/channels/7",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    }
+  ]
+}

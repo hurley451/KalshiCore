@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "id",
+    "sourceId",
+    "kind",
+    "description",
+    "input",
+    "expected"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "sourceId": {
+      "enum": [
+        "perps_openapi",
+        "perps_scm_openapi",
+        "perps_asyncapi"
+      ]
+    },
+    "kind": {
+      "const": "source-contract-cases"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cases"
+      ],
+      "properties": {
+        "cases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "caseId",
+              "operation",
+              "identity",
+              "value",
+              "valid"
+            ],
+            "properties": {
+              "caseId": { "type": "string", "minLength": 1 },
+              "operation": { "$ref": "#/$defs/qualifiedReference" },
+              "name": {
+                "type": "string"
+              },
+              "identity": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "sourceId",
+                  "pointer"
+                ],
+                "properties": {
+                  "sourceId": {
+                    "enum": [
+                      "perps_openapi",
+                      "perps_scm_openapi",
+                      "perps_asyncapi"
+                    ]
+                  },
+                  "pointer": {
+                    "type": "string",
+                    "pattern": "^#/"
+                  }
+                }
+              },
+              "value": true,
+              "valid": {
+                "type": "boolean"
+              }
+            }
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allCasesMatch"
+      ],
+      "properties": {
+        "allCasesMatch": {
+          "const": true
+        }
+      }
+    }
+  },
+  "$defs": {
+    "qualifiedReference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sourceId", "pointer"],
+      "properties": {
+        "sourceId": { "enum": ["perps_openapi", "perps_scm_openapi", "perps_asyncapi"] },
+        "pointer": { "type": "string", "pattern": "^#/" }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

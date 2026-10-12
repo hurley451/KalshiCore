@@ -1,0 +1,314 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "formatVersion",
+    "provenance",
+    "sources",
+    "counts"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "formatVersion": {
+      "const": 2
+    },
+    "provenance": {
+      "const": "official-source-imported"
+    },
+    "sources": {
+      "type": "object",
+      "required": [],
+      "additionalProperties": false,
+      "properties": {
+        "openapi": {
+          "$ref": "#/$defs/source"
+        },
+        "asyncapi": {
+          "$ref": "#/$defs/source"
+        }
+      },
+      "minProperties": 1,
+      "maxProperties": 1
+    },
+    "rest": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source",
+          "method",
+          "path",
+          "parameters",
+          "requestBody",
+          "responses",
+          "security",
+          "servers",
+          "deprecated",
+          "identity"
+        ],
+        "properties": {
+          "identity": {
+            "$ref": "#/$defs/identity"
+          }
+        }
+      }
+    },
+    "websocket": {
+      "type": "object",
+      "required": [
+        "channels",
+        "operations",
+        "messages",
+        "sourceGaps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "channels": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "source",
+              "address",
+              "messages",
+              "operations",
+              "commandContracts",
+              "commandScope",
+              "identity"
+            ],
+            "properties": {
+              "identity": {
+                "$ref": "#/$defs/identity"
+              }
+            }
+          }
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "source",
+              "action",
+              "channel",
+              "messages",
+              "identity"
+            ],
+            "properties": {
+              "identity": {
+                "$ref": "#/$defs/identity"
+              }
+            }
+          }
+        },
+        "messages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "source",
+              "contract",
+              "kind",
+              "channelBindings",
+              "identity"
+            ],
+            "properties": {
+              "identity": {
+                "$ref": "#/$defs/identity"
+              }
+            }
+          }
+        },
+        "sourceGaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "source",
+              "issue"
+            ]
+          }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "restOperations",
+        "channels",
+        "websocketOperations",
+        "channelMessages",
+        "componentMessages",
+        "schemas",
+        "references",
+        "responses"
+      ],
+      "properties": {
+        "restOperations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "channels": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "websocketOperations": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "channelMessages": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "componentMessages": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "schemas": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "references": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "responses": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "url",
+        "sha256",
+        "snapshot",
+        "dialect",
+        "document",
+        "references",
+        "schemas"
+      ],
+      "properties": {
+        "sourceId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "snapshot": {
+          "type": "string"
+        },
+        "dialect": {
+          "type": "string"
+        },
+        "document": {
+          "type": "object"
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "at",
+              "target"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "at": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "schemas": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^#/"
+          }
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "pointer"
+      ],
+      "properties": {
+        "sourceId": {
+          "enum": [
+            "perps_openapi",
+            "perps_scm_openapi",
+            "perps_asyncapi"
+          ]
+        },
+        "pointer": {
+          "type": "string",
+          "pattern": "^#/"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "sources": {
+            "required": [
+              "openapi"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "rest"
+        ],
+        "not": {
+          "required": [
+            "websocket"
+          ]
+        }
+      },
+      "else": {
+        "required": [
+          "websocket"
+        ],
+        "not": {
+          "required": [
+            "rest"
+          ]
+        }
+      }
+    }
+  ]
+}

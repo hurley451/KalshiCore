@@ -54,7 +54,7 @@ can have multiple channel bindings, so the two message counts are distinct.
 Run from the Core checkout:
 
 ```sh
-node tools/full-contracts.js import /private/tmp/kalshi-full-delivery
+node tools/full-contracts.js import /path/to/source-snapshots
 node tools/validate.js
 node tools/full-contracts.js
 node --test tools/full-contracts.test.js
@@ -105,3 +105,34 @@ payload validation. They do not prove any language SDK implements every contract
 prose-only business rule, authentication behavior, or live service behavior.
 Parent/language delivery still needs adapter conformance and functional tests
 against these contracts, and separate manual/live review where required.
+
+## Perps Sources
+
+Three additional bundles preserve independent document and reference namespaces:
+
+| Bundle | Source coverage |
+|--------|-----------------|
+| `contracts/perps_openapi.json` | 51 REST operations |
+| `contracts/perps_scm_openapi.json` | 27 clearing-member REST operations |
+| `contracts/perps_asyncapi.json` | 8 WebSocket channels and 22 operations |
+
+Each bundle has a source ledger, pinned YAML, operation inventory, coverage
+manifest, and positive/negative fixtures. Security alternatives, server URLs,
+and source inconsistencies are retained without combining authentication realms
+or inventing missing contracts. Imported entries remain unreviewed.
+
+```sh
+npm run import:perps -- /path/to/perps-source-snapshots
+npm run validate:perps
+npm test
+npm run validate
+```
+
+The import stages and validates all three sources before replacement. Failed
+validation, staged mutation, replacement failure, or concurrent edits reject the
+candidate and preserve prior artifacts and newer editor changes. Fixtures have
+independent required identities, operation/schema bindings, and behavior checks;
+preserving names or counts cannot substitute order cases for error, pagination,
+composition, or WebSocket cases. Legitimate payload edits are preserved when
+they still exercise the required behavior. These are representative contract
+cases, not complete SDK implementation or live API approval.

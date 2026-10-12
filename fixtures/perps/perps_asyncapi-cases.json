@@ -1,0 +1,218 @@
+{
+  "$schema": "../schemas/source-contract-cases.schema.json",
+  "id": "perps-asyncapi-cases",
+  "sourceId": "perps_asyncapi",
+  "kind": "source-contract-cases",
+  "description": "Source-qualified representative contract validation; imported completeness is not review approval.",
+  "input": {
+    "cases": [
+      {
+        "name": "root-subscribe-positive",
+        "caseId": "perps_asyncapi:root-subscribe-positive",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/schemas/subscribeCommandPayload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/sendSubscribe"
+        },
+        "value": {
+          "id": 1,
+          "cmd": "subscribe",
+          "params": {
+            "channels": [
+              "trade"
+            ]
+          }
+        },
+        "valid": true
+      },
+      {
+        "name": "root-subscribe-negative",
+        "caseId": "perps_asyncapi:root-subscribe-negative",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/schemas/subscribeCommandPayload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/sendSubscribe"
+        },
+        "value": {
+          "id": 1,
+          "cmd": "subscribe",
+          "params": {
+            "channels": [
+              "predictions"
+            ]
+          }
+        },
+        "valid": false
+      },
+      {
+        "name": "control-incoming-positive",
+        "caseId": "perps_asyncapi:control-incoming-positive",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/messages/incomingPing/payload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/sendPing"
+        },
+        "value": "",
+        "valid": true
+      },
+      {
+        "name": "control-incoming-negative",
+        "caseId": "perps_asyncapi:control-incoming-negative",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/messages/incomingPing/payload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/sendPing"
+        },
+        "value": "heartbeat",
+        "valid": false
+      },
+      {
+        "name": "control-outgoing-positive",
+        "caseId": "perps_asyncapi:control-outgoing-positive",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/messages/outgoingPing/payload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/receivePing"
+        },
+        "value": "heartbeat",
+        "valid": true
+      },
+      {
+        "name": "control-outgoing-negative",
+        "caseId": "perps_asyncapi:control-outgoing-negative",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/messages/outgoingPing/payload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/receivePing"
+        },
+        "value": "",
+        "valid": false
+      },
+      {
+        "name": "data-trade-positive",
+        "caseId": "perps_asyncapi:data-trade-positive",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/schemas/marginTradePayload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/receiveTrade"
+        },
+        "value": {
+          "type": "trade",
+          "sid": 1,
+          "seq": 2,
+          "msg": {
+            "trade_id": "123e4567-e89b-12d3-a456-426614174000",
+            "market_ticker": "BTC",
+            "price": "12.5000",
+            "count": "1.00",
+            "taker_side": "bid",
+            "ts_ms": 1791763200000
+          }
+        },
+        "valid": true
+      },
+      {
+        "name": "data-trade-negative",
+        "caseId": "perps_asyncapi:data-trade-negative",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/schemas/marginTradePayload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/receiveTrade"
+        },
+        "value": {
+          "type": "trade",
+          "sid": 1,
+          "seq": 2,
+          "msg": {
+            "trade_id": "123e4567-e89b-12d3-a456-426614174000",
+            "market_ticker": "BTC",
+            "price": "12.5000",
+            "count": "1.00",
+            "taker_side": "yes",
+            "ts_ms": 1791763200000
+          }
+        },
+        "valid": false
+      },
+      {
+        "name": "data-trade-timestamp-positive",
+        "caseId": "perps_asyncapi:data-trade-timestamp-positive",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/schemas/marginTradePayload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/receiveTrade"
+        },
+        "value": {
+          "type": "trade",
+          "sid": 1,
+          "seq": 2,
+          "msg": {
+            "trade_id": "123e4567-e89b-12d3-a456-426614174000",
+            "market_ticker": "BTC",
+            "price": "12.5000",
+            "count": "1.00",
+            "taker_side": "bid",
+            "ts_ms": 1791763200000
+          }
+        },
+        "valid": true
+      },
+      {
+        "name": "data-trade-timestamp-negative",
+        "caseId": "perps_asyncapi:data-trade-timestamp-negative",
+        "identity": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/components/schemas/marginTradePayload"
+        },
+        "operation": {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/operations/receiveTrade"
+        },
+        "value": {
+          "type": "trade",
+          "sid": 1,
+          "seq": 2,
+          "msg": {
+            "trade_id": "123e4567-e89b-12d3-a456-426614174000",
+            "market_ticker": "BTC",
+            "price": "12.5000",
+            "count": "1.00",
+            "taker_side": "bid",
+            "ts_ms": "1791763200000"
+          }
+        },
+        "valid": false
+      }
+    ]
+  },
+  "expected": {
+    "allCasesMatch": true
+  }
+}

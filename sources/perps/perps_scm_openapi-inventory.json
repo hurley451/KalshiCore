@@ -1,0 +1,2855 @@
+{
+  "$schema": "../schemas/perps-artifact.schema.json",
+  "sourceId": "perps_scm_openapi",
+  "counts": {
+    "restOperations": 27,
+    "channels": 0,
+    "websocketOperations": 0,
+    "channelMessages": 0,
+    "componentMessages": 0,
+    "schemas": 120,
+    "references": 189,
+    "responses": 141
+  },
+  "entries": [
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/get"
+      },
+      "operationId": "ListMarginFcmApiKeys",
+      "method": "GET",
+      "path": "/fcm/margin/api_keys",
+      "contract": "perps_scm_openapi.json#/rest/0",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post"
+      },
+      "operationId": "CreateMarginFcmApiKey",
+      "method": "POST",
+      "path": "/fcm/margin/api_keys",
+      "contract": "perps_scm_openapi.json#/rest/1",
+      "statuses": [
+        "201",
+        "400",
+        "401",
+        "403",
+        "409",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post"
+      },
+      "operationId": "GenerateMarginFcmApiKey",
+      "method": "POST",
+      "path": "/fcm/margin/api_keys/generate",
+      "contract": "perps_scm_openapi.json#/rest/2",
+      "statuses": [
+        "201",
+        "400",
+        "401",
+        "403",
+        "409",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1{api_key_id}/delete"
+      },
+      "operationId": "DeleteMarginFcmApiKey",
+      "method": "DELETE",
+      "path": "/fcm/margin/api_keys/{api_key_id}",
+      "contract": "perps_scm_openapi.json#/rest/3",
+      "statuses": [
+        "204",
+        "400",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/get"
+      },
+      "operationId": "GetMarginSubtraderGroups",
+      "method": "GET",
+      "path": "/fcm/margin/subtrader_groups",
+      "contract": "perps_scm_openapi.json#/rest/4",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post"
+      },
+      "operationId": "CreateMarginSubtraderGroup",
+      "method": "POST",
+      "path": "/fcm/margin/subtrader_groups",
+      "contract": "perps_scm_openapi.json#/rest/5",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "404",
+        "409",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/delete"
+      },
+      "operationId": "DeleteMarginSubtraderGroup",
+      "method": "DELETE",
+      "path": "/fcm/margin/subtrader_groups/{group_id}",
+      "contract": "perps_scm_openapi.json#/rest/6",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put"
+      },
+      "operationId": "UpdateMarginSubtraderGroup",
+      "method": "PUT",
+      "path": "/fcm/margin/subtrader_groups/{group_id}",
+      "contract": "perps_scm_openapi.json#/rest/7",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "404",
+        "409",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1active_obligations/get"
+      },
+      "operationId": "GetActiveMarginObligations",
+      "method": "GET",
+      "path": "/margin/active_obligations",
+      "contract": "perps_scm_openapi.json#/rest/8",
+      "statuses": [
+        "200",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post"
+      },
+      "operationId": "EstimatePortfolioMaintenanceMargin",
+      "method": "POST",
+      "path": "/margin/estimate_maintenance_margin",
+      "contract": "perps_scm_openapi.json#/rest/9",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get"
+      },
+      "operationId": "GetMaintenanceMarginMetadata",
+      "method": "GET",
+      "path": "/margin/estimate_maintenance_margin/metadata",
+      "contract": "perps_scm_openapi.json#/rest/10",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_estimate_by_asset_class/get"
+      },
+      "operationId": "GetFundingEstimateByAssetClass",
+      "method": "GET",
+      "path": "/margin/funding_estimate_by_asset_class",
+      "contract": "perps_scm_openapi.json#/rest/11",
+      "statuses": [
+        "200",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_payments/get"
+      },
+      "operationId": "GetMemberFundingPayments",
+      "method": "GET",
+      "path": "/margin/funding_payments",
+      "contract": "perps_scm_openapi.json#/rest/12",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_schedule/get"
+      },
+      "operationId": "GetMarginFundingSchedule",
+      "method": "GET",
+      "path": "/margin/funding_schedule",
+      "contract": "perps_scm_openapi.json#/rest/13",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1guaranty_fund_balance/get"
+      },
+      "operationId": "GetGuarantyFundBalance",
+      "method": "GET",
+      "path": "/margin/guaranty_fund_balance",
+      "contract": "perps_scm_openapi.json#/rest/14",
+      "statuses": [
+        "200",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1large_trader_positions/get"
+      },
+      "operationId": "GetLargeTraderPositions",
+      "method": "GET",
+      "path": "/margin/large_trader_positions",
+      "contract": "perps_scm_openapi.json#/rest/15",
+      "statuses": [
+        "200",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligation_history/get"
+      },
+      "operationId": "GetObligationHistory",
+      "method": "GET",
+      "path": "/margin/obligation_history",
+      "contract": "perps_scm_openapi.json#/rest/16",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get"
+      },
+      "operationId": "GetObligationFundingPayments",
+      "method": "GET",
+      "path": "/margin/obligations/{obligation_id}/funding_payments",
+      "contract": "perps_scm_openapi.json#/rest/17",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get"
+      },
+      "operationId": "GetObligationMaintenanceMarginDetails",
+      "method": "GET",
+      "path": "/margin/obligations/{obligation_id}/maintenance_margin_details",
+      "contract": "perps_scm_openapi.json#/rest/18",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get"
+      },
+      "operationId": "GetObligationSettlementDetails",
+      "method": "GET",
+      "path": "/margin/obligations/{obligation_id}/settlement_details",
+      "contract": "perps_scm_openapi.json#/rest/19",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1reports/get"
+      },
+      "operationId": "GetMarginReports",
+      "method": "GET",
+      "path": "/margin/reports",
+      "contract": "perps_scm_openapi.json#/rest/20",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance/get"
+      },
+      "operationId": "GetSettlementBalance",
+      "method": "GET",
+      "path": "/margin/settlement_balance",
+      "contract": "perps_scm_openapi.json#/rest/21",
+      "statuses": [
+        "200",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_history/get"
+      },
+      "operationId": "GetSettlementBalanceHistory",
+      "method": "GET",
+      "path": "/margin/settlement_balance_history",
+      "contract": "perps_scm_openapi.json#/rest/22",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get"
+      },
+      "operationId": "GetSettlementBalanceWithdrawal",
+      "method": "GET",
+      "path": "/margin/settlement_balance_withdrawal",
+      "contract": "perps_scm_openapi.json#/rest/23",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_estimate_by_asset_class/get"
+      },
+      "operationId": "GetSettlementEstimateByAssetClass",
+      "method": "GET",
+      "path": "/margin/settlement_estimate_by_asset_class",
+      "contract": "perps_scm_openapi.json#/rest/24",
+      "statuses": [
+        "200",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_prices/get"
+      },
+      "operationId": "GetSettlementPrices",
+      "method": "GET",
+      "path": "/margin/settlement_prices",
+      "contract": "perps_scm_openapi.json#/rest/25",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post"
+      },
+      "operationId": "WithdrawSettlementBalance",
+      "method": "POST",
+      "path": "/margin/withdraw_settlement_balance",
+      "contract": "perps_scm_openapi.json#/rest/26",
+      "statuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "500"
+      ]
+    }
+  ],
+  "schemas": [
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/responses/BadRequestError/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/responses/ConflictError/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/responses/ForbiddenError/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/responses/InternalServerError/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/responses/NotFoundError/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/responses/UnauthorizedError/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/AssetClass"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/AssetClassFundingEstimate"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/AssetClassSettlementEstimate"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/CreateMarginFcmApiKeyRequest"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/CreateMarginFcmApiKeyResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/CreateMarginSubtraderGroupRequest"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/CreateMarginSubtraderGroupResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/Error"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/EstimatePortfolioMaintenanceMarginPosition"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/EstimatePortfolioMaintenanceMarginRequest"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/EstimatePortfolioMaintenanceMarginResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/FundingEstimate"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/FundingPaymentDetail"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GenerateMarginFcmApiKeyRequest"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GenerateMarginFcmApiKeyResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetActiveMarginObligationsResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetFundingEstimateByAssetClassResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetGuarantyFundBalanceResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetLargeTraderPositionsResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetMaintenanceMarginMetadataResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetMarginFundingScheduleResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetMarginReportsResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetMarginSubtraderGroupsResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetMemberFundingPaymentsResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetObligationFundingPaymentsResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetObligationHistoryResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetObligationMaintenanceMarginDetailsResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetObligationSettlementDetailsResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetSettlementBalanceHistoryResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetSettlementBalanceResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetSettlementBalanceWithdrawalResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetSettlementEstimateByAssetClassResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/GetSettlementPricesResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/ListMarginFcmApiKeysResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MaintenanceMarginDetail"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MaintenanceMarginLiquidationConfig"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MaintenanceMarginMatrices"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MaintenanceMarginMatrix"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MarginFcmApiKey"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MarginReport"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MarginSubtraderGroup"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MarketFundingEstimate"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MarketSettlementEstimate"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/MemberFundingPayment"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/ObligationEntry"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/ObligationInfo"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/ObligationReceiveInfo"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/SettlementBalanceHistoryEntry"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/SettlementDetail"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/SettlementEstimate"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/UpdateMarginSubtraderGroupRequest"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/WithdrawSettlementBalanceRequest"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/components/schemas/WithdrawSettlementBalanceResponse"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys/post/requestBody/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys/post/responses/201/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys/post/responses/409/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/requestBody/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/responses/201/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/responses/409/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1api_keys~1{api_key_id}/delete/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/requestBody/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put/requestBody/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1active_obligations/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/requestBody/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1funding_estimate_by_asset_class/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1funding_payments/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1funding_payments/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1funding_payments/get/parameters/2/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1funding_payments/get/parameters/3/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1funding_payments/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1funding_schedule/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1funding_schedule/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1guaranty_fund_balance/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1large_trader_positions/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1large_trader_positions/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligation_history/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligation_history/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligation_history/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/parameters/2/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/parameters/2/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/parameters/2/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1reports/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1reports/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1reports/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_balance/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_balance_history/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_balance_history/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_balance_history/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_estimate_by_asset_class/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_prices/get/parameters/0/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_prices/get/parameters/1/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1settlement_prices/get/responses/200/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post/requestBody/content/application~1json/schema"
+    },
+    {
+      "sourceId": "perps_scm_openapi",
+      "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post/responses/200/content/application~1json/schema"
+    }
+  ],
+  "references": [
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1reports/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMarginReportsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1reports/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1reports/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1reports/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1reports/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1active_obligations/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetActiveMarginObligationsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1active_obligations/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1active_obligations/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1active_obligations/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligation_history/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetObligationHistoryResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligation_history/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligation_history/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligation_history/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligation_history/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetObligationSettlementDetailsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/responses/404/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetObligationFundingPaymentsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/responses/404/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetObligationMaintenanceMarginDetailsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/responses/404/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_payments/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMemberFundingPaymentsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_payments/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_payments/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_payments/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_payments/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1large_trader_positions/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetLargeTraderPositionsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1large_trader_positions/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1large_trader_positions/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1large_trader_positions/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/requestBody/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/EstimatePortfolioMaintenanceMarginRequest"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/EstimatePortfolioMaintenanceMarginResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/responses/404/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/parameters/0/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClass"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMaintenanceMarginMetadataResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/responses/404/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_estimate_by_asset_class/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetSettlementEstimateByAssetClassResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_estimate_by_asset_class/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_estimate_by_asset_class/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_estimate_by_asset_class/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_estimate_by_asset_class/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetFundingEstimateByAssetClassResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_estimate_by_asset_class/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_estimate_by_asset_class/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_estimate_by_asset_class/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_schedule/get/parameters/0/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClass"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_schedule/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMarginFundingScheduleResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_schedule/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_schedule/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_schedule/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_schedule/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_prices/get/parameters/0/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClass"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_prices/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetSettlementPricesResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_prices/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_prices/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_prices/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_prices/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetSettlementBalanceResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1guaranty_fund_balance/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetGuarantyFundBalanceResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1guaranty_fund_balance/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1guaranty_fund_balance/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1guaranty_fund_balance/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_history/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetSettlementBalanceHistoryResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_history/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_history/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_history/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_history/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post/requestBody/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/WithdrawSettlementBalanceRequest"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/WithdrawSettlementBalanceResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetSettlementBalanceWithdrawalResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMarginSubtraderGroupsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/requestBody/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/CreateMarginSubtraderGroupRequest"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/CreateMarginSubtraderGroupResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/responses/404/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/responses/409/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ConflictError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put/requestBody/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/UpdateMarginSubtraderGroupRequest"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put/responses/404/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put/responses/409/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ConflictError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/delete/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/delete/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/delete/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/delete/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post/requestBody/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/CreateMarginFcmApiKeyRequest"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post/responses/201/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/CreateMarginFcmApiKeyResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post/responses/409/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/Error"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/get/responses/200/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ListMarginFcmApiKeysResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/get/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/get/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/get/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/get/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/requestBody/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GenerateMarginFcmApiKeyRequest"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/responses/201/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GenerateMarginFcmApiKeyResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/responses/409/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/Error"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1{api_key_id}/delete/responses/400/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1{api_key_id}/delete/responses/401/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1{api_key_id}/delete/responses/403/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1{api_key_id}/delete/responses/404/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1{api_key_id}/delete/responses/500/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/BadRequestError/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/Error"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/UnauthorizedError/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/Error"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ForbiddenError/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/Error"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/NotFoundError/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/Error"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/ConflictError/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/Error"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/responses/InternalServerError/content/application~1json/schema/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/Error"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMarginReportsResponse/properties/reports/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MarginReport"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationInfo/properties/asset_class/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClass"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationEntry/allOf/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationInfo"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationEntry/allOf/1/properties/receives/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationReceiveInfo"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationEntry/allOf/1/properties/settlement_details/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/SettlementDetail"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationEntry/allOf/1/properties/maintenance_margin_details/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginDetail"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationEntry/allOf/1/properties/funding_payments/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/FundingPaymentDetail"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetActiveMarginObligationsResponse/properties/obligations/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationEntry"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/EstimatePortfolioMaintenanceMarginRequest/properties/asset_class/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClass"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/EstimatePortfolioMaintenanceMarginRequest/properties/positions/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/EstimatePortfolioMaintenanceMarginPosition"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrices/properties/hvar/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrix"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrices/properties/apc/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrix"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrices/properties/aug/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrix"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrices/properties/funding/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrix"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMaintenanceMarginMetadataResponse/properties/asset_class/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClass"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMaintenanceMarginMetadataResponse/properties/matrices/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginMatrices"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMaintenanceMarginMetadataResponse/properties/liquidation_configs/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginLiquidationConfig"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetObligationHistoryResponse/properties/obligations/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ObligationEntry"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetObligationSettlementDetailsResponse/properties/settlement_details/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/SettlementDetail"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetObligationFundingPaymentsResponse/properties/funding_payments/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/FundingPaymentDetail"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MemberFundingPayment/allOf/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/FundingPaymentDetail"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMemberFundingPaymentsResponse/properties/payments/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MemberFundingPayment"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetObligationMaintenanceMarginDetailsResponse/properties/maintenance_margin_details/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MaintenanceMarginDetail"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/SettlementEstimate/properties/positions/additionalProperties/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MarketSettlementEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClassSettlementEstimate/properties/user_breakdown/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/SettlementEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClassSettlementEstimate/properties/subtrader_breakdowns/additionalProperties/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/SettlementEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClassSettlementEstimate/properties/group_breakdowns/additionalProperties/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/SettlementEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetSettlementEstimateByAssetClassResponse/properties/estimates/additionalProperties/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClassSettlementEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/FundingEstimate/properties/positions/additionalProperties/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MarketFundingEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClassFundingEstimate/properties/user_breakdown/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/FundingEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClassFundingEstimate/properties/subtrader_breakdowns/additionalProperties/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/FundingEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClassFundingEstimate/properties/group_breakdowns/additionalProperties/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/FundingEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetFundingEstimateByAssetClassResponse/properties/estimates/additionalProperties/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/AssetClassFundingEstimate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetSettlementBalanceHistoryResponse/properties/entries/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/SettlementBalanceHistoryEntry"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/GetMarginSubtraderGroupsResponse/properties/groups/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MarginSubtraderGroup"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/ListMarginFcmApiKeysResponse/properties/api_keys/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/components/schemas/MarginFcmApiKey"
+      }
+    }
+  ]
+}
