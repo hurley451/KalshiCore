@@ -1,0 +1,31 @@
+{
+  "$schema": "../schemas/fixture.schema.json",
+  "id": "official.current-contract-cases",
+  "kind": "official-contract-cases",
+  "description": "Representative source-linked REST query/body/response/error and WebSocket command/message positive and negative validation cases.",
+  "input": {
+    "cases": [
+      { "name": "fills page", "source": "openapi", "schema": "#/components/schemas/GetFillsResponse", "value": { "fills": [], "cursor": "" }, "valid": true },
+      { "name": "fills missing cursor", "source": "openapi", "schema": "#/components/schemas/GetFillsResponse", "value": { "fills": [] }, "valid": false },
+      { "name": "query limit", "source": "openapi", "schema": "#/components/parameters/LimitQuery/schema", "value": 100, "valid": true },
+      { "name": "query limit above maximum", "source": "openapi", "schema": "#/components/parameters/LimitQuery/schema", "value": 1001, "valid": false },
+      { "name": "query limit wrong type", "source": "openapi", "schema": "#/components/parameters/LimitQuery/schema", "value": "100", "valid": false },
+      { "name": "create order body", "source": "openapi", "schema": "#/components/schemas/CreateOrderV2Request", "value": { "ticker": "TEST", "side": "bid", "count": "10.00", "price": "0.5600", "time_in_force": "good_till_canceled", "self_trade_prevention_type": "taker_at_cross" }, "valid": true },
+      { "name": "create order missing price", "source": "openapi", "schema": "#/components/schemas/CreateOrderV2Request", "value": { "ticker": "TEST", "side": "bid", "count": "10.00", "time_in_force": "good_till_canceled", "self_trade_prevention_type": "taker_at_cross" }, "valid": false },
+      { "name": "allOf enum rejects unsupported prevention", "source": "openapi", "schema": "#/components/schemas/CreateOrderV2Request", "value": { "ticker": "TEST", "side": "bid", "count": "10.00", "price": "0.5600", "time_in_force": "good_till_canceled", "self_trade_prevention_type": "bogus" }, "valid": false },
+      { "name": "nullable allOf prices", "source": "openapi", "schema": "#/components/schemas/PriceDistributionHistorical", "value": { "open": null, "low": null, "high": null, "close": "0.5600", "mean": null, "previous": null }, "valid": true },
+      { "name": "nullable still rejects number", "source": "openapi", "schema": "#/components/schemas/PriceDistributionHistorical", "value": { "open": 42, "low": null, "high": null, "close": null, "mean": null, "previous": null }, "valid": false },
+      { "name": "REST error", "source": "openapi", "schema": "#/components/schemas/ErrorResponse", "value": { "code": "invalid_parameter", "message": "Invalid input" }, "valid": true },
+      { "name": "REST error wrong code type", "source": "openapi", "schema": "#/components/schemas/ErrorResponse", "value": { "code": 1 }, "valid": false },
+      { "name": "subscribe", "source": "asyncapi", "schema": "#/components/schemas/subscribeCommandPayload", "value": { "id": 1, "cmd": "subscribe", "params": { "channels": ["ticker"] } }, "valid": true },
+      { "name": "subscribe empty channels", "source": "asyncapi", "schema": "#/components/schemas/subscribeCommandPayload", "value": { "id": 1, "cmd": "subscribe", "params": { "channels": [] } }, "valid": false },
+      { "name": "subscribe unsupported channel", "source": "asyncapi", "schema": "#/components/schemas/subscribeCommandPayload", "value": { "id": 1, "cmd": "subscribe", "params": { "channels": ["bogus"] } }, "valid": false },
+      { "name": "subscribe wrong command", "source": "asyncapi", "schema": "#/components/schemas/subscribeCommandPayload", "value": { "id": 1, "cmd": "other", "params": { "channels": ["ticker"] } }, "valid": false },
+      { "name": "subscription error", "source": "asyncapi", "schema": "#/components/schemas/errorResponsePayload", "value": { "type": "error", "msg": { "code": 25, "msg": "Subscription buffer overflow" } }, "valid": true },
+      { "name": "retired error code", "source": "asyncapi", "schema": "#/components/schemas/errorResponsePayload", "value": { "type": "error", "msg": { "code": 6, "msg": "Retired" } }, "valid": false },
+      { "name": "delta", "source": "asyncapi", "schema": "#/components/schemas/orderbookDeltaPayload", "value": { "type": "orderbook_delta", "sid": 1, "seq": 2, "msg": { "market_ticker": "TEST", "market_id": "12345678-1234-1234-1234-123456789abc", "price_dollars": "0.5600", "delta_fp": "1.00", "side": "yes" } }, "valid": true },
+      { "name": "delta missing sequence", "source": "asyncapi", "schema": "#/components/schemas/orderbookDeltaPayload", "value": { "type": "orderbook_delta", "sid": 1, "msg": { "market_ticker": "TEST", "market_id": "12345678-1234-1234-1234-123456789abc", "price_dollars": "0.5600", "delta_fp": "1.00", "side": "yes" } }, "valid": false }
+    ]
+  },
+  "expected": { "allCasesMatch": true }
+}

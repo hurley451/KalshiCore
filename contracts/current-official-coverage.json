@@ -1,0 +1,1574 @@
+{
+  "$schema": "./schemas/full-contract-coverage.schema.json",
+  "formatVersion": 1,
+  "bundle": "current-official.json",
+  "sourceHashes": {
+    "openapi": "091f171718a0376b0c1a2e9348b02b1ce003d0786dd04d772dd11005ca414bf4",
+    "asyncapi": "eaf754def77f36cd016f1e852a5ce76f11b635140e879bee7a3f9cad40716f9f"
+  },
+  "counts": {
+    "restOperations": 118,
+    "channels": 15,
+    "websocketOperations": 41,
+    "channelMessages": 44,
+    "componentMessages": 44,
+    "schemas": 630,
+    "references": 1184
+  },
+  "operations": [
+    {
+      "id": "UpgradeAccountApiUsageLevel",
+      "contract": "current-official.json#/rest/0",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "UpgradeAccountApiUsageLevel",
+        "path": "/account/api_usage_level/upgrade",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetAccountApiUsageLevelVolumeProgress",
+      "contract": "current-official.json#/rest/1",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetAccountApiUsageLevelVolumeProgress",
+        "path": "/account/api_usage_level/volume_progress",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetAccountEndpointCosts",
+      "contract": "current-official.json#/rest/2",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetAccountEndpointCosts",
+        "path": "/account/endpoint_costs",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetAccountApiLimits",
+      "contract": "current-official.json#/rest/3",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetAccountApiLimits",
+        "path": "/account/limits",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetApiKeys",
+      "contract": "current-official.json#/rest/4",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetApiKeys",
+        "path": "/api_keys",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateApiKey",
+      "contract": "current-official.json#/rest/5",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateApiKey",
+        "path": "/api_keys",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GenerateApiKey",
+      "contract": "current-official.json#/rest/6",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GenerateApiKey",
+        "path": "/api_keys/generate",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "DeleteApiKey",
+      "contract": "current-official.json#/rest/7",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "DeleteApiKey",
+        "path": "/api_keys/{api_key}",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetBlockTradeProposals",
+      "contract": "current-official.json#/rest/8",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetBlockTradeProposals",
+        "path": "/communications/block-trade-proposals",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "ProposeBlockTrade",
+      "contract": "current-official.json#/rest/9",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "ProposeBlockTrade",
+        "path": "/communications/block-trade-proposals",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "AcceptBlockTradeProposal",
+      "contract": "current-official.json#/rest/10",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "AcceptBlockTradeProposal",
+        "path": "/communications/block-trade-proposals/{block_trade_proposal_id}/accept",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetCommunicationsID",
+      "contract": "current-official.json#/rest/11",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetCommunicationsID",
+        "path": "/communications/id",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetQuotes",
+      "contract": "current-official.json#/rest/12",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetQuotes",
+        "path": "/communications/quotes",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateQuote",
+      "contract": "current-official.json#/rest/13",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateQuote",
+        "path": "/communications/quotes",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "DeleteQuote",
+      "contract": "current-official.json#/rest/14",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "DeleteQuote",
+        "path": "/communications/quotes/{quote_id}",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetQuote",
+      "contract": "current-official.json#/rest/15",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetQuote",
+        "path": "/communications/quotes/{quote_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "AcceptQuote",
+      "contract": "current-official.json#/rest/16",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "AcceptQuote",
+        "path": "/communications/quotes/{quote_id}/accept",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "ConfirmQuote",
+      "contract": "current-official.json#/rest/17",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "ConfirmQuote",
+        "path": "/communications/quotes/{quote_id}/confirm",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetRFQs",
+      "contract": "current-official.json#/rest/18",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetRFQs",
+        "path": "/communications/rfqs",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateRFQ",
+      "contract": "current-official.json#/rest/19",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateRFQ",
+        "path": "/communications/rfqs",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "DeleteRFQ",
+      "contract": "current-official.json#/rest/20",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "DeleteRFQ",
+        "path": "/communications/rfqs/{rfq_id}",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetRFQ",
+      "contract": "current-official.json#/rest/21",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetRFQ",
+        "path": "/communications/rfqs/{rfq_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "DeleteRFQQuote",
+      "contract": "current-official.json#/rest/22",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "DeleteRFQQuote",
+        "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetRFQQuote",
+      "contract": "current-official.json#/rest/23",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetRFQQuote",
+        "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "AcceptRFQQuote",
+      "contract": "current-official.json#/rest/24",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "AcceptRFQQuote",
+        "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}/accept",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "ConfirmRFQQuote",
+      "contract": "current-official.json#/rest/25",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "ConfirmRFQQuote",
+        "path": "/communications/rfqs/{rfq_id}/quotes/{quote_id}/confirm",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetEvents",
+      "contract": "current-official.json#/rest/26",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetEvents",
+        "path": "/events",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetEventFeeChanges",
+      "contract": "current-official.json#/rest/27",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetEventFeeChanges",
+        "path": "/events/fee_changes",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMultivariateEvents",
+      "contract": "current-official.json#/rest/28",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMultivariateEvents",
+        "path": "/events/multivariate",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetEvent",
+      "contract": "current-official.json#/rest/29",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetEvent",
+        "path": "/events/{event_ticker}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetEventMetadata",
+      "contract": "current-official.json#/rest/30",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetEventMetadata",
+        "path": "/events/{event_ticker}/metadata",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetExchangeSchedule",
+      "contract": "current-official.json#/rest/31",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetExchangeSchedule",
+        "path": "/exchange/schedule",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetExchangeStatus",
+      "contract": "current-official.json#/rest/32",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetExchangeStatus",
+        "path": "/exchange/status",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetUserDataTimestamp",
+      "contract": "current-official.json#/rest/33",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetUserDataTimestamp",
+        "path": "/exchange/user_data_timestamp",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetFCMFills",
+      "contract": "current-official.json#/rest/34",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetFCMFills",
+        "path": "/fcm/fills",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetFCMOrders",
+      "contract": "current-official.json#/rest/35",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetFCMOrders",
+        "path": "/fcm/orders",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetFCMPositions",
+      "contract": "current-official.json#/rest/36",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetFCMPositions",
+        "path": "/fcm/positions",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateFCMPositionTransfer",
+      "contract": "current-official.json#/rest/37",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateFCMPositionTransfer",
+        "path": "/fcm/positions/transfers",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "ListFCMSubtraders",
+      "contract": "current-official.json#/rest/38",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "ListFCMSubtraders",
+        "path": "/fcm/subtraders",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateFCMSubtrader",
+      "contract": "current-official.json#/rest/39",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateFCMSubtrader",
+        "path": "/fcm/subtraders",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetFCMSubtraderBlockedCategories",
+      "contract": "current-official.json#/rest/40",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetFCMSubtraderBlockedCategories",
+        "path": "/fcm/subtraders/blocked_categories",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "UpdateFCMSubtraderBlockedCategories",
+      "contract": "current-official.json#/rest/41",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "UpdateFCMSubtraderBlockedCategories",
+        "path": "/fcm/subtraders/blocked_categories",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "DeleteFCMEventContractDailyCap",
+      "contract": "current-official.json#/rest/42",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "DeleteFCMEventContractDailyCap",
+        "path": "/fcm/subtraders/event_contract_daily_cap",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetFCMEventContractDailyCap",
+      "contract": "current-official.json#/rest/43",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetFCMEventContractDailyCap",
+        "path": "/fcm/subtraders/event_contract_daily_cap",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "UpdateFCMEventContractDailyCap",
+      "contract": "current-official.json#/rest/44",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "UpdateFCMEventContractDailyCap",
+        "path": "/fcm/subtraders/event_contract_daily_cap",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetHistoricalCutoff",
+      "contract": "current-official.json#/rest/45",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetHistoricalCutoff",
+        "path": "/historical/cutoff",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetFillsHistorical",
+      "contract": "current-official.json#/rest/46",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetFillsHistorical",
+        "path": "/historical/fills",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetHistoricalMarkets",
+      "contract": "current-official.json#/rest/47",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetHistoricalMarkets",
+        "path": "/historical/markets",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetHistoricalMarket",
+      "contract": "current-official.json#/rest/48",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetHistoricalMarket",
+        "path": "/historical/markets/{ticker}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMarketCandlesticksHistorical",
+      "contract": "current-official.json#/rest/49",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMarketCandlesticksHistorical",
+        "path": "/historical/markets/{ticker}/candlesticks",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetHistoricalOrders",
+      "contract": "current-official.json#/rest/50",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetHistoricalOrders",
+        "path": "/historical/orders",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetHistoricalPositions",
+      "contract": "current-official.json#/rest/51",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetHistoricalPositions",
+        "path": "/historical/positions",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetTradesHistorical",
+      "contract": "current-official.json#/rest/52",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetTradesHistorical",
+        "path": "/historical/trades",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetIncentivePrograms",
+      "contract": "current-official.json#/rest/53",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetIncentivePrograms",
+        "path": "/incentive_programs",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetLiveDatas",
+      "contract": "current-official.json#/rest/54",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetLiveDatas",
+        "path": "/live_data/batch",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetEventLiveData",
+      "contract": "current-official.json#/rest/55",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetEventLiveData",
+        "path": "/live_data/events/{event_ticker}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetLiveDataByMilestone",
+      "contract": "current-official.json#/rest/56",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetLiveDataByMilestone",
+        "path": "/live_data/milestone/{milestone_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetGameStats",
+      "contract": "current-official.json#/rest/57",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetGameStats",
+        "path": "/live_data/milestone/{milestone_id}/game_stats",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetWeatherIndex",
+      "contract": "current-official.json#/rest/58",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetWeatherIndex",
+        "path": "/live_data/weather/{city}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetWeatherIndexCalibrations",
+      "contract": "current-official.json#/rest/59",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetWeatherIndexCalibrations",
+        "path": "/live_data/weather/{city}/calibrations",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetLiveData",
+      "contract": "current-official.json#/rest/60",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetLiveData",
+        "path": "/live_data/{type}/milestone/{milestone_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMarkets",
+      "contract": "current-official.json#/rest/61",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMarkets",
+        "path": "/markets",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "BatchGetMarketCandlesticks",
+      "contract": "current-official.json#/rest/62",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "BatchGetMarketCandlesticks",
+        "path": "/markets/candlesticks",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMarketOrderbooks",
+      "contract": "current-official.json#/rest/63",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMarketOrderbooks",
+        "path": "/markets/orderbooks",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetTrades",
+      "contract": "current-official.json#/rest/64",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetTrades",
+        "path": "/markets/trades",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMarket",
+      "contract": "current-official.json#/rest/65",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMarket",
+        "path": "/markets/{ticker}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMarketOrderbook",
+      "contract": "current-official.json#/rest/66",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMarketOrderbook",
+        "path": "/markets/{ticker}/orderbook",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMilestones",
+      "contract": "current-official.json#/rest/67",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMilestones",
+        "path": "/milestones",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMilestone",
+      "contract": "current-official.json#/rest/68",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMilestone",
+        "path": "/milestones/{milestone_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMultivariateEventCollections",
+      "contract": "current-official.json#/rest/69",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMultivariateEventCollections",
+        "path": "/multivariate_event_collections",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMultivariateEventCollection",
+      "contract": "current-official.json#/rest/70",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMultivariateEventCollection",
+        "path": "/multivariate_event_collections/{collection_ticker}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateMarketInMultivariateEventCollection",
+      "contract": "current-official.json#/rest/71",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateMarketInMultivariateEventCollection",
+        "path": "/multivariate_event_collections/{collection_ticker}",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetBalance",
+      "contract": "current-official.json#/rest/72",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetBalance",
+        "path": "/portfolio/balance",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetDeposits",
+      "contract": "current-official.json#/rest/73",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetDeposits",
+        "path": "/portfolio/deposits",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CancelAllOrders",
+      "contract": "current-official.json#/rest/74",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CancelAllOrders",
+        "path": "/portfolio/events/orders",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateOrderV2",
+      "contract": "current-official.json#/rest/75",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateOrderV2",
+        "path": "/portfolio/events/orders",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "BatchCancelOrdersV2",
+      "contract": "current-official.json#/rest/76",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "BatchCancelOrdersV2",
+        "path": "/portfolio/events/orders/batched",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "BatchCreateOrdersV2",
+      "contract": "current-official.json#/rest/77",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "BatchCreateOrdersV2",
+        "path": "/portfolio/events/orders/batched",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CancelOrderV2",
+      "contract": "current-official.json#/rest/78",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CancelOrderV2",
+        "path": "/portfolio/events/orders/{order_id}",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "AmendOrderV2",
+      "contract": "current-official.json#/rest/79",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "AmendOrderV2",
+        "path": "/portfolio/events/orders/{order_id}/amend",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "DecreaseOrderV2",
+      "contract": "current-official.json#/rest/80",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "DecreaseOrderV2",
+        "path": "/portfolio/events/orders/{order_id}/decrease",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetFills",
+      "contract": "current-official.json#/rest/81",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetFills",
+        "path": "/portfolio/fills",
+        "method": "GET",
+        "status": "reviewed",
+        "contractId": "portfolio.fills.list"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "IntraExchangeInstanceTransfer",
+      "contract": "current-official.json#/rest/82",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "IntraExchangeInstanceTransfer",
+        "path": "/portfolio/intra_exchange_instance_transfer",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetIntraExchangeInstanceTransfers",
+      "contract": "current-official.json#/rest/83",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetIntraExchangeInstanceTransfers",
+        "path": "/portfolio/intra_exchange_instance_transfers",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetIntraExchangeInstanceTransfer",
+      "contract": "current-official.json#/rest/84",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetIntraExchangeInstanceTransfer",
+        "path": "/portfolio/intra_exchange_instance_transfers/{transfer_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetOrderGroups",
+      "contract": "current-official.json#/rest/85",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetOrderGroups",
+        "path": "/portfolio/order_groups",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateOrderGroup",
+      "contract": "current-official.json#/rest/86",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateOrderGroup",
+        "path": "/portfolio/order_groups/create",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "DeleteOrderGroup",
+      "contract": "current-official.json#/rest/87",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "DeleteOrderGroup",
+        "path": "/portfolio/order_groups/{order_group_id}",
+        "method": "DELETE",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetOrderGroup",
+      "contract": "current-official.json#/rest/88",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetOrderGroup",
+        "path": "/portfolio/order_groups/{order_group_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "UpdateOrderGroupLimit",
+      "contract": "current-official.json#/rest/89",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "UpdateOrderGroupLimit",
+        "path": "/portfolio/order_groups/{order_group_id}/limit",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "ResetOrderGroup",
+      "contract": "current-official.json#/rest/90",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "ResetOrderGroup",
+        "path": "/portfolio/order_groups/{order_group_id}/reset",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "TriggerOrderGroup",
+      "contract": "current-official.json#/rest/91",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "TriggerOrderGroup",
+        "path": "/portfolio/order_groups/{order_group_id}/trigger",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetOrders",
+      "contract": "current-official.json#/rest/92",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetOrders",
+        "path": "/portfolio/orders",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetOrderQueuePositions",
+      "contract": "current-official.json#/rest/93",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetOrderQueuePositions",
+        "path": "/portfolio/orders/queue_positions",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetOrder",
+      "contract": "current-official.json#/rest/94",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetOrder",
+        "path": "/portfolio/orders/{order_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetOrderQueuePosition",
+      "contract": "current-official.json#/rest/95",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetOrderQueuePosition",
+        "path": "/portfolio/orders/{order_id}/queue_position",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetPositions",
+      "contract": "current-official.json#/rest/96",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetPositions",
+        "path": "/portfolio/positions",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetSettlements",
+      "contract": "current-official.json#/rest/97",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetSettlements",
+        "path": "/portfolio/settlements",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "CreateSubaccount",
+      "contract": "current-official.json#/rest/98",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "CreateSubaccount",
+        "path": "/portfolio/subaccounts",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetSubaccountBalances",
+      "contract": "current-official.json#/rest/99",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetSubaccountBalances",
+        "path": "/portfolio/subaccounts/balances",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetSubaccountNetting",
+      "contract": "current-official.json#/rest/100",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetSubaccountNetting",
+        "path": "/portfolio/subaccounts/netting",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "UpdateSubaccountNetting",
+      "contract": "current-official.json#/rest/101",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "UpdateSubaccountNetting",
+        "path": "/portfolio/subaccounts/netting",
+        "method": "PUT",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "ApplySubaccountTransfer",
+      "contract": "current-official.json#/rest/102",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "ApplySubaccountTransfer",
+        "path": "/portfolio/subaccounts/transfer",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetSubaccountTransfers",
+      "contract": "current-official.json#/rest/103",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetSubaccountTransfers",
+        "path": "/portfolio/subaccounts/transfers",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetPortfolioRestingOrderTotalValue",
+      "contract": "current-official.json#/rest/104",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetPortfolioRestingOrderTotalValue",
+        "path": "/portfolio/summary/total_resting_order_value",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetTargetBalanceAllocation",
+      "contract": "current-official.json#/rest/105",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetTargetBalanceAllocation",
+        "path": "/portfolio/target_balance_allocation",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "SetTargetBalanceAllocation",
+      "contract": "current-official.json#/rest/106",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "SetTargetBalanceAllocation",
+        "path": "/portfolio/target_balance_allocation",
+        "method": "POST",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetWithdrawals",
+      "contract": "current-official.json#/rest/107",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetWithdrawals",
+        "path": "/portfolio/withdrawals",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetFiltersForSports",
+      "contract": "current-official.json#/rest/108",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetFiltersForSports",
+        "path": "/search/filters_by_sport",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetTagsForSeriesCategories",
+      "contract": "current-official.json#/rest/109",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetTagsForSeriesCategories",
+        "path": "/search/tags_by_categories",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetSeriesList",
+      "contract": "current-official.json#/rest/110",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetSeriesList",
+        "path": "/series",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetSeriesFeeChanges",
+      "contract": "current-official.json#/rest/111",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetSeriesFeeChanges",
+        "path": "/series/fee_changes",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetSeries",
+      "contract": "current-official.json#/rest/112",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetSeries",
+        "path": "/series/{series_ticker}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMarketCandlesticksByEvent",
+      "contract": "current-official.json#/rest/113",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMarketCandlesticksByEvent",
+        "path": "/series/{series_ticker}/events/{ticker}/candlesticks",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetEventForecastPercentilesHistory",
+      "contract": "current-official.json#/rest/114",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetEventForecastPercentilesHistory",
+        "path": "/series/{series_ticker}/events/{ticker}/forecast_percentile_history",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetMarketCandlesticks",
+      "contract": "current-official.json#/rest/115",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetMarketCandlesticks",
+        "path": "/series/{series_ticker}/markets/{ticker}/candlesticks",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetStructuredTargets",
+      "contract": "current-official.json#/rest/116",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetStructuredTargets",
+        "path": "/structured_targets",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "GetStructuredTarget",
+      "contract": "current-official.json#/rest/117",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "operationId": "GetStructuredTarget",
+        "path": "/structured_targets/{structured_target_id}",
+        "method": "GET",
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    }
+  ],
+  "channels": [
+    {
+      "id": "cfbenchmarks_value",
+      "contract": "current-official.json#/websocket/channels/0",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "cfbenchmarks_value_5hz",
+      "contract": "current-official.json#/websocket/channels/1",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "communications",
+      "contract": "current-official.json#/websocket/channels/2",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "control_frames",
+      "contract": "current-official.json#/websocket/channels/3",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "fill",
+      "contract": "current-official.json#/websocket/channels/4",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "market_lifecycle_v2",
+      "contract": "current-official.json#/websocket/channels/5",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "market_positions",
+      "contract": "current-official.json#/websocket/channels/6",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "multivariate_market_lifecycle",
+      "contract": "current-official.json#/websocket/channels/7",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "order_group_updates",
+      "contract": "current-official.json#/websocket/channels/8",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "orderbook_delta",
+      "contract": "current-official.json#/websocket/channels/9",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "pyth_value",
+      "contract": "current-official.json#/websocket/channels/10",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "root",
+      "contract": "current-official.json#/websocket/channels/11",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "ticker",
+      "contract": "current-official.json#/websocket/channels/12",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "trade",
+      "contract": "current-official.json#/websocket/channels/13",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    },
+    {
+      "id": "user_orders",
+      "contract": "current-official.json#/websocket/channels/14",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      },
+      "effective": "present-in-source"
+    }
+  ]
+}

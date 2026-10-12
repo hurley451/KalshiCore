@@ -20,6 +20,8 @@ test("release distribution includes the approved MIT license and matching packag
   assert.equal(pkg.license, "MIT");
   assert.equal(lock.packages[""].license, pkg.license);
   assert.equal(pkg.private, true);
+  assert.match(pkg.scripts.test, /full-contracts\.test\.js/);
+  assert.match(pkg.scripts.validate, /tools\/full-contracts\.js/);
   assert.match(steps.find((step) => step.name === "Build suite archive").run, /\n\s+LICENSE \\/);
 });
 

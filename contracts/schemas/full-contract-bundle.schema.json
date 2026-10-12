@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "formatVersion", "provenance", "sources", "rest", "websocket", "counts"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "formatVersion": { "const": 1 },
+    "provenance": { "const": "official-source-imported" },
+    "sources": {
+      "type": "object", "required": ["openapi", "asyncapi"], "additionalProperties": false,
+      "properties": { "openapi": { "$ref": "#/$defs/source" }, "asyncapi": { "$ref": "#/$defs/source" } }
+    },
+    "rest": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "source", "method", "path", "parameters", "requestBody", "responses", "security", "servers", "deprecated"] } },
+    "websocket": { "type": "object", "required": ["channels", "operations", "messages", "sourceGaps"], "additionalProperties": false,
+      "properties": { "channels": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "source", "address", "messages", "operations", "commandContracts", "commandScope"] } }, "operations": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["id", "source", "action", "channel", "messages"] } }, "messages": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["name", "source", "contract", "kind", "channelBindings"] } }, "sourceGaps": { "type": "array", "items": { "type": "object", "required": ["source", "issue"] } } }
+    },
+    "counts": { "type": "object", "required": ["restOperations", "channels", "websocketOperations", "channelMessages", "componentMessages", "schemas", "references"], "additionalProperties": { "type": "integer", "minimum": 1 } }
+  },
+  "$defs": {
+    "source": { "type": "object", "additionalProperties": false, "required": ["sourceId", "url", "sha256", "snapshot", "dialect", "document", "references", "schemas"],
+      "properties": { "sourceId": { "type": "string" }, "url": { "type": "string", "format": "uri" }, "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }, "snapshot": { "type": "string" }, "dialect": { "type": "string" }, "document": { "type": "object" }, "references": { "type": "array", "items": { "type": "object", "required": ["at", "target"], "additionalProperties": false, "properties": { "at": { "type": "string" }, "target": { "type": "string" } } } }, "schemas": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^#/" } } }
+    }
+  }
+}
