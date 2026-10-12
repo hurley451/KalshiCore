@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/manual-source-index.schema.json",
+  "id": "kalshi-manual-sources",
+  "sources": [
+    {
+      "id": "cfbenchmarks-rest-manual",
+      "kind": "kalshi-docs-manual",
+      "url": "https://docs.kalshi.com/cfbenchmarks/rest-passthrough",
+      "observedAt": "2026-10-12T12:13:36.758Z",
+      "rawSha256": "bf0ef09aae3c97542090c17bce999e04441f830e6db390c6d392e67929996b51",
+      "factsPath": "sources/manual/cfbenchmarks-rest.json",
+      "factsSha256": "378168c12ee1d7374d225686e24e6ab56f95df3c914f9bfa08c1b7c687ff4ef4",
+      "hashScope": "derived-file-bytes",
+      "entryIds": [
+        "cfbenchmarks.values",
+        "cfbenchmarks.history-values",
+        "cfbenchmarks.passthrough"
+      ]
+    }
+  ]
+}

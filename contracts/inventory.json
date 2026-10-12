@@ -6,6 +6,9 @@
     {
       "id": "portfolio.fills.list",
       "path": "endpoints/portfolio.fills.list.json"
-    }
+    },
+    { "id": "cfbenchmarks.values", "path": "endpoints/cfbenchmarks.values.json" },
+    { "id": "cfbenchmarks.history-values", "path": "endpoints/cfbenchmarks.history-values.json" },
+    { "id": "cfbenchmarks.passthrough", "path": "endpoints/cfbenchmarks.passthrough.json" }
   ]
 }

@@ -136,3 +136,31 @@ preserving names or counts cannot substitute order cases for error, pagination,
 composition, or WebSocket cases. Legitimate payload edits are preserved when
 they still exercise the required behavior. These are representative contract
 cases, not complete SDK implementation or live API approval.
+
+## Manually Documented REST
+
+CF Benchmarks REST passthrough has separate source facts, contracts and cases
+because it is documented outside the imported OpenAPI files. Three helper entries
+describe one passthrough surface, not three exhaustive provider APIs:
+`cfbenchmarks.values`, `cfbenchmarks.history-values` and
+`cfbenchmarks.passthrough`.
+
+The contracts record authenticated GET requests under the Kalshi CF prefix,
+50 Read-token cost, open provider paths/query keys, the ignored
+`includeVerification` key, an open JSON envelope with required `data`, and
+documented upstream error mappings. Provider payloads and error bodies remain
+unknown rather than inferred from examples. Decoded relative path and percent
+input restrictions are explicitly SDK conventions, not provider restrictions.
+
+```sh
+npm run validate:cf
+npm test
+npm run validate
+```
+
+The source record distinguishes the retrieved page hash from derived facts;
+the page itself is not bundled. Positive/negative cases check request mapping,
+query pairs, path confinement, signing preimages, envelopes, error metadata and
+cost. These are contract checks, not cryptographic signing, network dispatch or
+rate-admission execution. The manual coverage matrix keeps target adoption
+pending until SDK adapters and wire tests provide that evidence.

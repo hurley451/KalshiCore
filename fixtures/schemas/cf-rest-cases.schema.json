@@ -1,0 +1,590 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kalshicore.dev/fixtures/schemas/cf-rest-cases.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "kind",
+    "description",
+    "input",
+    "expected"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "const": "cfbenchmarks.rest-cases"
+    },
+    "kind": {
+      "const": "cf-rest-contract-cases"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input": {
+      "type": "object",
+      "required": [
+        "cases"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "cases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "caseId",
+              "name",
+              "kind",
+              "identity",
+              "input",
+              "expected"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "caseId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "enum": [
+                  "request",
+                  "signing",
+                  "envelope",
+                  "mapping",
+                  "error",
+                  "metadata"
+                ]
+              },
+              "identity": {
+                "type": "object",
+                "required": [
+                  "sourceId",
+                  "manualEntryId"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "sourceId": {
+                    "const": "cfbenchmarks-rest-manual"
+                  },
+                  "manualEntryId": {
+                    "enum": [
+                      "cfbenchmarks.values",
+                      "cfbenchmarks.history-values",
+                      "cfbenchmarks.passthrough"
+                    ]
+                  }
+                }
+              },
+              "input": {
+                "type": "object"
+              },
+              "expected": {
+                "type": "object"
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "request"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "input": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "providerPath",
+                        "queryPairs",
+                        "credentialsProvided"
+                      ],
+                      "properties": {
+                        "providerPath": true,
+                        "queryPairs": true,
+                        "credentialsProvided": {
+                          "type": "boolean"
+                        }
+                      }
+                    },
+                    "expected": {
+                      "type": "object",
+                      "required": [
+                        "valid"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "valid": {
+                          "type": "boolean"
+                        },
+                        "request": {
+                          "type": "object",
+                          "required": [
+                            "method",
+                            "origin",
+                            "pathname",
+                            "pathAndQuery",
+                            "queryPairs",
+                            "body",
+                            "auth",
+                            "rateCost",
+                            "signingPath"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "method": {
+                              "const": "GET"
+                            },
+                            "origin": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "pathname": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "pathAndQuery": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "queryPairs": {
+                              "type": "array",
+                              "items": {
+                                "type": "array",
+                                "prefixItems": [
+                                  {
+                                    "type": "string"
+                                  },
+                                  {
+                                    "type": "string"
+                                  }
+                                ],
+                                "minItems": 2,
+                                "maxItems": 2
+                              }
+                            },
+                            "body": {
+                              "type": "null"
+                            },
+                            "auth": {
+                              "const": "api-key"
+                            },
+                            "rateCost": {
+                              "type": "object",
+                              "required": [
+                                "bucket",
+                                "tokens"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "bucket": {
+                                  "const": "Read"
+                                },
+                                "tokens": {
+                                  "const": 50
+                                }
+                              }
+                            },
+                            "signingPath": {
+                              "type": "string",
+                              "minLength": 1
+                            }
+                          }
+                        },
+                        "dispatches": {
+                          "const": 0
+                        },
+                        "reason": {
+                          "enum": [
+                            "provider-path",
+                            "query-pairs",
+                            "credentials",
+                            "confinement"
+                          ]
+                        }
+                      },
+                      "allOf": [
+                        {
+                          "if": {
+                            "properties": {
+                              "valid": {
+                                "const": true
+                              }
+                            }
+                          },
+                          "then": {
+                            "required": [
+                              "request"
+                            ]
+                          },
+                          "else": {
+                            "required": [
+                              "dispatches",
+                              "reason"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "signing"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "input": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "pathname",
+                        "method",
+                        "timestampMs",
+                        "query",
+                        "candidateMessage"
+                      ],
+                      "properties": {
+                        "pathname": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "method": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "timestampMs": {
+                          "type": "string",
+                          "pattern": "^[0-9]+$"
+                        },
+                        "query": {
+                          "type": "string"
+                        },
+                        "candidateMessage": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "expected": {
+                      "type": "object",
+                      "required": [
+                        "valid",
+                        "signatureMessage"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "valid": {
+                          "type": "boolean"
+                        },
+                        "signatureMessage": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "envelope"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "input": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "body"
+                      ],
+                      "properties": {
+                        "body": true
+                      }
+                    },
+                    "expected": {
+                      "type": "object",
+                      "required": [
+                        "valid"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "valid": {
+                          "type": "boolean"
+                        },
+                        "body": true
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "mapping"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "input": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "condition",
+                        "status",
+                        "code",
+                        "upstreamDetail"
+                      ],
+                      "properties": {
+                        "condition": {
+                          "enum": [
+                            "not-found",
+                            "rate-limit",
+                            "authorization",
+                            "server",
+                            "timeout",
+                            "client"
+                          ]
+                        },
+                        "status": {
+                          "type": "integer",
+                          "minimum": 100,
+                          "maximum": 599
+                        },
+                        "code": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "upstreamDetail": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      }
+                    },
+                    "expected": {
+                      "type": "object",
+                      "required": [
+                        "valid",
+                        "mapping"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "valid": {
+                          "type": "boolean"
+                        },
+                        "mapping": {
+                          "type": "object",
+                          "required": [
+                            "status",
+                            "code",
+                            "upstreamDetail"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "status": {
+                              "type": "integer"
+                            },
+                            "code": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "upstreamDetail": {
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "error"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "input": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "status",
+                        "format",
+                        "headers",
+                        "rawBase64"
+                      ],
+                      "properties": {
+                        "status": {
+                          "type": "integer",
+                          "minimum": 100,
+                          "maximum": 599
+                        },
+                        "format": {
+                          "enum": [
+                            "json",
+                            "text",
+                            "binary",
+                            "empty"
+                          ]
+                        },
+                        "headers": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        },
+                        "rawBase64": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "expected": {
+                      "type": "object",
+                      "required": [
+                        "valid",
+                        "preservedResponse"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "valid": {
+                          "const": true
+                        },
+                        "preservedResponse": {
+                          "type": "object",
+                          "required": [
+                            "status",
+                            "headers",
+                            "rawBase64"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "status": {
+                              "type": "integer"
+                            },
+                            "headers": {
+                              "type": "object",
+                              "additionalProperties": {
+                                "type": "string"
+                              }
+                            },
+                            "rawBase64": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "kind": {
+                      "const": "metadata"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "input": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "method",
+                        "auth",
+                        "prefix",
+                        "rateCost"
+                      ],
+                      "properties": {
+                        "method": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "auth": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "prefix": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "rateCost": {
+                          "type": "object",
+                          "required": [
+                            "bucket",
+                            "tokens"
+                          ],
+                          "additionalProperties": false,
+                          "properties": {
+                            "bucket": {
+                              "type": "string",
+                              "minLength": 1
+                            },
+                            "tokens": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "expected": {
+                      "type": "object",
+                      "required": [
+                        "valid"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "valid": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "expected": {
+      "type": "object",
+      "required": [
+        "allCasesMatch"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "allCasesMatch": {
+          "const": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kalshicore.dev/sources/schemas/manual-source-index.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "const": "kalshi-manual-sources"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "url",
+          "observedAt",
+          "rawSha256",
+          "factsPath",
+          "factsSha256",
+          "hashScope",
+          "entryIds"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "const": "kalshi-docs-manual"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "observedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "rawSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "factsPath": {
+            "type": "string",
+            "pattern": "^sources/manual/[^/]+\\.json$"
+          },
+          "factsSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "hashScope": {
+            "const": "derived-file-bytes"
+          },
+          "entryIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

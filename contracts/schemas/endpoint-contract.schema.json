@@ -57,6 +57,10 @@
         "none"
       ]
     },
+    "rateCost": {
+      "type": "object", "required": ["bucket", "tokens"], "additionalProperties": false,
+      "properties": { "bucket": { "const": "Read" }, "tokens": { "type": "integer", "minimum": 1 } }
+    },
     "request": {
       "type": "object",
       "additionalProperties": false,
@@ -72,6 +76,22 @@
         },
         "bodySchema": {
           "type": "object"
+        },
+        "passthrough": {
+          "type": "object", "required": ["prefix", "providerPath", "query", "signingPath"], "additionalProperties": false,
+          "properties": {
+            "prefix": { "type": "string" },
+            "providerPath": { "enum": ["values", "history/values", "decoded-relative-segments"] },
+            "query": {
+              "type": "object", "required": ["representation", "open", "ignoredKeys", "preserve"], "additionalProperties": false,
+              "properties": {
+                "representation": { "const": "ordered-string-pairs" }, "open": { "const": true },
+                "ignoredKeys": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+                "preserve": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+              }
+            },
+            "signingPath": { "const": "final-encoded-pathname-without-query" }
+          }
         }
       }
     },
@@ -153,6 +173,9 @@
         "operationId": {
           "type": "string",
           "minLength": 1
+        },
+        "manualEntryId": {
+          "type": "string", "minLength": 1
         }
       }
     }

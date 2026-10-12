@@ -9,7 +9,8 @@
     "validate": "node tools/validate.js && node tools/full-contracts.js",
     "import:perps": "node tools/perps-contracts.js import",
     "validate:perps": "node tools/perps-contracts.js",
-    "test": "node tools/validate.test.js && node --test tools/refresh-official-sources.test.js tools/release-workflow.test.js tools/full-contracts.test.js tools/perps-contracts.test.js"
+    "validate:cf": "node tools/cf-contracts.js",
+    "test": "node tools/validate.test.js && node --test tools/refresh-official-sources.test.js tools/release-workflow.test.js tools/full-contracts.test.js tools/perps-contracts.test.js tools/cf-contracts.test.js"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
