@@ -6,8 +6,8 @@
   "description": "Shared contracts, fixtures, and conformance framework for Kalshi SDK implementations.",
   "scripts": {
     "refresh:sources": "node tools/refresh-official-sources.js",
-    "validate": "node tools/validate.js",
-    "test": "node tools/validate.test.js && node --test tools/refresh-official-sources.test.js tools/release-workflow.test.js"
+    "validate": "node tools/validate.js && node tools/full-contracts.js",
+    "test": "node tools/validate.test.js && node --test tools/refresh-official-sources.test.js tools/release-workflow.test.js tools/full-contracts.test.js"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

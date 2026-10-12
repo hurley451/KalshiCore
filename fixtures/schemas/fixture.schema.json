@@ -13,6 +13,17 @@
   "additionalProperties": false,
   "allOf": [
     {
+      "if": { "properties": { "kind": { "const": "official-contract-cases" } } },
+      "then": { "properties": {
+        "input": { "type": "object", "required": ["cases"], "additionalProperties": false,
+          "properties": { "cases": { "type": "array", "minItems": 1, "items": {
+            "type": "object", "required": ["name", "source", "schema", "value", "valid"], "additionalProperties": false,
+            "properties": { "name": { "type": "string", "minLength": 1 }, "source": { "enum": ["openapi", "asyncapi"] }, "schema": { "type": "string", "pattern": "^#/" }, "value": true, "valid": { "type": "boolean" } }
+          } } } },
+        "expected": { "type": "object", "required": ["allCasesMatch"], "additionalProperties": false, "properties": { "allCasesMatch": { "const": true } } }
+      } }
+    },
+    {
       "if": { "properties": { "kind": { "const": "auth-signing" } } },
       "then": {
         "properties": {
@@ -171,6 +182,7 @@
     "kind": {
       "type": "string",
       "enum": [
+        "official-contract-cases",
         "auth-signing",
         "rest-request-serialization",
         "rest-response-shape",
