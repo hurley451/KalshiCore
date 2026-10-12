@@ -1,0 +1,80 @@
+{
+  "$schema": "../schemas/endpoint-contract.schema.json",
+  "id": "cfbenchmarks.values",
+  "name": "cfbenchmarks.values",
+  "status": "ready",
+  "description": "Manual helper over one documented passthrough; not an enumerated provider API. Path/query validation is an approved SDK input convention.",
+  "method": "GET",
+  "path": "/trade-api/v2/cfbenchmarks/values",
+  "auth": "api-key",
+  "rateCost": {
+    "bucket": "Read",
+    "tokens": 50
+  },
+  "request": {
+    "passthrough": {
+      "prefix": "/trade-api/v2/cfbenchmarks/",
+      "providerPath": "values",
+      "query": {
+        "representation": "ordered-string-pairs",
+        "open": true,
+        "ignoredKeys": [
+          "includeVerification"
+        ],
+        "preserve": [
+          "duplicates",
+          "order",
+          "decoded-values"
+        ]
+      },
+      "signingPath": "final-encoded-pathname-without-query"
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "description": "Open envelope containing unknown upstream JSON.",
+      "bodySchema": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {}
+        },
+        "additionalProperties": true
+      }
+    },
+    {
+      "status": 400,
+      "description": "Documented upstream condition mapping; error body shape unspecified.",
+      "bodySchema": {}
+    },
+    {
+      "status": 404,
+      "description": "Documented upstream condition mapping; error body shape unspecified.",
+      "bodySchema": {}
+    },
+    {
+      "status": 429,
+      "description": "Documented upstream condition mapping; error body shape unspecified.",
+      "bodySchema": {}
+    },
+    {
+      "status": 503,
+      "description": "Documented upstream condition mapping; error body shape unspecified.",
+      "bodySchema": {}
+    }
+  ],
+  "fixtures": [
+    "../../fixtures/cfbenchmarks/rest-cases.json"
+  ],
+  "source": {
+    "provenance": "official-confirmed",
+    "kind": "kalshi-docs",
+    "url": "https://docs.kalshi.com/cfbenchmarks/rest-passthrough",
+    "observedAt": "2026-10-12T12:13:36.758Z",
+    "sourceId": "cfbenchmarks-rest-manual",
+    "manualEntryId": "cfbenchmarks.values"
+  }
+}

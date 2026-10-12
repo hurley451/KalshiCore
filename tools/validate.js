@@ -117,12 +117,16 @@ function validateSchemas(parsed) {
     const schemaPath = resolveReference(relativePath, document.$schema);
     const expectedSchema = relativePath.startsWith("contracts/endpoints/")
       ? "contracts/schemas/endpoint-contract.schema.json"
+      : relativePath.startsWith("fixtures/cfbenchmarks/") ? "fixtures/schemas/cf-rest-cases.schema.json"
       : relativePath.startsWith("fixtures/perps/") ? "fixtures/schemas/source-contract-cases.schema.json"
       : relativePath.startsWith("fixtures/") ? "fixtures/schemas/fixture.schema.json"
       : relativePath.startsWith("targets/") ? "targets/schemas/sdk-target.schema.json"
       : {
         "contracts/inventory.json": "contracts/schemas/contract-inventory.schema.json",
+        "contracts/manual-coverage.json": "contracts/schemas/manual-coverage.schema.json",
         "contracts/official-coverage.json": "contracts/schemas/official-coverage.schema.json",
+        "sources/manual/index.json": "sources/schemas/manual-source-index.schema.json",
+        "sources/manual/cfbenchmarks-rest.json": "sources/schemas/manual-facts.schema.json",
         "sources/official/kalshi-official-sources.json": "sources/schemas/official-source-index.schema.json",
         "sources/official/rest-openapi-operations.json": "sources/schemas/openapi-operations.schema.json",
         "sources/official/docs-links.json": "sources/schemas/docs-links.schema.json"
@@ -229,7 +233,8 @@ function validateEndpointContracts(parsed) {
     }
 
     if (contract.source?.sourceId) {
-      expect(sourceIds.has(contract.source.sourceId), `${relativePath}: source.sourceId ${contract.source.sourceId} is not in official source index`);
+      const manual = parsed.get("sources/manual/index.json")?.sources || [];
+      expect(sourceIds.has(contract.source.sourceId) || manual.some((source) => source.id === contract.source.sourceId), `${relativePath}: source.sourceId ${contract.source.sourceId} is not in official source index or manual source index`);
     }
     if (contract.source?.operationId) {
       const operation = operations.get(contract.source.operationId);
@@ -434,6 +439,11 @@ function main() {
     validateSources(parsed);
     validateOfficialCoverage(parsed, contractIds);
     validateTargets(parsed, contractIds, fixtureIds);
+    try {
+      require("./cf-contracts").validateCf(root);
+    } catch (error) {
+      errors.push(`CF contracts: ${error.message}`);
+    }
     try {
       require("./perps-contracts").validatePerps(root);
     } catch (error) {

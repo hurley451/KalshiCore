@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kalshicore.dev/sources/schemas/manual-facts.schema.json",
+  "type": "object",
+  "required": [
+    "id",
+    "representation",
+    "url",
+    "retrieval",
+    "facts",
+    "conventions",
+    "gaps"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "representation": {
+      "const": "derived-facts"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "retrieval": {
+      "type": "object",
+      "required": [
+        "url",
+        "observedAt",
+        "contentType",
+        "bytes",
+        "sha256",
+        "hashScope",
+        "rawStored"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "hashScope": {
+          "const": "raw-retrieved-bytes"
+        },
+        "rawStored": {
+          "const": false
+        }
+      }
+    },
+    "facts": {
+      "type": "object"
+    },
+    "conventions": {
+      "type": "object"
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

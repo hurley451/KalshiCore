@@ -76,8 +76,10 @@
               "path": { "$ref": "#/$defs/path" },
               "query": { "$ref": "#/$defs/query" },
               "headers": { "type": "object", "additionalProperties": { "type": "string" } },
+              "queryPairs": { "$ref": "#/$defs/queryPairs" },
               "body": true
-            }
+            },
+            "not": { "required": ["query", "queryPairs"] }
           },
           "expected": {
             "type": "object",
@@ -158,6 +160,12 @@
     }
   ],
   "$defs": {
+    "queryPairs": {
+      "type": "array", "items": {
+        "type": "array", "prefixItems": [{ "type": "string" }, { "type": "string" }],
+        "minItems": 2, "maxItems": 2
+      }
+    },
     "nonEmptyString": { "type": "string", "minLength": 1 },
     "method": { "type": "string", "enum": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"] },
     "path": { "type": "string", "pattern": "^/[^\\s]*$" },

@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kalshicore.dev/contracts/schemas/manual-coverage.schema.json",
+  "type": "object",
+  "required": [
+    "sourceId",
+    "fixtureId",
+    "entries",
+    "pendingTargets"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "sourceId": {
+      "const": "cfbenchmarks-rest-manual"
+    },
+    "fixtureId": {
+      "const": "cfbenchmarks.rest-cases"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "manualEntryId",
+          "contractId",
+          "fixtureId",
+          "caseIds"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "manualEntryId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "contractId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fixtureId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "caseIds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "pendingTargets": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "targetId",
+          "status",
+          "contractIds",
+          "fixtureIds",
+          "caseIds"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "targetId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "const": "pending-sdk-support"
+          },
+          "contractIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "fixtureIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "caseIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

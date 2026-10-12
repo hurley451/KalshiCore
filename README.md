@@ -60,6 +60,14 @@ bundles retain 51 Perps REST operations, 27 clearing-member REST operations, and
 8 Perps WebSocket channels. Import coverage is not manual contract approval.
 See [complete source contracts](docs/FULL_OFFICIAL_CONTRACTS.md).
 
+The manually documented CF Benchmarks REST passthrough is tracked separately
+from OpenAPI operation counts. Three helper contracts cover latest values,
+historical values and a provider-relative passthrough. The
+[manual coverage matrix](contracts/manual-coverage.json) links their cases;
+SDK adoption remains pending. [Recorded facts](sources/manual/cfbenchmarks-rest.json)
+distinguish official API behavior from SDK path conventions without storing
+the full documentation page.
+
 Four offline fixtures cover signing canonicalization, fills query serialization,
 fills response parsing and order-book message replay. These are focused cases,
 not full cryptographic, live API, all-endpoint or WebSocket connection approval.
@@ -95,6 +103,7 @@ Source metadata records URLs, retrieval timestamps, content hashes and counts:
 - [Perps REST OpenAPI](https://docs.kalshi.com/perps_openapi.yaml)
 - [Perps clearing-member OpenAPI](https://docs.kalshi.com/perps_scm_openapi.yaml)
 - [Perps WebSocket AsyncAPI](https://docs.kalshi.com/perps_asyncapi.yaml)
+- [CF Benchmarks REST passthrough](https://docs.kalshi.com/cfbenchmarks/rest-passthrough)
 
 Refresh in an isolated checkout, then review the complete diff:
 

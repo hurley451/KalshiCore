@@ -1,0 +1,91 @@
+{
+  "$schema": "../schemas/manual-facts.schema.json",
+  "id": "cfbenchmarks-rest-manual",
+  "representation": "derived-facts",
+  "url": "https://docs.kalshi.com/cfbenchmarks/rest-passthrough",
+  "retrieval": {
+    "url": "https://docs.kalshi.com/cfbenchmarks/rest-passthrough.md",
+    "observedAt": "2026-10-12T12:13:36.758Z",
+    "contentType": "text/markdown; charset=utf-8",
+    "bytes": 5987,
+    "sha256": "bf0ef09aae3c97542090c17bce999e04441f830e6db390c6d392e67929996b51",
+    "hashScope": "raw-retrieved-bytes",
+    "rawStored": false
+  },
+  "facts": {
+    "method": "GET",
+    "prefix": "/trade-api/v2/cfbenchmarks/",
+    "auth": "api-key",
+    "entitlementRequired": true,
+    "providerCredentials": false,
+    "readTokens": 50,
+    "examplePaths": [
+      "values",
+      "history/values"
+    ],
+    "providerPaths": "open",
+    "queryKeys": "open",
+    "ignoredKey": "includeVerification",
+    "coinAllowlist": false,
+    "signing": "pathname-without-query",
+    "envelope": "required-data-unknown-json-open-object",
+    "errorSchema": "unknown",
+    "errorMappings": [
+      {
+        "condition": "not-found",
+        "status": 404,
+        "code": "not_found"
+      },
+      {
+        "condition": "rate-limit",
+        "status": 429,
+        "code": "too_many_requests"
+      },
+      {
+        "condition": "authorization",
+        "status": 503,
+        "code": "service_unavailable"
+      },
+      {
+        "condition": "server",
+        "status": 503,
+        "code": "service_unavailable"
+      },
+      {
+        "condition": "timeout",
+        "status": 503,
+        "code": "service_unavailable"
+      },
+      {
+        "condition": "client",
+        "status": 400,
+        "code": "bad_request",
+        "upstreamDetail": true
+      }
+    ]
+  },
+  "conventions": {
+    "provenance": "approved-sdk-convention",
+    "providerPath": "decoded-relative-segments-encoded-once",
+    "confinement": "configured-origin-and-fixed-prefix",
+    "reject": [
+      "empty-path-or-segment",
+      "leading-or-trailing-slash",
+      "dot-segments",
+      "backslash",
+      "percent",
+      "control",
+      "query",
+      "fragment",
+      "url-or-scheme"
+    ],
+    "queryPairs": "ordered-string-pairs-preserve-duplicates-order-decoded-values",
+    "ignoredKey": "remove-every-exact-includeVerification-pair",
+    "invalidInputDispatches": 0,
+    "providerRestriction": false
+  },
+  "gaps": [
+    "No upstream data or error-body schema imported.",
+    "No live entitlement, forwarding, signature, retry, rate admission or SDK wire execution demonstrated."
+  ]
+}
