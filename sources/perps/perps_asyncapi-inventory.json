@@ -1,0 +1,2218 @@
+{
+  "$schema": "../schemas/perps-artifact.schema.json",
+  "sourceId": "perps_asyncapi",
+  "counts": {
+    "restOperations": 0,
+    "channels": 8,
+    "websocketOperations": 22,
+    "channelMessages": 22,
+    "componentMessages": 22,
+    "schemas": 49,
+    "references": 152,
+    "responses": 0
+  },
+  "entries": [
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveError"
+      },
+      "operationId": "receiveError",
+      "contract": "perps_asyncapi.json#/websocket/operations/0",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/errorResponse"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveFill"
+      },
+      "operationId": "receiveFill",
+      "contract": "perps_asyncapi.json#/websocket/operations/1",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/fill"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/fill/messages/fill"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveListSubscriptions"
+      },
+      "operationId": "receiveListSubscriptions",
+      "contract": "perps_asyncapi.json#/websocket/operations/2",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/listSubscriptionsResponse"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOk"
+      },
+      "operationId": "receiveOk",
+      "contract": "perps_asyncapi.json#/websocket/operations/3",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/okResponse"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderGroupUpdates"
+      },
+      "operationId": "receiveOrderGroupUpdates",
+      "contract": "perps_asyncapi.json#/websocket/operations/4",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/order_group_updates"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/order_group_updates/messages/orderGroupUpdates"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderbookDelta"
+      },
+      "operationId": "receiveOrderbookDelta",
+      "contract": "perps_asyncapi.json#/websocket/operations/5",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/orderbook_delta/messages/orderbookDelta"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderbookSnapshot"
+      },
+      "operationId": "receiveOrderbookSnapshot",
+      "contract": "perps_asyncapi.json#/websocket/operations/6",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/orderbook_delta/messages/orderbookSnapshot"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receivePing"
+      },
+      "operationId": "receivePing",
+      "contract": "perps_asyncapi.json#/websocket/operations/7",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/control_frames/messages/outgoingPing"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receivePong"
+      },
+      "operationId": "receivePong",
+      "contract": "perps_asyncapi.json#/websocket/operations/8",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/control_frames/messages/outgoingPong"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveSubscribed"
+      },
+      "operationId": "receiveSubscribed",
+      "contract": "perps_asyncapi.json#/websocket/operations/9",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/subscribedResponse"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveTicker"
+      },
+      "operationId": "receiveTicker",
+      "contract": "perps_asyncapi.json#/websocket/operations/10",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/ticker"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/ticker/messages/ticker"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveTrade"
+      },
+      "operationId": "receiveTrade",
+      "contract": "perps_asyncapi.json#/websocket/operations/11",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/trade"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/trade/messages/trade"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveUnsubscribed"
+      },
+      "operationId": "receiveUnsubscribed",
+      "contract": "perps_asyncapi.json#/websocket/operations/12",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/unsubscribedResponse"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveUserOrder"
+      },
+      "operationId": "receiveUserOrder",
+      "contract": "perps_asyncapi.json#/websocket/operations/13",
+      "action": "send",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/user_orders"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/user_orders/messages/userOrder"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendListSubscriptions"
+      },
+      "operationId": "sendListSubscriptions",
+      "contract": "perps_asyncapi.json#/websocket/operations/14",
+      "action": "receive",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/listSubscriptionsCommand"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendPing"
+      },
+      "operationId": "sendPing",
+      "contract": "perps_asyncapi.json#/websocket/operations/15",
+      "action": "receive",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/control_frames/messages/incomingPing"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendPong"
+      },
+      "operationId": "sendPong",
+      "contract": "perps_asyncapi.json#/websocket/operations/16",
+      "action": "receive",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/control_frames/messages/incomingPong"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendSubscribe"
+      },
+      "operationId": "sendSubscribe",
+      "contract": "perps_asyncapi.json#/websocket/operations/17",
+      "action": "receive",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/subscribeCommand"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUnsubscribe"
+      },
+      "operationId": "sendUnsubscribe",
+      "contract": "perps_asyncapi.json#/websocket/operations/18",
+      "action": "receive",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/unsubscribeCommand"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscription"
+      },
+      "operationId": "sendUpdateSubscription",
+      "contract": "perps_asyncapi.json#/websocket/operations/19",
+      "action": "receive",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/updateSubscriptionCommand"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscriptionDelete"
+      },
+      "operationId": "sendUpdateSubscriptionDelete",
+      "contract": "perps_asyncapi.json#/websocket/operations/20",
+      "action": "receive",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/updateSubscriptionDeleteCommand"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscriptionSingleSid"
+      },
+      "operationId": "sendUpdateSubscriptionSingleSid",
+      "contract": "perps_asyncapi.json#/websocket/operations/21",
+      "action": "receive",
+      "channel": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "messages": [
+        {
+          "sourceId": "perps_asyncapi",
+          "pointer": "#/channels/root/messages/updateSubscriptionSingleSidCommand"
+        }
+      ]
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      },
+      "channelId": "control_frames",
+      "contract": "perps_asyncapi.json#/websocket/channels/0"
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/fill"
+      },
+      "channelId": "fill",
+      "contract": "perps_asyncapi.json#/websocket/channels/1"
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/order_group_updates"
+      },
+      "channelId": "order_group_updates",
+      "contract": "perps_asyncapi.json#/websocket/channels/2"
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta"
+      },
+      "channelId": "orderbook_delta",
+      "contract": "perps_asyncapi.json#/websocket/channels/3"
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      },
+      "channelId": "root",
+      "contract": "perps_asyncapi.json#/websocket/channels/4"
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/ticker"
+      },
+      "channelId": "ticker",
+      "contract": "perps_asyncapi.json#/websocket/channels/5"
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/trade"
+      },
+      "channelId": "trade",
+      "contract": "perps_asyncapi.json#/websocket/channels/6"
+    },
+    {
+      "identity": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/user_orders"
+      },
+      "channelId": "user_orders",
+      "contract": "perps_asyncapi.json#/websocket/channels/7"
+    }
+  ],
+  "schemas": [
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/errorResponse/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/fill/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/incomingPing/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/incomingPong/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/listSubscriptionsCommand/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/listSubscriptionsResponse/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/okResponse/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/orderGroupUpdates/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/orderbookDelta/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/orderbookSnapshot/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/outgoingPing/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/outgoingPong/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/subscribeCommand/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/subscribedResponse/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/ticker/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/trade/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/unsubscribeCommand/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/unsubscribedResponse/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/updateSubscriptionCommand/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/updateSubscriptionDeleteCommand/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/updateSubscriptionSingleSidCommand/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/messages/userOrder/payload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/bookSide"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/commandId"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/errorResponsePayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/fundingRate"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/lastUpdateReason"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/listSubscriptionsCommandPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/listSubscriptionsResponsePayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/marginFillPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/marginOrderbookDeltaPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/marginOrderbookSnapshotPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/marginTickerPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/marginTradePayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/marginUserOrderPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/marketTicker"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/okResponsePayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/orderGroupUpdatesPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/priceLevelDollarsCountFp"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/selfTradePreventionType"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/sendingTimestampMs"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/sequenceNumber"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/subscribeCommandPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/subscribedResponsePayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/subscriptionId"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/tickerPrice"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/unsubscribeCommandPayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/unsubscribedResponsePayload"
+    },
+    {
+      "sourceId": "perps_asyncapi",
+      "pointer": "#/components/schemas/updateSubscriptionCommandPayload"
+    }
+  ],
+  "references": [
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/servers/production/security/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/securitySchemes/apiKey"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/servers/demo/security/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/securitySchemes/apiKey"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/subscribeCommand/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/subscribeCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/unsubscribeCommand/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/unsubscribeCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/updateSubscriptionCommand/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/updateSubscriptionCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/updateSubscriptionDeleteCommand/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/updateSubscriptionDeleteCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/updateSubscriptionSingleSidCommand/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/updateSubscriptionSingleSidCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/listSubscriptionsCommand/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/listSubscriptionsCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/subscribedResponse/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/subscribedResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/unsubscribedResponse/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/unsubscribedResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/okResponse/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/okResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/listSubscriptionsResponse/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/listSubscriptionsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/errorResponse/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/errorResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames/messages/incomingPing/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/incomingPing"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames/messages/incomingPong/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/incomingPong"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames/messages/outgoingPing/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/outgoingPing"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames/messages/outgoingPong/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/outgoingPong"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta/messages/orderbookSnapshot/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/orderbookSnapshot"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta/messages/orderbookDelta/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/orderbookDelta"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/ticker/messages/ticker/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/ticker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/trade/messages/trade/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/trade"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/fill/messages/fill/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/fill"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/user_orders/messages/userOrder/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/userOrder"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/order_group_updates/messages/orderGroupUpdates/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/orderGroupUpdates"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendPing/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendPing/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames/messages/incomingPing"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendPong/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendPong/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames/messages/incomingPong"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendSubscribe/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendSubscribe/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/subscribeCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUnsubscribe/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUnsubscribe/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/unsubscribeCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendListSubscriptions/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendListSubscriptions/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/listSubscriptionsCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscription/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscription/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/updateSubscriptionCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscriptionDelete/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscriptionDelete/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/updateSubscriptionDeleteCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscriptionSingleSid/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/sendUpdateSubscriptionSingleSid/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/updateSubscriptionSingleSidCommand"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receivePing/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receivePing/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames/messages/outgoingPing"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receivePong/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receivePong/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/control_frames/messages/outgoingPong"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveSubscribed/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveSubscribed/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/subscribedResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveUnsubscribed/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveUnsubscribed/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/unsubscribedResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOk/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOk/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/okResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveListSubscriptions/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveListSubscriptions/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/listSubscriptionsResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveError/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveError/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/root/messages/errorResponse"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderbookSnapshot/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderbookSnapshot/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta/messages/orderbookSnapshot"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderbookDelta/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderbookDelta/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/orderbook_delta/messages/orderbookDelta"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveTicker/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/ticker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveTicker/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/ticker/messages/ticker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveTrade/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/trade"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveTrade/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/trade/messages/trade"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveFill/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/fill"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveFill/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/fill/messages/fill"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveUserOrder/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/user_orders"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveUserOrder/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/user_orders/messages/userOrder"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderGroupUpdates/channel/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/order_group_updates"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/operations/receiveOrderGroupUpdates/messages/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/channels/order_group_updates/messages/orderGroupUpdates"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/subscribeCommand/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscribeCommandPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/unsubscribeCommand/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/unsubscribeCommandPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/listSubscriptionsCommand/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/listSubscriptionsCommandPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/updateSubscriptionCommand/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/updateSubscriptionCommandPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/updateSubscriptionDeleteCommand/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/updateSubscriptionCommandPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/updateSubscriptionSingleSidCommand/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/updateSubscriptionCommandPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/subscribedResponse/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscribedResponsePayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/unsubscribedResponse/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/unsubscribedResponsePayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/okResponse/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/okResponsePayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/listSubscriptionsResponse/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/listSubscriptionsResponsePayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/errorResponse/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/errorResponsePayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/orderbookSnapshot/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookSnapshotPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/orderbookDelta/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookDeltaPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/ticker/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTickerPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/trade/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTradePayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/fill/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginFillPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/userOrder/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginUserOrderPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/messages/orderGroupUpdates/payload/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/orderGroupUpdatesPayload"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscribeCommandPayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscribeCommandPayload/properties/params/properties/market_tickers/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/unsubscribeCommandPayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/unsubscribeCommandPayload/properties/params/properties/sids/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/updateSubscriptionCommandPayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/updateSubscriptionCommandPayload/properties/params/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/updateSubscriptionCommandPayload/properties/params/properties/sids/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/updateSubscriptionCommandPayload/properties/params/properties/market_tickers/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/listSubscriptionsCommandPayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscribedResponsePayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscribedResponsePayload/properties/msg/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscribedResponsePayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/unsubscribedResponsePayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/unsubscribedResponsePayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/unsubscribedResponsePayload/properties/seq/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sequenceNumber"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/unsubscribedResponsePayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/okResponsePayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/okResponsePayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/okResponsePayload/properties/seq/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sequenceNumber"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/okResponsePayload/properties/msg/properties/market_tickers/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/okResponsePayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/listSubscriptionsResponsePayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/listSubscriptionsResponsePayload/properties/msg/items/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/listSubscriptionsResponsePayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/errorResponsePayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/errorResponsePayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/errorResponsePayload/properties/seq/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sequenceNumber"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/errorResponsePayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookSnapshotPayload/properties/id/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/commandId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookSnapshotPayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookSnapshotPayload/properties/seq/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sequenceNumber"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookSnapshotPayload/properties/msg/properties/market_ticker/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookSnapshotPayload/properties/msg/properties/bid/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/priceLevelDollarsCountFp"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookSnapshotPayload/properties/msg/properties/ask/items/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/priceLevelDollarsCountFp"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookSnapshotPayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookDeltaPayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookDeltaPayload/properties/seq/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sequenceNumber"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookDeltaPayload/properties/msg/properties/market_ticker/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookDeltaPayload/properties/msg/properties/side/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/bookSide"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookDeltaPayload/properties/msg/properties/last_update_reason/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/lastUpdateReason"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginOrderbookDeltaPayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTickerPayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTickerPayload/properties/msg/properties/market_ticker/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTickerPayload/properties/msg/properties/reference_price/allOf/0/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/tickerPrice"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTickerPayload/properties/msg/properties/settlement_mark_price/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/tickerPrice"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTickerPayload/properties/msg/properties/liquidation_mark_price/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/tickerPrice"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTickerPayload/properties/msg/properties/funding_rate/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/fundingRate"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTickerPayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTradePayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTradePayload/properties/seq/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sequenceNumber"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTradePayload/properties/msg/properties/market_ticker/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTradePayload/properties/msg/properties/taker_side/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/bookSide"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginTradePayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginFillPayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginFillPayload/properties/msg/properties/market_ticker/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginFillPayload/properties/msg/properties/side/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/bookSide"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginFillPayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginUserOrderPayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginUserOrderPayload/properties/msg/properties/ticker/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marketTicker"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginUserOrderPayload/properties/msg/properties/side/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/bookSide"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginUserOrderPayload/properties/msg/properties/self_trade_prevention_type/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/selfTradePreventionType"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginUserOrderPayload/properties/msg/properties/last_update_reason/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/lastUpdateReason"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/marginUserOrderPayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/orderGroupUpdatesPayload/properties/sid/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/subscriptionId"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/orderGroupUpdatesPayload/properties/seq/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sequenceNumber"
+      }
+    },
+    {
+      "at": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/orderGroupUpdatesPayload/properties/sending_ts_ms/$ref"
+      },
+      "target": {
+        "sourceId": "perps_asyncapi",
+        "pointer": "#/components/schemas/sendingTimestampMs"
+      }
+    }
+  ]
+}

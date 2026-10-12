@@ -1,0 +1,650 @@
+{
+  "perps_openapi": {
+    "$schema": "../schemas/source-contract-cases.schema.json",
+    "id": "perps-openapi-cases",
+    "sourceId": "perps_openapi",
+    "kind": "source-contract-cases",
+    "description": "Source-qualified representative contract validation; imported completeness is not review approval.",
+    "input": {
+      "cases": [
+        {
+          "name": "composed-order-positive",
+          "caseId": "perps_openapi:composed-order-positive",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/CreateMarginOrderRequest"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1orders/post"
+          },
+          "value": {
+            "ticker": "BTC",
+            "client_order_id": "order-1",
+            "side": "bid",
+            "count": "1.00",
+            "price": "12.5000",
+            "time_in_force": "good_till_canceled",
+            "self_trade_prevention_type": "maker",
+            "subaccount": 0
+          },
+          "valid": true
+        },
+        {
+          "name": "composed-order-negative",
+          "caseId": "perps_openapi:composed-order-negative",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/CreateMarginOrderRequest"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1orders/post"
+          },
+          "value": {
+            "ticker": "BTC",
+            "client_order_id": "order-1",
+            "side": "bid",
+            "count": "1.00",
+            "price": "12.5000",
+            "time_in_force": "good_till_canceled",
+            "self_trade_prevention_type": "invalid",
+            "subaccount": 0
+          },
+          "valid": false
+        },
+        {
+          "name": "required-order-positive",
+          "caseId": "perps_openapi:required-order-positive",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/CreateMarginOrderRequest"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1orders/post"
+          },
+          "value": {
+            "ticker": "BTC",
+            "client_order_id": "order-1",
+            "side": "bid",
+            "count": "1.00",
+            "price": "12.5000",
+            "time_in_force": "good_till_canceled",
+            "self_trade_prevention_type": "maker",
+            "subaccount": 0
+          },
+          "valid": true
+        },
+        {
+          "name": "required-order-negative",
+          "caseId": "perps_openapi:required-order-negative",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/CreateMarginOrderRequest"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1orders/post"
+          },
+          "value": {
+            "side": "bid"
+          },
+          "valid": false
+        },
+        {
+          "name": "error-positive",
+          "caseId": "perps_openapi:error-positive",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/ErrorResponse"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1orders/post"
+          },
+          "value": {
+            "code": "bad_request",
+            "message": "Invalid order"
+          },
+          "valid": true
+        },
+        {
+          "name": "error-negative",
+          "caseId": "perps_openapi:error-negative",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/ErrorResponse"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1orders/post"
+          },
+          "value": {
+            "code": 123
+          },
+          "valid": false
+        },
+        {
+          "name": "fills-pagination-positive",
+          "caseId": "perps_openapi:fills-pagination-positive",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/GetMarginFillsResponse"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1fills/get"
+          },
+          "value": {
+            "fills": [
+              {
+                "fill_id": "fill-1",
+                "order_id": "order-1",
+                "is_taker": true,
+                "side": "bid",
+                "count": "1.00",
+                "created_time": "2026-10-12T00:00:00Z",
+                "ticker": "BTC",
+                "price": "12.5000",
+                "entry_price": "12.0000",
+                "fees": "0.0100",
+                "realized_pnl": "0.5000"
+              }
+            ],
+            "cursor": "next"
+          },
+          "valid": true
+        },
+        {
+          "name": "fills-pagination-negative",
+          "caseId": "perps_openapi:fills-pagination-negative",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/GetMarginFillsResponse"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1fills/get"
+          },
+          "value": {
+            "fills": [
+              {
+                "fill_id": "fill-1",
+                "order_id": "order-1",
+                "is_taker": true,
+                "side": "bid",
+                "count": 1,
+                "created_time": "2026-10-12T00:00:00Z",
+                "ticker": "BTC",
+                "price": "12.5000",
+                "entry_price": "12.0000",
+                "fees": "0.0100",
+                "realized_pnl": "0.5000"
+              }
+            ],
+            "cursor": "next"
+          },
+          "valid": false
+        },
+        {
+          "name": "fills-terminal-positive",
+          "caseId": "perps_openapi:fills-terminal-positive",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/GetMarginFillsResponse"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1fills/get"
+          },
+          "value": {
+            "fills": [],
+            "cursor": ""
+          },
+          "valid": true
+        },
+        {
+          "name": "fills-terminal-negative",
+          "caseId": "perps_openapi:fills-terminal-negative",
+          "identity": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/components/schemas/GetMarginFillsResponse"
+          },
+          "operation": {
+            "sourceId": "perps_openapi",
+            "pointer": "#/paths/~1margin~1fills/get"
+          },
+          "value": {
+            "fills": []
+          },
+          "valid": false
+        }
+      ]
+    },
+    "expected": {
+      "allCasesMatch": true
+    }
+  },
+  "perps_scm_openapi": {
+    "$schema": "../schemas/source-contract-cases.schema.json",
+    "id": "perps-scm-openapi-cases",
+    "sourceId": "perps_scm_openapi",
+    "kind": "source-contract-cases",
+    "description": "Source-qualified representative contract validation; imported completeness is not review approval.",
+    "input": {
+      "cases": [
+        {
+          "name": "error-positive",
+          "caseId": "perps_scm_openapi:error-positive",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/components/schemas/Error"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": {
+            "code": "forbidden",
+            "message": "Forbidden"
+          },
+          "valid": true
+        },
+        {
+          "name": "error-negative",
+          "caseId": "perps_scm_openapi:error-negative",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/components/schemas/Error"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": {
+            "code": "forbidden"
+          },
+          "valid": false
+        },
+        {
+          "name": "composed-payment-positive",
+          "caseId": "perps_scm_openapi:composed-payment-positive",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/components/schemas/MemberFundingPayment"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": {
+            "id": "payment-1",
+            "market_ticker": "BTC",
+            "subtrader_id": "sub-1",
+            "funding_time": "2026-10-12T00:00:00Z",
+            "position_quantity_fp": "1.25",
+            "notional_value_centicents": 100,
+            "funding_amount_centicents": -5,
+            "settlement_execution_time": "2026-10-12T01:00:00Z"
+          },
+          "valid": true
+        },
+        {
+          "name": "composed-payment-negative",
+          "caseId": "perps_scm_openapi:composed-payment-negative",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/components/schemas/MemberFundingPayment"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": {
+            "id": "payment-1",
+            "market_ticker": "BTC",
+            "subtrader_id": "sub-1",
+            "funding_time": "2026-10-12T00:00:00Z",
+            "position_quantity_fp": "1.25",
+            "notional_value_centicents": 100,
+            "funding_amount_centicents": -5,
+            "settlement_execution_time": "yesterday"
+          },
+          "valid": false
+        },
+        {
+          "name": "payment-pagination-positive",
+          "caseId": "perps_scm_openapi:payment-pagination-positive",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/components/schemas/GetMemberFundingPaymentsResponse"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": {
+            "payments": [
+              {
+                "id": "payment-1",
+                "market_ticker": "BTC",
+                "subtrader_id": "sub-1",
+                "funding_time": "2026-10-12T00:00:00Z",
+                "position_quantity_fp": "1.25",
+                "notional_value_centicents": 100,
+                "funding_amount_centicents": -5,
+                "settlement_execution_time": "2026-10-12T01:00:00Z"
+              }
+            ],
+            "cursor": "next"
+          },
+          "valid": true
+        },
+        {
+          "name": "payment-pagination-negative",
+          "caseId": "perps_scm_openapi:payment-pagination-negative",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/components/schemas/GetMemberFundingPaymentsResponse"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": {
+            "payments": [
+              {
+                "id": "incomplete"
+              }
+            ],
+            "cursor": "next"
+          },
+          "valid": false
+        },
+        {
+          "name": "payment-terminal-positive",
+          "caseId": "perps_scm_openapi:payment-terminal-positive",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/components/schemas/GetMemberFundingPaymentsResponse"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": {
+            "payments": []
+          },
+          "valid": true
+        },
+        {
+          "name": "payment-terminal-negative",
+          "caseId": "perps_scm_openapi:payment-terminal-negative",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/components/schemas/GetMemberFundingPaymentsResponse"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": {
+            "payments": [],
+            "cursor": 5
+          },
+          "valid": false
+        },
+        {
+          "name": "pagination-limit-positive",
+          "caseId": "perps_scm_openapi:pagination-limit-positive",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get/parameters/2/schema"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": 10000,
+          "valid": true
+        },
+        {
+          "name": "pagination-limit-negative",
+          "caseId": "perps_scm_openapi:pagination-limit-negative",
+          "identity": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get/parameters/2/schema"
+          },
+          "operation": {
+            "sourceId": "perps_scm_openapi",
+            "pointer": "#/paths/~1margin~1funding_payments/get"
+          },
+          "value": 10001,
+          "valid": false
+        }
+      ]
+    },
+    "expected": {
+      "allCasesMatch": true
+    }
+  },
+  "perps_asyncapi": {
+    "$schema": "../schemas/source-contract-cases.schema.json",
+    "id": "perps-asyncapi-cases",
+    "sourceId": "perps_asyncapi",
+    "kind": "source-contract-cases",
+    "description": "Source-qualified representative contract validation; imported completeness is not review approval.",
+    "input": {
+      "cases": [
+        {
+          "name": "root-subscribe-positive",
+          "caseId": "perps_asyncapi:root-subscribe-positive",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/schemas/subscribeCommandPayload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/sendSubscribe"
+          },
+          "value": {
+            "id": 1,
+            "cmd": "subscribe",
+            "params": {
+              "channels": [
+                "trade"
+              ]
+            }
+          },
+          "valid": true
+        },
+        {
+          "name": "root-subscribe-negative",
+          "caseId": "perps_asyncapi:root-subscribe-negative",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/schemas/subscribeCommandPayload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/sendSubscribe"
+          },
+          "value": {
+            "id": 1,
+            "cmd": "subscribe",
+            "params": {
+              "channels": [
+                "predictions"
+              ]
+            }
+          },
+          "valid": false
+        },
+        {
+          "name": "control-incoming-positive",
+          "caseId": "perps_asyncapi:control-incoming-positive",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/messages/incomingPing/payload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/sendPing"
+          },
+          "value": "",
+          "valid": true
+        },
+        {
+          "name": "control-incoming-negative",
+          "caseId": "perps_asyncapi:control-incoming-negative",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/messages/incomingPing/payload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/sendPing"
+          },
+          "value": "heartbeat",
+          "valid": false
+        },
+        {
+          "name": "control-outgoing-positive",
+          "caseId": "perps_asyncapi:control-outgoing-positive",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/messages/outgoingPing/payload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/receivePing"
+          },
+          "value": "heartbeat",
+          "valid": true
+        },
+        {
+          "name": "control-outgoing-negative",
+          "caseId": "perps_asyncapi:control-outgoing-negative",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/messages/outgoingPing/payload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/receivePing"
+          },
+          "value": "",
+          "valid": false
+        },
+        {
+          "name": "data-trade-positive",
+          "caseId": "perps_asyncapi:data-trade-positive",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/schemas/marginTradePayload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/receiveTrade"
+          },
+          "value": {
+            "type": "trade",
+            "sid": 1,
+            "seq": 2,
+            "msg": {
+              "trade_id": "123e4567-e89b-12d3-a456-426614174000",
+              "market_ticker": "BTC",
+              "price": "12.5000",
+              "count": "1.00",
+              "taker_side": "bid",
+              "ts_ms": 1791763200000
+            }
+          },
+          "valid": true
+        },
+        {
+          "name": "data-trade-negative",
+          "caseId": "perps_asyncapi:data-trade-negative",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/schemas/marginTradePayload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/receiveTrade"
+          },
+          "value": {
+            "type": "trade",
+            "sid": 1,
+            "seq": 2,
+            "msg": {
+              "trade_id": "123e4567-e89b-12d3-a456-426614174000",
+              "market_ticker": "BTC",
+              "price": "12.5000",
+              "count": "1.00",
+              "taker_side": "yes",
+              "ts_ms": 1791763200000
+            }
+          },
+          "valid": false
+        },
+        {
+          "name": "data-trade-timestamp-positive",
+          "caseId": "perps_asyncapi:data-trade-timestamp-positive",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/schemas/marginTradePayload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/receiveTrade"
+          },
+          "value": {
+            "type": "trade",
+            "sid": 1,
+            "seq": 2,
+            "msg": {
+              "trade_id": "123e4567-e89b-12d3-a456-426614174000",
+              "market_ticker": "BTC",
+              "price": "12.5000",
+              "count": "1.00",
+              "taker_side": "bid",
+              "ts_ms": 1791763200000
+            }
+          },
+          "valid": true
+        },
+        {
+          "name": "data-trade-timestamp-negative",
+          "caseId": "perps_asyncapi:data-trade-timestamp-negative",
+          "identity": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/components/schemas/marginTradePayload"
+          },
+          "operation": {
+            "sourceId": "perps_asyncapi",
+            "pointer": "#/operations/receiveTrade"
+          },
+          "value": {
+            "type": "trade",
+            "sid": 1,
+            "seq": 2,
+            "msg": {
+              "trade_id": "123e4567-e89b-12d3-a456-426614174000",
+              "market_ticker": "BTC",
+              "price": "12.5000",
+              "count": "1.00",
+              "taker_side": "bid",
+              "ts_ms": "1791763200000"
+            }
+          },
+          "valid": false
+        }
+      ]
+    },
+    "expected": {
+      "allCasesMatch": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/perps-artifact.schema.json",
+  "id": "perps_scm_openapi",
+  "kind": "openapi",
+  "url": "https://docs.kalshi.com/perps_scm_openapi.yaml",
+  "sha256": "3ac27696d43bffbb5e993daa7106e62872028b7630980a492438d1d0043202e8",
+  "version": "0.0.1",
+  "byteCount": 62707,
+  "lineCount": 1340,
+  "counts": {
+    "restOperations": 27,
+    "channels": 0,
+    "websocketOperations": 0,
+    "channelMessages": 0,
+    "componentMessages": 0,
+    "schemas": 120,
+    "references": 189,
+    "responses": 141
+  },
+  "gaps": []
+}

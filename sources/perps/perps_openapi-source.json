@@ -1,0 +1,30 @@
+{
+  "$schema": "../schemas/perps-artifact.schema.json",
+  "id": "perps_openapi",
+  "kind": "openapi",
+  "url": "https://docs.kalshi.com/perps_openapi.yaml",
+  "sha256": "27e4b0b76a686f797342f1526a08df5b8f60d8104a81b65c94073d3d89b54308",
+  "version": "0.0.1",
+  "byteCount": 150288,
+  "lineCount": 3930,
+  "counts": {
+    "restOperations": 51,
+    "channels": 0,
+    "websocketOperations": 0,
+    "channelMessages": 0,
+    "componentMessages": 0,
+    "schemas": 213,
+    "references": 457,
+    "responses": 236
+  },
+  "gaps": [
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1portfolio~1intra_exchange_instance_transfer/post"
+      },
+      "issue": "Transfer security declares three separate alternatives; signing scheme descriptions require combined headers. Preserved without correction.",
+      "status": "unreviewed"
+    }
+  ]
+}

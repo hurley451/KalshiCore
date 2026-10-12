@@ -54,13 +54,19 @@ private npm project installs tooling; it is not a runtime client package.
 The recorded official OpenAPI 3.34.0 snapshot contains 118 REST operations. One
 endpoint contract, portfolio fills, has reviewed response material. The other
 117 operations remain explicitly unreviewed in `contracts/official-coverage.json`.
-The operation inventory includes IDs, methods, paths, summaries, tags and
-repeated-array query encoding, not complete parameter/body/response schemas.
+The complete Predictions bundle retains parameter, body, success/error response,
+security, and WebSocket schemas with source-qualified references. Separate
+bundles retain 51 Perps REST operations, 27 clearing-member REST operations, and
+8 Perps WebSocket channels. Import coverage is not manual contract approval.
+See [complete source contracts](docs/FULL_OFFICIAL_CONTRACTS.md).
 
 Four offline fixtures cover signing canonicalization, fills query serialization,
 fills response parsing and order-book message replay. These are focused cases,
 not full cryptographic, live API, all-endpoint or WebSocket connection approval.
 The individual SDK adapters own the strength of their execution assertions.
+Shared validators also execute positive and negative source-linked payload cases,
+including Perps errors, pagination, composition, and WebSocket control/data
+messages. These validators do not establish SDK transport or live-service behavior.
 
 Target manifests currently use draft/example status. A target must demonstrate
 its adapter, pin an immutable Core ref and document exclusions before activation.
@@ -86,6 +92,9 @@ Source metadata records URLs, retrieval timestamps, content hashes and counts:
 - [Official REST OpenAPI](https://docs.kalshi.com/openapi.yaml)
 - [Official WebSocket AsyncAPI](https://docs.kalshi.com/asyncapi.yaml)
 - [Official documentation index](https://docs.kalshi.com/llms.txt)
+- [Perps REST OpenAPI](https://docs.kalshi.com/perps_openapi.yaml)
+- [Perps clearing-member OpenAPI](https://docs.kalshi.com/perps_scm_openapi.yaml)
+- [Perps WebSocket AsyncAPI](https://docs.kalshi.com/perps_asyncapi.yaml)
 
 Refresh in an isolated checkout, then review the complete diff:
 
@@ -130,15 +139,16 @@ This repository should stay focused on shared contract truth and compatibility
 checks. SDK repositories own language-specific abstractions, dependencies,
 release cadence, and user-facing documentation.
 
-## Boundaries and Deferred Work
+## Boundaries
 
 SDKs own public APIs, authentication implementation, retries, runtime choices,
 packaging and release cadence. Core does not prescribe generated class layouts
 or uniform language ergonomics.
 
-Broader endpoint schemas, additional edge/error fixtures, credentialed integration
-evidence and deeper WebSocket replay remain future work. New language targets
-should first demonstrate one useful offline adapter before expanding coverage.
+Structured source accounting does not cover every prose-only rule or prove live
+behavior. Authentication, streaming recovery, manual API contracts, and each
+target's complete runtime verification require their own evidence. Clearing-member
+credentials and endpoints remain separate from ordinary trading-key clients.
 
 ## Documentation
 

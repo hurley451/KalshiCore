@@ -1,0 +1,227 @@
+{
+  "$schema": "../schemas/source-contract-cases.schema.json",
+  "id": "perps-openapi-cases",
+  "sourceId": "perps_openapi",
+  "kind": "source-contract-cases",
+  "description": "Source-qualified representative contract validation; imported completeness is not review approval.",
+  "input": {
+    "cases": [
+      {
+        "name": "composed-order-positive",
+        "caseId": "perps_openapi:composed-order-positive",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/CreateMarginOrderRequest"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1orders/post"
+        },
+        "value": {
+          "ticker": "BTC",
+          "client_order_id": "order-1",
+          "side": "bid",
+          "count": "1.00",
+          "price": "12.5000",
+          "time_in_force": "good_till_canceled",
+          "self_trade_prevention_type": "maker",
+          "subaccount": 0
+        },
+        "valid": true
+      },
+      {
+        "name": "composed-order-negative",
+        "caseId": "perps_openapi:composed-order-negative",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/CreateMarginOrderRequest"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1orders/post"
+        },
+        "value": {
+          "ticker": "BTC",
+          "client_order_id": "order-1",
+          "side": "bid",
+          "count": "1.00",
+          "price": "12.5000",
+          "time_in_force": "good_till_canceled",
+          "self_trade_prevention_type": "invalid",
+          "subaccount": 0
+        },
+        "valid": false
+      },
+      {
+        "name": "required-order-positive",
+        "caseId": "perps_openapi:required-order-positive",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/CreateMarginOrderRequest"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1orders/post"
+        },
+        "value": {
+          "ticker": "BTC",
+          "client_order_id": "order-1",
+          "side": "bid",
+          "count": "1.00",
+          "price": "12.5000",
+          "time_in_force": "good_till_canceled",
+          "self_trade_prevention_type": "maker",
+          "subaccount": 0
+        },
+        "valid": true
+      },
+      {
+        "name": "required-order-negative",
+        "caseId": "perps_openapi:required-order-negative",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/CreateMarginOrderRequest"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1orders/post"
+        },
+        "value": {
+          "side": "bid"
+        },
+        "valid": false
+      },
+      {
+        "name": "error-positive",
+        "caseId": "perps_openapi:error-positive",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/ErrorResponse"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1orders/post"
+        },
+        "value": {
+          "code": "bad_request",
+          "message": "Invalid order"
+        },
+        "valid": true
+      },
+      {
+        "name": "error-negative",
+        "caseId": "perps_openapi:error-negative",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/ErrorResponse"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1orders/post"
+        },
+        "value": {
+          "code": 123
+        },
+        "valid": false
+      },
+      {
+        "name": "fills-pagination-positive",
+        "caseId": "perps_openapi:fills-pagination-positive",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/GetMarginFillsResponse"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1fills/get"
+        },
+        "value": {
+          "fills": [
+            {
+              "fill_id": "fill-1",
+              "order_id": "order-1",
+              "is_taker": true,
+              "side": "bid",
+              "count": "1.00",
+              "created_time": "2026-10-12T00:00:00Z",
+              "ticker": "BTC",
+              "price": "12.5000",
+              "entry_price": "12.0000",
+              "fees": "0.0100",
+              "realized_pnl": "0.5000"
+            }
+          ],
+          "cursor": "next"
+        },
+        "valid": true
+      },
+      {
+        "name": "fills-pagination-negative",
+        "caseId": "perps_openapi:fills-pagination-negative",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/GetMarginFillsResponse"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1fills/get"
+        },
+        "value": {
+          "fills": [
+            {
+              "fill_id": "fill-1",
+              "order_id": "order-1",
+              "is_taker": true,
+              "side": "bid",
+              "count": 1,
+              "created_time": "2026-10-12T00:00:00Z",
+              "ticker": "BTC",
+              "price": "12.5000",
+              "entry_price": "12.0000",
+              "fees": "0.0100",
+              "realized_pnl": "0.5000"
+            }
+          ],
+          "cursor": "next"
+        },
+        "valid": false
+      },
+      {
+        "name": "fills-terminal-positive",
+        "caseId": "perps_openapi:fills-terminal-positive",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/GetMarginFillsResponse"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1fills/get"
+        },
+        "value": {
+          "fills": [],
+          "cursor": ""
+        },
+        "valid": true
+      },
+      {
+        "name": "fills-terminal-negative",
+        "caseId": "perps_openapi:fills-terminal-negative",
+        "identity": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/components/schemas/GetMarginFillsResponse"
+        },
+        "operation": {
+          "sourceId": "perps_openapi",
+          "pointer": "#/paths/~1margin~1fills/get"
+        },
+        "value": {
+          "fills": []
+        },
+        "valid": false
+      }
+    ]
+  },
+  "expected": {
+    "allCasesMatch": true
+  }
+}

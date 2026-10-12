@@ -208,10 +208,9 @@ function buildCoverage(bundle, ledger, previous = null) {
       effective: wsDecisions.get(channel.id)?.status === "future" ? "future-disposition" : "present-in-source" })) };
 }
 
-function compiler(document) {
+function compiler(document, id = "urn:kalshicore:official") {
   const ajv = new Ajv({ allErrors: true, strict: false, validateFormats: true });
   addFormats(ajv);
-  const id = "urn:kalshicore:official";
   // Official OAS uses nullable on both typed schemas and ref/allOf wrappers.
   // Compile a derived view; the bundle retains the exact original constraints.
   function normalize(value) {
@@ -324,4 +323,4 @@ if (require.main === module) {
     console.log(`Full official contracts validated: ${JSON.stringify(counts)}`);
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
-module.exports = { buildBundle, buildCoverage, validateBundle, validateFull, importFull, compiler, pointer, resolve, schemaIndex };
+module.exports = { buildBundle, buildCoverage, validateBundle, validateFull, importFull, compiler, pointer, resolve, schemaIndex, referenceIndex, restContracts, websocketContracts };

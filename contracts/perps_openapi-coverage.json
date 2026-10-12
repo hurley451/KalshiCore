@@ -1,0 +1,578 @@
+{
+  "$schema": "./schemas/source-coverage.schema.json",
+  "sourceId": "perps_openapi",
+  "sha256": "27e4b0b76a686f797342f1526a08df5b8f60d8104a81b65c94073d3d89b54308",
+  "counts": {
+    "restOperations": 51,
+    "channels": 0,
+    "websocketOperations": 0,
+    "channelMessages": 0,
+    "componentMessages": 0,
+    "schemas": 213,
+    "references": 457,
+    "responses": 236
+  },
+  "entries": [
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1account~1limits~1perps/get"
+      },
+      "contract": "perps_openapi.json#/rest/0",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1balance/get"
+      },
+      "contract": "perps_openapi.json#/rest/1",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1cross~1positions~1{ticker}~1exit_trigger/delete"
+      },
+      "contract": "perps_openapi.json#/rest/2",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1cross~1positions~1{ticker}~1exit_trigger/get"
+      },
+      "contract": "perps_openapi.json#/rest/3",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1cross~1positions~1{ticker}~1exit_trigger/put"
+      },
+      "contract": "perps_openapi.json#/rest/4",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1cross~1positions~1{ticker}~1exit_trigger~1{trigger_id}/delete"
+      },
+      "contract": "perps_openapi.json#/rest/5",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1cross~1positions~1{ticker}~1exit_trigger~1{trigger_id}/put"
+      },
+      "contract": "perps_openapi.json#/rest/6",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1enabled/get"
+      },
+      "contract": "perps_openapi.json#/rest/7",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1exchange~1status/get"
+      },
+      "contract": "perps_openapi.json#/rest/8",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fcm~1notional_risk_limit/delete"
+      },
+      "contract": "perps_openapi.json#/rest/9",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fcm~1notional_risk_limit/put"
+      },
+      "contract": "perps_openapi.json#/rest/10",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fcm~1subtraders/post"
+      },
+      "contract": "perps_openapi.json#/rest/11",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fcm~1subtraders~1risk_controls/delete"
+      },
+      "contract": "perps_openapi.json#/rest/12",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fcm~1subtraders~1risk_controls/get"
+      },
+      "contract": "perps_openapi.json#/rest/13",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fcm~1subtraders~1risk_controls/put"
+      },
+      "contract": "perps_openapi.json#/rest/14",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fee_tier_rates/get"
+      },
+      "contract": "perps_openapi.json#/rest/15",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fee_tiers/get"
+      },
+      "contract": "perps_openapi.json#/rest/16",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1fills/get"
+      },
+      "contract": "perps_openapi.json#/rest/17",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1funding_history/get"
+      },
+      "contract": "perps_openapi.json#/rest/18",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1funding_rates~1estimate/get"
+      },
+      "contract": "perps_openapi.json#/rest/19",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1funding_rates~1historical/get"
+      },
+      "contract": "perps_openapi.json#/rest/20",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1funding_rates~1premium_index/get"
+      },
+      "contract": "perps_openapi.json#/rest/21",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1isolated~1positions~1{ticker}~1exit_trigger/delete"
+      },
+      "contract": "perps_openapi.json#/rest/22",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1isolated~1positions~1{ticker}~1exit_trigger/get"
+      },
+      "contract": "perps_openapi.json#/rest/23",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1isolated~1positions~1{ticker}~1exit_trigger/put"
+      },
+      "contract": "perps_openapi.json#/rest/24",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1markets/get"
+      },
+      "contract": "perps_openapi.json#/rest/25",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1markets~1{ticker}/get"
+      },
+      "contract": "perps_openapi.json#/rest/26",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1markets~1{ticker}~1candlesticks/get"
+      },
+      "contract": "perps_openapi.json#/rest/27",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1markets~1{ticker}~1orderbook/get"
+      },
+      "contract": "perps_openapi.json#/rest/28",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1notional_risk_limit/get"
+      },
+      "contract": "perps_openapi.json#/rest/29",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1order_groups/get"
+      },
+      "contract": "perps_openapi.json#/rest/30",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1order_groups~1create/post"
+      },
+      "contract": "perps_openapi.json#/rest/31",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1order_groups~1{order_group_id}/delete"
+      },
+      "contract": "perps_openapi.json#/rest/32",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1order_groups~1{order_group_id}/get"
+      },
+      "contract": "perps_openapi.json#/rest/33",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1order_groups~1{order_group_id}~1limit/put"
+      },
+      "contract": "perps_openapi.json#/rest/34",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1order_groups~1{order_group_id}~1reset/put"
+      },
+      "contract": "perps_openapi.json#/rest/35",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1order_groups~1{order_group_id}~1trigger/put"
+      },
+      "contract": "perps_openapi.json#/rest/36",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1orders/delete"
+      },
+      "contract": "perps_openapi.json#/rest/37",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1orders/get"
+      },
+      "contract": "perps_openapi.json#/rest/38",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1orders/post"
+      },
+      "contract": "perps_openapi.json#/rest/39",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1orders~1{order_id}/delete"
+      },
+      "contract": "perps_openapi.json#/rest/40",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1orders~1{order_id}/get"
+      },
+      "contract": "perps_openapi.json#/rest/41",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1orders~1{order_id}~1amend/post"
+      },
+      "contract": "perps_openapi.json#/rest/42",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1orders~1{order_id}~1decrease/post"
+      },
+      "contract": "perps_openapi.json#/rest/43",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1positions/get"
+      },
+      "contract": "perps_openapi.json#/rest/44",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1risk/get"
+      },
+      "contract": "perps_openapi.json#/rest/45",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1risk_parameters/get"
+      },
+      "contract": "perps_openapi.json#/rest/46",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1margin~1trades/get"
+      },
+      "contract": "perps_openapi.json#/rest/47",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1portfolio~1intra_exchange_instance_transfer/post"
+      },
+      "contract": "perps_openapi.json#/rest/48",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1portfolio~1margin~1subaccounts/post"
+      },
+      "contract": "perps_openapi.json#/rest/49",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_openapi",
+        "pointer": "#/paths/~1portfolio~1margin~1subaccounts~1transfer/post"
+      },
+      "contract": "perps_openapi.json#/rest/50",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    }
+  ]
+}

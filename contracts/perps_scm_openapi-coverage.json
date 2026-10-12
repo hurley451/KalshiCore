@@ -1,0 +1,314 @@
+{
+  "$schema": "./schemas/source-coverage.schema.json",
+  "sourceId": "perps_scm_openapi",
+  "sha256": "3ac27696d43bffbb5e993daa7106e62872028b7630980a492438d1d0043202e8",
+  "counts": {
+    "restOperations": 27,
+    "channels": 0,
+    "websocketOperations": 0,
+    "channelMessages": 0,
+    "componentMessages": 0,
+    "schemas": 120,
+    "references": 189,
+    "responses": 141
+  },
+  "entries": [
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/0",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys/post"
+      },
+      "contract": "perps_scm_openapi.json#/rest/1",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1generate/post"
+      },
+      "contract": "perps_scm_openapi.json#/rest/2",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1api_keys~1{api_key_id}/delete"
+      },
+      "contract": "perps_scm_openapi.json#/rest/3",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/4",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups/post"
+      },
+      "contract": "perps_scm_openapi.json#/rest/5",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/delete"
+      },
+      "contract": "perps_scm_openapi.json#/rest/6",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1fcm~1margin~1subtrader_groups~1{group_id}/put"
+      },
+      "contract": "perps_scm_openapi.json#/rest/7",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1active_obligations/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/8",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin/post"
+      },
+      "contract": "perps_scm_openapi.json#/rest/9",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1estimate_maintenance_margin~1metadata/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/10",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_estimate_by_asset_class/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/11",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_payments/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/12",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1funding_schedule/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/13",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1guaranty_fund_balance/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/14",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1large_trader_positions/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/15",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligation_history/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/16",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1funding_payments/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/17",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1maintenance_margin_details/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/18",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1obligations~1{obligation_id}~1settlement_details/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/19",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1reports/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/20",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/21",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_history/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/22",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_balance_withdrawal/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/23",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_estimate_by_asset_class/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/24",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1settlement_prices/get"
+      },
+      "contract": "perps_scm_openapi.json#/rest/25",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    },
+    {
+      "identity": {
+        "sourceId": "perps_scm_openapi",
+        "pointer": "#/paths/~1margin~1withdraw_settlement_balance/post"
+      },
+      "contract": "perps_scm_openapi.json#/rest/26",
+      "schemaAccounting": "complete",
+      "disposition": {
+        "status": "unreviewed"
+      }
+    }
+  ]
+}

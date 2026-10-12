@@ -117,6 +117,7 @@ function validateSchemas(parsed) {
     const schemaPath = resolveReference(relativePath, document.$schema);
     const expectedSchema = relativePath.startsWith("contracts/endpoints/")
       ? "contracts/schemas/endpoint-contract.schema.json"
+      : relativePath.startsWith("fixtures/perps/") ? "fixtures/schemas/source-contract-cases.schema.json"
       : relativePath.startsWith("fixtures/") ? "fixtures/schemas/fixture.schema.json"
       : relativePath.startsWith("targets/") ? "targets/schemas/sdk-target.schema.json"
       : {
@@ -266,7 +267,8 @@ function collectOfficialSourceIds(parsed) {
 function collectOpenApiOperationIds(parsed) {
   const ids = new Set();
   for (const [relativePath, document] of parsed) {
-    if (!relativePath.startsWith("sources/official/") || !Array.isArray(document.operations)) {
+    // This legacy coverage ledger belongs only to the Predictions inventory.
+    if (relativePath !== "sources/official/rest-openapi-operations.json" || !Array.isArray(document.operations)) {
       continue;
     }
 
@@ -324,6 +326,8 @@ function validateSources(parsed) {
   const index = parsed.get(indexPath);
   const ids = new Map();
   const kinds = new Map();
+  // Predictions defaults remain isolated. Perps allows multiple sources of the
+  // same kind and validates source-ID plus pointer identities in its own gate.
   for (const source of index?.sources || []) {
     assertUniqueId(ids, source.id, indexPath, "source");
     assertUniqueId(kinds, source.kind, indexPath, "source kind");
@@ -430,6 +434,11 @@ function main() {
     validateSources(parsed);
     validateOfficialCoverage(parsed, contractIds);
     validateTargets(parsed, contractIds, fixtureIds);
+    try {
+      require("./perps-contracts").validatePerps(root);
+    } catch (error) {
+      errors.push(`Perps contracts: ${error.message}`);
+    }
   }
 
   if (errors.length > 0) {

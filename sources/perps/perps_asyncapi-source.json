@@ -1,0 +1,21 @@
+{
+  "$schema": "../schemas/perps-artifact.schema.json",
+  "id": "perps_asyncapi",
+  "kind": "asyncapi",
+  "url": "https://docs.kalshi.com/perps_asyncapi.yaml",
+  "sha256": "e5cc0f026b8e306e917860b870e23c9152d0d782c33137d42698f051a9dbe824",
+  "version": "2.0.0",
+  "byteCount": 38219,
+  "lineCount": 1227,
+  "counts": {
+    "restOperations": 0,
+    "channels": 8,
+    "websocketOperations": 22,
+    "channelMessages": 22,
+    "componentMessages": 22,
+    "schemas": 49,
+    "references": 152,
+    "responses": 0
+  },
+  "gaps": []
+}
